@@ -1,0 +1,157 @@
+html,body{
+    height: 100%;
+}
+#app{
+    height: 100%;
+}
+.box_wy{
+    height: 100%;   
+}
+.container_wy{
+    font-size: 32px; 
+    height: 100%;   
+    display: flex;
+    flex-direction: column;
+    .header_wy{
+        height: 88px;
+        background: #eee;
+        display: flex;
+        line-height: 88px;
+        border-bottom: 1px solid #999;
+        h3{
+            flex:1;              
+            text-align: center;
+            margin-left: 90px;
+        }
+        span{
+            margin: 0 20px;
+        }
+    }
+    .main_wy{
+        flex: 1;
+        overflow-y: auto; 
+        background: #ddd;
+        .main_header{
+            overflow: hidden;
+            height: 70px;
+            line-height: 70px;
+            padding-left: 10px;
+            border-bottom: 1px solid #999;
+            background: #fff;
+            .allselect{
+                margin-top: 18px;
+                float: left;
+            }
+            h4{
+                float: left;
+                margin-left: 15px;
+            }    
+        }
+        .goods{
+            li{
+                background: #fff;
+                margin-bottom: 20px;
+                overflow: hidden;
+                height: 200px;
+                padding: 20px 10px;
+                .goodsselect{
+                    float: left;
+                    margin-top: 60px;
+                }
+                .goodsImg{
+                    float: left;
+                    width: 160px;
+                    height: 160px;
+                    margin: 0 20px;
+                }
+                .goods_r{
+                    .title{
+                        font-size: 28px;
+                    }
+                    .cont{
+                        color: rgb(151, 151, 151);
+                        font-size: 24px;
+                        .cont_t{
+                            overflow: hidden;
+                            .cont_t_l{
+                                float: left;
+                            }
+                            .cont_t_r{
+                                float: right;
+                                color: rgb(243, 36, 36);
+                            }
+                        }
+                        .cont_c{
+                            overflow: hidden;
+                            .cont_c_l{
+                                float: left;
+                            }
+                            .cont_c_r{
+                                float: right;
+                                color: rgb(243, 36, 36);
+                            }
+                        }
+                        .cont_b{
+                            overflow: hidden;
+                            .cont_b_l{
+                                float: left;
+                            }
+                            .cont_b_r{
+                                float: right;
+                                .minus,.plus{
+                                    border:1px solid #ccc;
+                                    padding: 6px;
+                                    float: left;
+                                    width: 50px;
+                                }
+                                .num{
+                                    background:none;  
+                                    outline:none;  
+                                    border:0px; 
+                                    width: 50px;
+                                    border: 1px solid #ccc;
+                                    float: left;
+                                    text-align: center;
+                                }
+                                // .ant-input-number-sm {
+                                //     padding: 1px 7px;
+                                //     height: 60px;
+                                //     width: 110px;
+                                //     .ant-input-number-input-wrap{
+                                //         height: 50px;
+                                //         line-height: 50px;
+                                //         font-size: 30px;
+                                //         span{
+                                //             font-size: 28px;
+                                //         }
+                                //         .ant-input-number-input{
+                                //             height: 50px;
+                                //             line-height: 50px;
+                                //             font-size: 30px;
+                                //         }
+                                        
+                                //     } 
+                                // }
+                                  
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer_wy{
+        height: 88px;
+        line-height: 88px;
+        border-top: 1px solid #999;
+        display: flex;
+        span{
+            flex:1;
+            text-align: center;
+        }
+    }
+} 
+
+
+
+
