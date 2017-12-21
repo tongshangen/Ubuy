@@ -12,108 +12,145 @@ html,body{
     height: 100%;   
     display: flex;
     flex-direction: column;
-    .header_wy{
+    .header_car{
         height: 88px;
-        background: #eee;
+        background: #f8f8f8;
+        color: #333;
         display: flex;
         line-height: 88px;
         border-bottom: 1px solid #999;
+        .header_classify_l,.header_classify_r{
+            font-size: 38px;
+            line-height: 88px;
+            width: 100px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .header_classify_r{
+            text-align: center;
+        }
         h3{
             flex:1;              
             text-align: center;
-            margin-left: 90px;
         }
         span{
             margin: 0 20px;
         }
     }
-    .main_wy{
+    .main_car_wy{
         flex: 1;
         overflow-y: auto; 
-        background: #ddd;
+        background: #eee;
         .main_header{
             overflow: hidden;
-            height: 70px;
-            line-height: 70px;
+            height: 90px;
+            line-height: 90px;
             padding-left: 10px;
+            border-top: 1px solid #e3e5e9;
             border-bottom: 1px solid #999;
-            background: #fff;
+            background: #f5f5f5;
+            margin-top: 16px;
+            color: #333;
+            i{
+                height: 90px;
+                line-height: 90px;
+            }
             .allselect{
-                margin-top: 18px;
                 float: left;
+                padding-left: 10px;
+                font-size: 36px;
+                color: red;
             }
             h4{
                 float: left;
                 margin-left: 15px;
+                font-size: 28px;
             }    
         }
         .goods{
             li{
+                padding: 15px 0 20px 10px;
                 background: #fff;
-                margin-bottom: 20px;
                 overflow: hidden;
-                height: 200px;
-                padding: 20px 10px;
-                .goodsselect{
+                width: 100%;
+                .goods_l{
                     float: left;
-                    margin-top: 60px;
-                }
-                .goodsImg{
-                    float: left;
-                    width: 160px;
-                    height: 160px;
-                    margin: 0 20px;
+                    width: 10%;
+                    .allselect{
+                        padding-left: 10px;
+                        font-size: 36px;
+                        color: red;
+                    }
                 }
                 .goods_r{
+                    float: left;
+                    width: 90%;
                     .title{
-                        font-size: 28px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        font-size: 30px;
+                        color: #4a4a4a;
                     }
-                    .cont{
-                        color: rgb(151, 151, 151);
-                        font-size: 24px;
-                        .cont_t{
-                            overflow: hidden;
-                            .cont_t_l{
+                    .goods_r_m{
+                        overflow: hidden;
+                        margin-top: 10px;
+                        width: 100%;
+                        .goods_r_m_l{
+                            float: left;
+                            width: 20%;
+                            img{
+                                width: 160px;
+                                border:1px solid #ddd;
                                 float: left;
-                            }
-                            .cont_t_r{
-                                float: right;
-                                color: rgb(243, 36, 36);
                             }
                         }
-                        .cont_c{
+                        .goods_r_m_r{
+                            float: left;
+                            margin-left: 60px;
+                            font-size: 26px;
+                            color: #7b7b7b;
                             overflow: hidden;
-                            .cont_c_l{
-                                float: left;
-                            }
-                            .cont_c_r{
-                                float: right;
-                                color: rgb(243, 36, 36);
-                            }
-                        }
-                        .cont_b{
-                            overflow: hidden;
-                            .cont_b_l{
-                                float: left;
-                            }
-                            .cont_b_r{
-                                float: right;
-                                .minus,.plus{
-                                    border:1px solid #ccc;
-                                    padding: 6px;
+                            width: 65%;
+                            .info_t{
+                                width: 100%;
+                                .color{
                                     float: left;
-                                    width: 50px;
+                                    width: 80%;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
                                 }
-                                .num{
-                                    background:none;  
-                                    outline:none;  
-                                    border:0px; 
-                                    width: 50px;
-                                    border: 1px solid #ccc;
+                                .price{
+                                    float: right;
+                                    width: 20%;
+                                    color: #333;
+                                }
+                            }
+                            .info_num{
+                                .info_num_l{
                                     float: left;
-                                    text-align: center;
+                                    margin-top: 8px;
+                                    .minus,.plus{
+                                        border:1px solid #ccc;
+                                        padding: 6px;
+                                        float: left;
+                                        width: 50px;
+                                    }
+                                    .num{
+                                        background:none;  
+                                        outline:none;  
+                                        border:0px; 
+                                        width: 50px;
+                                        border: 1px solid #ccc;
+                                        float: left;
+                                        text-align: center;
+                                    }
                                 }
-                                  
+                                .info_num_r{
+                                    float: right;
+                                    font-size: 34px;
+                                }
                             }
                         }
                     }
@@ -123,13 +160,37 @@ html,body{
     }
     .calculate_wy{
         height: 88px;
+        line-height: 88px;
         background: #fff;
         border-top:1px solid #999;
+        padding-left: 20px;
+        font-size: 26px;
         .cal_l{
             float: left;
+            .allselect{
+                color: red;
+                margin-right: 20px;
+                font-size: 34px;
+            }
         }
-        .cal_c{
-            float: left;
+        .cal_r{
+            float: right;
+            .cal_r_l{
+                float: left;
+                span{
+                    em{
+                        color: red;
+                    }
+                }
+            }
+            .cal_r_r{
+                float: right;
+                background: red;
+                color: #fff;
+                width: 200px;
+                text-align: center;
+                margin-left: 24px;
+            }
         }
     }
     .footer_wy{

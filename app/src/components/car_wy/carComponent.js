@@ -7,102 +7,56 @@ import './car.scss'
 import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber} from 'antd';
 import { browserHistory } from 'react-router';
 
-class carComponent extends React.Component{
-    state = {       
-        text: true
-    }
-
-    handleClick = (e) => {        
-        this.setState({text:!this.state.text})
-        e.preventDefault();
-        e.stopPropagation();
-    }
+class carComponent extends React.Component{ 
     render(){
-        var res = this.state.text ? '完成' : '编辑';
         return(
             <div className="box_wy">
                 <div className="container_wy">
-                    <div className="header_wy">
+                    <div className="header_car">
+                        <div className="header_classify_l">
+                            <Icon type="left"></Icon>
+                        </div>
                         <h3>购物车</h3>
-                        <span onClick={this.handleClick}>{res}</span>
+                        <div className="header_classify_r">
+                            <Icon type="bars"></Icon>
+                        </div>
                     </div>
-                    <div className="main_wy">
+                    <div className="main_car_wy">
                         <div className="main_header">
-                            {/* <Radio className="allselect"/> */}
-                            {/* <input type="radio" name="" id="" className="allselect"/> */}
                             <Icon type="check-circle" className="allselect"/>
                             <h4>百丽优购</h4>
                         </div>
                         <ul className="goods">
                             <li>
-                                <Icon type="check-circle" className="goodsselect"/>
-                                <img src={require("../../libs/images/goods001.jpg")} className="goodsImg" alt=""/>
-                                <div className="goods_r">
-                                    <h4 className="title">配料的爱好手机号</h4>
-                                    <div className="cont">
-                                        <div className="cont_t">
-                                            <div className="cont_t_l">
-                                                <span>颜色：</span>
-                                                <span className="color">黑色</span>
-                                            </div>
-                                            <div className="cont_t_r">
-                                                <i>￥</i><span className="price">318</span>
-                                            </div>
-                                        </div>
-                                        <div className="cont_c">
-                                            <div className="cont_c_l">
-                                                <span>尺码</span>
-                                                <span className="size">35</span>
-                                            </div>
-                                            <div className="cont_c_r">
-                                                <span>已降10元</span>
-                                            </div>
-                                        </div>
-                                        <div className="cont_b">
-                                            <div className="cont_b_l">
-                                                <span>发货：百丽优购</span>
-                                            </div>
-                                            <div className="cont_b_r">
-                                                <Icon type="minus" className="minus"/>
-                                                <input type="text" className="num" value={1}/>
-                                                <Icon type="plus" className="plus"/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div className="goods_l">
+                                    <Icon type="check-circle" className="allselect"/>
                                 </div>
-                            </li>
-                            <li>
-                                <Icon type="check-circle" className="goodsselect"/>
-                                <img src={require("../../libs/images/goods001.jpg")} className="goodsImg" alt=""/>
                                 <div className="goods_r">
-                                    <h4 className="title">配料的爱好手机号</h4>
-                                    <div className="cont">
-                                        <div className="cont_t">
-                                            <div className="cont_t_l">
-                                                <span>颜色：</span>
-                                                <span className="color">黑色</span>
-                                            </div>
-                                            <div className="cont_t_r">
-                                                <i>￥</i><span className="price">318</span>
-                                            </div>
+                                    <p className="title">NIKE耐克2017年新款男大童NIKE TEAM HUSTLE D 8 (GS)篮球鞋881941-001</p>
+                                    <div className="goods_r_m">
+                                        <div className="goods_r_m_l">
+                                            <img src={require('../../libs/images/goods01_wy.jpg')} alt=""/>
                                         </div>
-                                        <div className="cont_c">
-                                            <div className="cont_c_l">
-                                                <span>尺码</span>
-                                                <span className="size">35</span>
+                                        <div className="goods_r_m_r">
+                                            <div className="info_t">
+                                                <span className="color">颜色：黑/金色银/白</span>
+                                                <span className="price"><i>￥</i><i className="price_num">368</i></span>
                                             </div>
-                                            <div className="cont_c_r">
-                                                <span>已降10元</span>
+                                            <div className="info_c">
+                                                <span>尺码：<i>37.5</i></span>
                                             </div>
-                                        </div>
-                                        <div className="cont_b">
-                                            <div className="cont_b_l">
+                                            <div className="info_b">
                                                 <span>发货：百丽优购</span>
                                             </div>
-                                            <div className="cont_b_r">
-                                                <Icon type="minus" className="minus"/>
-                                                <input type="text" className="num" value={1}/>
-                                                <Icon type="plus" className="plus"/>
+                                            <div className="info_num">
+                                                <div className="info_num_l">
+                                                    <Icon type="minus" className="minus"/>
+                                                    <input type="text" className="num" value={1}/>
+                                                    <Icon type="plus" className="plus"/>
+                                                </div>
+                                                <div className="info_num_r">
+                                                    <Icon type="delete"></Icon>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -113,18 +67,13 @@ class carComponent extends React.Component{
                     <div className="calculate_wy">
                         <div className="cal_l">
                             <Icon type="check-circle" className="allselect"/>
-                            <span>全选</span>
-                        </div>
-                        <div className="cal_c">
-                            <span>总计：</span>
-                            <i>￥</i>
-                            <span className="totleprice">3100</span>
+                            <span>全部</span>
                         </div>
                         <div className="cal_r">
-                            <div className="cont">
-                                <span>去结算</span>
-                                <span><i>(</i><i className="totlenum">5</i><i>)</i></span>
+                            <div className="cal_r_l">
+                                <span>总计：<em>￥</em><em>0</em>(不含运费)</span>
                             </div>
+                            <div className="cal_r_r">去结算</div>
                         </div>
                     </div>
                     <div className="footer_wy">
