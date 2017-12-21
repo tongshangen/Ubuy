@@ -113,31 +113,23 @@ html,body{
                                     float: left;
                                     text-align: center;
                                 }
-                                // .ant-input-number-sm {
-                                //     padding: 1px 7px;
-                                //     height: 60px;
-                                //     width: 110px;
-                                //     .ant-input-number-input-wrap{
-                                //         height: 50px;
-                                //         line-height: 50px;
-                                //         font-size: 30px;
-                                //         span{
-                                //             font-size: 28px;
-                                //         }
-                                //         .ant-input-number-input{
-                                //             height: 50px;
-                                //             line-height: 50px;
-                                //             font-size: 30px;
-                                //         }
-                                        
-                                //     } 
-                                // }
                                   
                             }
                         }
                     }
                 }
             }
+        }
+    }
+    .calculate_wy{
+        height: 88px;
+        background: #fff;
+        border-top:1px solid #999;
+        .cal_l{
+            float: left;
+        }
+        .cal_c{
+            float: left;
         }
     }
     .footer_wy{

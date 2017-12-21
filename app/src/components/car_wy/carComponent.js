@@ -18,7 +18,6 @@ class carComponent extends React.Component{
         e.stopPropagation();
     }
     render(){
-        console.log(Radio);
         var res = this.state.text ? '完成' : '编辑';
         return(
             <div className="box_wy">
@@ -112,13 +111,27 @@ class carComponent extends React.Component{
                         </ul>
                     </div>
                     <div className="calculate_wy">
-                        
+                        <div className="cal_l">
+                            <Icon type="check-circle" className="allselect"/>
+                            <span>全选</span>
+                        </div>
+                        <div className="cal_c">
+                            <span>总计：</span>
+                            <i>￥</i>
+                            <span className="totleprice">3100</span>
+                        </div>
+                        <div className="cal_r">
+                            <div className="cont">
+                                <span>去结算</span>
+                                <span><i>(</i><i className="totlenum">5</i><i>)</i></span>
+                            </div>
+                        </div>
                     </div>
                     <div className="footer_wy">
                         <span>首页</span>
-                        <span>分类</span>
+                        <span><Link to="/classify">分类</Link></span>
                         <span>分享购</span>
-                        <span>购物车</span>
+                        <span><Link to="/car">购物车</Link></span>
                         <span>我的</span>
                     </div>
                 </div>
