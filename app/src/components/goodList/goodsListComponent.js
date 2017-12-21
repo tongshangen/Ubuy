@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {connect} from 'react-redux'
+import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 
 import * as LightActions from '../goodList/goodsListAction'
 
-class LightComponent extends React.Component{
+class GoodslistComponent extends React.Component{
     render(){
         return (
             <div>
@@ -28,4 +29,4 @@ const mapToState = function(state){
 //connect => state and action 
 //自动调用 reducer
 //自动凋用了 setState
-export default connect(mapToState, LightActions)(LightComponent)
+export default connect(mapToState, LightActions)(GoodslistComponent)

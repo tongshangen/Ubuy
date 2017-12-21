@@ -4,7 +4,7 @@ import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import * as homeAction from './homeAction';
 import { Layout, Menu, Breadcrumb, Icon, Carousel} from 'antd';
 import { browserHistory } from 'react-router';
-class homeComponent extends React.Component{
+class HomeComponent extends React.Component{
    render() {
         return (
             <div>
@@ -22,4 +22,4 @@ const mapStateToProps = function(state){
     }
 }
 
-export default connect(mapStateToProps, homeAction)(homeComponent)
+export default connect(mapStateToProps, homeAction)(HomeComponent)
