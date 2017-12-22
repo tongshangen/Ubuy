@@ -90,3 +90,7 @@ export function some_left(){
     var $someDetail =$('.someDetail');
     $someDetail.animate({right:"-10rem"});
 }
+
+export function toDetail(){
+    console.log(666)
+}
