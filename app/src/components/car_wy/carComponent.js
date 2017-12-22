@@ -7,12 +7,57 @@ import './car.scss'
 import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber} from 'antd';
 import { browserHistory } from 'react-router';
 
-class carComponent extends React.Component{ 
+class carComponent extends React.Component{    
     componentDidMount(){
         this.props.getData("car_sel.php",{userid:1})
+    } 
+
+    state = {
+        isAllChecked:true,
+    }
+    // 点击头部全选
+    handleClick = (e) => {
+        this.setState({isAllChecked:!this.state.isAllChecked});
+        
+        // 每个li里面的选择按钮
+        var isCheck = document.getElementsByClassName('anticon anticon-check-circle');
+            for(var i=1;i<=isCheck.length-2;i++){
+                // 跟随头部全选变化
+                if(this.state.isAllChecked){
+                    isCheck[i].className = 'anticon anticon-check-circle unchecked';
+                }else{
+                    isCheck[i].className = 'anticon anticon-check-circle checked';
+                }
+                
+            }
     }
 
+    clickCheck = (e) => {
+        // 单个li来判断全选状态
+        var isCheck = document.getElementsByClassName('anticon anticon-check-circle');
+        if(e.target.className == 'anticon anticon-check-circle checked'){
+            e.target.className = 'anticon anticon-check-circle unchecked';
+            this.setState({isAllChecked:false});
+        }else if(e.target.className == 'anticon anticon-check-circle unchecked'){
+            e.target.className = 'anticon anticon-check-circle checked';
+            for(var i=1;i<=isCheck.length-2;i++){
+                if(isCheck[i].className == 'anticon anticon-check-circle unchecked'){
+                    this.setState({isAllChecked:false});
+                }else{
+                    this.setState({isAllChecked:true});
+                }
+            }
+        }
+    }
+    // 封装计算勾选商品总价的函数
+    getTotal(){
 
+    }
+    
+    addNum = (e) => {
+        console.log(e)
+        // e.target.value++;
+    }
     render(){
         
         if(!this.props.dataset){
@@ -20,7 +65,10 @@ class carComponent extends React.Component{
         }else{
             var dataset = JSON.parse(this.props.dataset);
         }
-        console.log(dataset);
+        
+        var color = {
+            color:this.state.isAllChecked ? 'red' : '#ccc'
+        }
         return(
             <div className="box_wy">
                 <div className="container_wy">
@@ -35,16 +83,16 @@ class carComponent extends React.Component{
                     </div>
                     <div className="main_car_wy">
                         <div className="main_header">
-                            <Icon type="check-circle" className="allselect"/>
+                            <Icon type="check-circle" className="allselect" onClick={this.handleClick} style={color}/>
                             <h4>百丽优购</h4>
                         </div>
                         <ul className="goods">
                             {
                                 dataset.map(function(obj, index){
                                     return (
-                                        <li key={'goods' + index}>
+                                        <li key={'goods' + index} data-id={obj.goodid}>
                                             <div className="goods_l">
-                                                <Icon type="check-circle" className="allselect"/>
+                                                <Icon type="check-circle" onClick={this.clickCheck} className="checked"/>
                                             </div>
                                             <div className="goods_r">
                                                     <p className="title">{obj.name}</p>
@@ -65,9 +113,9 @@ class carComponent extends React.Component{
                                                             </div>
                                                             <div className="info_num">
                                                                 <div className="info_num_l">
-                                                                    <Icon type="minus" className="minus"/>
+                                                                    <Icon type="minus" className="minus" onClick={this.reduceNum}/>
                                                                     <input type="text" className="num" defaultValue={1}/>
-                                                                    <Icon type="plus" className="plus"/>
+                                                                    <Icon type="plus" className="plus" onClick={this.addNum.bind(this)}/>
                                                                 </div>
                                                                 <div className="info_num_r">
                                                                     <Icon type="delete"></Icon>
@@ -78,13 +126,13 @@ class carComponent extends React.Component{
                                                 </div>
                                         </li>
                                     )
-                                })
+                                }.bind(this))
                             }
                         </ul>    
                     </div>
                     <div className="calculate_wy">
                         <div className="cal_l">
-                            <Icon type="check-circle" className="allselect"/>
+                            <Icon type="check-circle" className="allselect" onClick={this.handleClick} style={color}/>
                             <span>全部</span>
                         </div>
                         <div className="cal_r">
