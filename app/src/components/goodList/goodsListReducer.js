@@ -1,4 +1,4 @@
-export default function LightReducer(state = {}, action){
+export default function goodsListReducer(state = {}, action){
     var newState = JSON.parse(JSON.stringify(state));
     switch(action.type){
         case 'beforeRequest':
