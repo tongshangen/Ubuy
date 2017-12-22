@@ -1,0 +1,93 @@
+body,h1,h2,h3,h4,p,ul,li,ol,dl,dd,dt{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+html,body{
+    font-style: '微软雅黑';
+    font-size: 0.4rem;
+    height:100%;
+
+}
+.ant-layout-header{
+    padding: 0;
+    background:transparent;
+    border:1px solid transparent;box-shadow: 2px 2px 2px transparent;
+    overflow: hidden;
+    z-index:10;
+    height: 0.6rem;
+    padding-left: 0.2rem;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    .icon{
+        margin-right: 0.12rem;
+        &:nth-child(1){
+            float: left;
+        }
+        &:nth-child(2),&:nth-child(3){
+            float: right;
+        }
+        i{
+          width: 0.44rem;
+          height: 0.44rem;
+
+            border-radius:50%;
+            background-color: #999999;
+            line-height: 0.44rem;
+            text-align: center;
+            color:#fff;
+            font-size: 0.28rem;
+           
+        }
+    }
+        
+    }
+.ant-layout-content{
+    top: 0;
+    
+
+    .detailBody{
+        min-height: 20.0rem;
+    }
+
+}
+
+.ant-layout-footer{
+    width: 100%;
+    height: 0.8rem;
+    background: #fff;
+    position:fixed;
+    bottom: 0;
+    line-height: 0.8rem;
+    padding: 0;
+    text-align: center;
+    font-size: 0.22rem;
+    div{
+        float: left;
+    }
+
+    .left{
+        font-size: 0.6rem;
+        width: 25%;
+    }
+    .center{
+        background: #f60;
+        width: 40%;
+        color:#fff;
+    }
+    .right{
+        width:35%;background: #FF0000;color:#fff;
+    }
+}

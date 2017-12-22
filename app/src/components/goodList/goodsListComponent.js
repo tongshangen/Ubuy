@@ -55,7 +55,7 @@ class goodsListComponent extends React.Component{
           </Content>
           <div>
             <BackTop>
-              <div className="ant-back-top-inner"><Icon type="up-square" /> </div>
+              <div className="ant-back-top-inner" style={{ position:'fixed',bottom:'1rem'}}><Icon type="up-square" /> </div>
             </BackTop>
             Scroll down to see the bottom-right
             <strong style={{ color: '#1088e9' }}> blue </strong>

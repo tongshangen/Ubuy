@@ -11,6 +11,7 @@ import collect from '../components/collect/collectComponent'
 import HelpCenter from '../components/helpCenter/helpCenterComponent';
 import FeedBack from '../components/feedBack/feedBackComponent'
 import goodslistComponent from "../components/goodList/goodsListComponent"
+import detailComponent from "../components/detail/detailComponent"
 
 export default (
         <div>
@@ -24,6 +25,8 @@ export default (
             <Route path="/helpcenter" component={HelpCenter}></Route>
             <Route path="/feedfack" component={FeedBack}></Route>
             <Route path="goodslist" component={goodslistComponent}>
+            </Route>
+            <Route path="detail" component={detailComponent}>
             </Route>
         </div>
 )
