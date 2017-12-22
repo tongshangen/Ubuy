@@ -45,39 +45,39 @@ class classifyComponent extends React.Component{
                                         <Row>
                                             <Col span={8}>
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
-                                                百丽
+                                                <div>百丽</div>
                                             </Col>
                                             <Col span={8}>
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
-                                                天美意
+                                                <div>天美意</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
-                                                百丽
+                                                <img src={require('../../libs/images/tata_wy.jpg')} alt=""/>
+                                                <div>他她</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
-                                                百丽
+                                                <img src={require('../../libs/images/bata_wy.jpg')} alt=""/>
+                                                <div>拔佳</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
-                                                百丽
+                                                <img src={require('../../libs/images/sacc_wy.jpg')} alt=""/>
+                                                <div>思加图</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
-                                                百丽
+                                                <img src={require('../../libs/images/bassto_wy.jpg')} alt=""/>
+                                                <div>百思图</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
-                                                百丽
+                                                <img src={require('../../libs/images/senda_wy.jpg')} alt=""/>
+                                                <div>森达</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
-                                                百丽
+                                                <img src={require('../../libs/images/miaoli_wy.jpg')} alt=""/>
+                                                <div>妙丽</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
-                                                百丽
+                                                <img src={require('../../libs/images/search_wy.jpg')} alt=""/>
+                                                <div className="ys_wy">全部商品</div>
                                             </Col>
                                         </Row>
                                     </div>
@@ -86,39 +86,39 @@ class classifyComponent extends React.Component{
                                         <Row>
                                             <Col span={8}>
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <div>小白鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
-                                                天美意
+                                                <img src={require('../../libs/images/lefu_wy.jpg')} alt=""/>
+                                                <div>乐福鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/xiuxian_wy.jpg')} alt=""/>
+                                                <div>休闲鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/songgao.jpg')} alt=""/>
+                                                <div>松糕鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/fanbu_wy.jpg')} alt=""/>
+                                                <div>帆布鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/yundong_wy.jpg')} alt=""/>
+                                                <div>运动风</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/doudou.jpg')} alt=""/>
+                                                <div>豆豆鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/hunxie_wy.jpg')} alt=""/>
+                                                <div>婚鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/leizg_wy.jpg')} alt=""/>
+                                                <div>内增高</div>
                                             </Col>
                                         </Row>
                                     </div>
@@ -127,39 +127,39 @@ class classifyComponent extends React.Component{
                                         <Row>
                                             <Col span={8}>
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <div>鱼嘴</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
-                                                天美意
+                                                <img src={require('../../libs/images/lefu_wy.jpg')} alt=""/>
+                                                <div>浅口鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/xiuxian_wy.jpg')} alt=""/>
+                                                <div>布洛克鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/songgao.jpg')} alt=""/>
+                                                <div>凉拖鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/fanbu_wy.jpg')} alt=""/>
+                                                <div>豆豆鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/yundong_wy.jpg')} alt=""/>
+                                                <div>休闲鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/doudou.jpg')} alt=""/>
+                                                <div>及踝鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/hunxie_wy.jpg')} alt=""/>
+                                                <div>懒人鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/leizg_wy.jpg')} alt=""/>
+                                                <div>淑女</div>
                                             </Col>
                                         </Row>
                                     </div>
@@ -168,39 +168,39 @@ class classifyComponent extends React.Component{
                                         <Row>
                                             <Col span={8}>
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <div>鱼嘴</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
-                                                天美意
+                                                <img src={require('../../libs/images/lefu_wy.jpg')} alt=""/>
+                                                <div>浅口鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/xiuxian_wy.jpg')} alt=""/>
+                                                <div>布洛克鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/songgao.jpg')} alt=""/>
+                                                <div>凉拖鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/fanbu_wy.jpg')} alt=""/>
+                                                <div>豆豆鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/yundong_wy.jpg')} alt=""/>
+                                                <div>休闲鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/doudou.jpg')} alt=""/>
+                                                <div>及踝鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/hunxie_wy.jpg')} alt=""/>
+                                                <div>懒人鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/leizg_wy.jpg')} alt=""/>
+                                                <div>淑女</div>
                                             </Col>
                                         </Row>
                                     </div>
@@ -209,39 +209,39 @@ class classifyComponent extends React.Component{
                                         <Row>
                                             <Col span={8}>
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <div>鱼嘴</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
-                                                天美意
+                                                <img src={require('../../libs/images/lefu_wy.jpg')} alt=""/>
+                                                <div>浅口鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/xiuxian_wy.jpg')} alt=""/>
+                                                <div>布洛克鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/songgao.jpg')} alt=""/>
+                                                <div>凉拖鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/fanbu_wy.jpg')} alt=""/>
+                                                <div>豆豆鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/yundong_wy.jpg')} alt=""/>
+                                                <div>休闲鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/doudou.jpg')} alt=""/>
+                                                <div>及踝鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/hunxie_wy.jpg')} alt=""/>
+                                                <div>懒人鞋</div>
                                             </Col>
                                             <Col span={8}>
-                                                <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
-                                                小白鞋
+                                                <img src={require('../../libs/images/leizg_wy.jpg')} alt=""/>
+                                                <div>淑女</div>
                                             </Col>
                                         </Row>
                                     </div>
