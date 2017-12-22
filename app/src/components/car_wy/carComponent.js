@@ -7,11 +7,14 @@ import './car.scss'
 import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber} from 'antd';
 import { browserHistory } from 'react-router';
 
-class carComponent extends React.Component{    
+class carComponent extends React.Component{ 
     componentDidMount(){
         this.props.getData("car_sel.php",{userid:1})
+        
     } 
-
+    componentDidUpdate(){
+        this.getTotal();
+    }
     state = {
         isAllChecked:true,
     }
@@ -51,15 +54,49 @@ class carComponent extends React.Component{
     }
     // 封装计算勾选商品总价的函数
     getTotal(){
-
+        // 总价元素
+        var totleprice_ele = document.getElementsByClassName('totleprice')[0];
+        // 单件商品价格元素
+        var price_num = document.getElementsByClassName('price_num');
+        // 单个商品数量元素
+        var num = document.getElementsByClassName('num');
+        // 循环遍历每个商品计算价格
+        var isCheck = document.getElementsByClassName('anticon anticon-check-circle');
+        var totleprice = 0;
+                
+        for(var i=1;i<=isCheck.length-2;i++){
+            if(isCheck[i].className == 'anticon anticon-check-circle checked'){
+                // console.log(num[i-1].value);
+                totleprice += price_num[i-1].innerText*1*num[i-1].value;
+            }
+        }
+        // 第一次的时候为undifined
+        if(!totleprice_ele){
+            return;
+        }
+        totleprice_ele.innerHTML = totleprice;
     }
-    
+    // 减少商品数量
+    reduceNum = (e) => {
+        // 商品数量元素
+        var num = e.target.parentNode.getElementsByClassName('num')[0];
+        if(num.value == 1){
+            return ;
+        }
+        num.value--;
+        this.getTotal();
+    }
+
+    // 增加商品数量
     addNum = (e) => {
-        console.log(e)
-        // e.target.value++;
+        
+        // 商品数量元素
+        var num = e.target.parentNode.getElementsByClassName('num')[0];
+        num.value++;
+        this.getTotal();
     }
     render(){
-        
+        // this.getTotal();
         if(!this.props.dataset){
             return null
         }else{
@@ -137,7 +174,7 @@ class carComponent extends React.Component{
                         </div>
                         <div className="cal_r">
                             <div className="cal_r_l">
-                                <span>总计：<em>￥</em><em>0</em>(不含运费)</span>
+                                <span>总计：<em>￥</em><em className="totleprice">0</em>(不含运费)</span>
                             </div>
                             <div className="cal_r_r">去结算</div>
                         </div>
