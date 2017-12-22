@@ -1,15 +1,19 @@
 export default function StudentReducer(state = {}, action) {
     var reState = JSON.parse(JSON.stringify(state));
     switch (action.type) {
-        case 'BeforeRequest':
+        case 'beforeRequest':
             reState.loading = true;
             break;
-        case 'T_Requested':
+        case 'Requested':
             reState.loading = false;
-            reState.dataset = action.dataset;
+            reState.response = action.response;
+            break;
+        case 'requestError':
+            reState.loading = false;
+            reState.error = action.error
             break;
         default:
-            reState.loading = false;
+            
     }
     return reState;
 }

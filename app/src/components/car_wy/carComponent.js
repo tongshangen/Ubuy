@@ -8,7 +8,19 @@ import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber} from 'antd
 import { browserHistory } from 'react-router';
 
 class carComponent extends React.Component{ 
+    componentDidMount(){
+        this.props.getData("car_sel.php",{userid:1})
+    }
+
+
     render(){
+        
+        if(!this.props.dataset){
+            return null
+        }else{
+            var dataset = JSON.parse(this.props.dataset);
+        }
+        console.log(dataset);
         return(
             <div className="box_wy">
                 <div className="container_wy">
@@ -27,42 +39,48 @@ class carComponent extends React.Component{
                             <h4>百丽优购</h4>
                         </div>
                         <ul className="goods">
-                            <li>
-                                <div className="goods_l">
-                                    <Icon type="check-circle" className="allselect"/>
-                                </div>
-                                <div className="goods_r">
-                                    <p className="title">NIKE耐克2017年新款男大童NIKE TEAM HUSTLE D 8 (GS)篮球鞋881941-001</p>
-                                    <div className="goods_r_m">
-                                        <div className="goods_r_m_l">
-                                            <img src={require('../../libs/images/goods01_wy.jpg')} alt=""/>
-                                        </div>
-                                        <div className="goods_r_m_r">
-                                            <div className="info_t">
-                                                <span className="color">颜色：黑/金色银/白</span>
-                                                <span className="price"><i>￥</i><i className="price_num">368</i></span>
+                            {
+                                dataset.map(function(obj, index){
+                                    return (
+                                        <li key={'goods' + index}>
+                                            <div className="goods_l">
+                                                <Icon type="check-circle" className="allselect"/>
                                             </div>
-                                            <div className="info_c">
-                                                <span>尺码：<i>37.5</i></span>
-                                            </div>
-                                            <div className="info_b">
-                                                <span>发货：百丽优购</span>
-                                            </div>
-                                            <div className="info_num">
-                                                <div className="info_num_l">
-                                                    <Icon type="minus" className="minus"/>
-                                                    <input type="text" className="num" value={1}/>
-                                                    <Icon type="plus" className="plus"/>
+                                            <div className="goods_r">
+                                                    <p className="title">{obj.name}</p>
+                                                    <div className="goods_r_m">
+                                                        <div className="goods_r_m_l">
+                                                            <img src={require(`../../libs/images/${obj.imgurl}.jpg`)} alt=""/>
+                                                        </div>
+                                                        <div className="goods_r_m_r">
+                                                            <div className="info_t">
+                                                                <span className="color">颜色：{obj.color}</span>
+                                                                <span className="price"><i>￥</i><i className="price_num">{obj.price}</i></span>
+                                                            </div>
+                                                            <div className="info_c">
+                                                                <span>尺码：<i>{obj.size}</i></span>
+                                                            </div>
+                                                            <div className="info_b">
+                                                                <span>发货：百丽优购</span>
+                                                            </div>
+                                                            <div className="info_num">
+                                                                <div className="info_num_l">
+                                                                    <Icon type="minus" className="minus"/>
+                                                                    <input type="text" className="num" defaultValue={1}/>
+                                                                    <Icon type="plus" className="plus"/>
+                                                                </div>
+                                                                <div className="info_num_r">
+                                                                    <Icon type="delete"></Icon>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className="info_num_r">
-                                                    <Icon type="delete"></Icon>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>    
                     </div>
                     <div className="calculate_wy">
                         <div className="cal_l">
@@ -90,10 +108,10 @@ class carComponent extends React.Component{
 }
 
 const mapStateToProps = function(state){
-    var dataset  = state.car.dataset || '[]';
+    // console.log(state.car.response);
     return {
         loading: state.car.loading,
-        dataset: dataset[0] || []
+        dataset: state.car.response
     }
 }
 
