@@ -2,8 +2,8 @@ export function normalSearch(){
     console.log('综合搜索');
     return {
         type: 'normalSearch',
-        url: '',
-        params:{page: 1, limit: 10}
+        url: 'goodslist.php',
+        params:{brandid: 0 }
     }
 }
 

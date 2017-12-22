@@ -8,6 +8,11 @@ import "../goodList/goodsList.scss"
 import "../../libs/base/rem.js"
 const { Header, Footer, Content } = Layout;
 class goodsListComponent extends React.Component{
+
+    getKeys(item){
+        var newObj = (item ? Object.keys(item) : []);
+        return newObj
+    }
     render(){
         return (
     <div>
@@ -31,66 +36,18 @@ class goodsListComponent extends React.Component{
           </Header>
           <Content>
                 <ul>
-                    <li>
+                    {
+                      this.props.dataset.map(function(obj, index){
+                            return (
+                                <li key={index}>
+                                <img src={obj.imgurl}/>
+                                <p>{obj.name}</p>
+                                <p>￥<span>{obj.price}</span> &nbsp;<del>原价{obj.Oprice}</del></p>
 
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                    <li>
-
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                    <li>
-
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                    <li>
-
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                    <li>
-
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
+                                </li>
+                            )
+                        }.bind(this))
+                  }
                 </ul>
           </Content>
           <div>
@@ -128,7 +85,7 @@ class goodsListComponent extends React.Component{
                   </div>
               </div>
               <ul className="someSmall">
-                 
+
               </ul>
           </div>
           <Footer></Footer>

@@ -68,7 +68,17 @@ html,body{
         flex-wrap:wrap;
         width: 100%;
         li{
-          margin: 1%;min-width:48%;height: 2.8rem;float: left;background: #fff;
+          margin: 1%;width:48%;height: 2.8rem;float: left;background: #fff;
+          overflow:hidden;
+          img{
+            width: 1.6rem;
+          }
+          p{
+            font-size:0.14rem;
+            span{
+                color:red;font-size:0.16rem;
+            }
+          }
         }
     }
 }
