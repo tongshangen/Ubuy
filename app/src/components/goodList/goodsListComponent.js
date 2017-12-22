@@ -42,7 +42,7 @@ class goodsListComponent extends React.Component{
                     {
                       this.props.dataset.map(function(obj, index){
                             return (
-                                <li key={index}>
+                                <li key={index} onClick={this.props.toDetail}>
                                 <img src={obj.imgurl}/>
                                 <p>{obj.name}</p>
                                 <p>￥<span>{obj.price}</span> &nbsp;<del>原价{obj.Oprice}</del></p>
