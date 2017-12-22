@@ -8,6 +8,9 @@ import "../goodList/goodsList.scss"
 import "../../libs/base/rem.js"
 const { Header, Footer, Content } = Layout;
 class goodsListComponent extends React.Component{
+    componentDidMount(){
+        this.props.normalSearch();
+    }
 
     getKeys(item){
         var newObj = (item ? Object.keys(item) : []);
