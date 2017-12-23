@@ -46,6 +46,7 @@ class carComponent extends React.Component{
             for(var i=1;i<=isCheck.length-2;i++){
                 if(isCheck[i].className == 'anticon anticon-check-circle unchecked'){
                     this.setState({isAllChecked:false});
+                    break;
                 }else{
                     this.setState({isAllChecked:true});
                 }
@@ -56,6 +57,8 @@ class carComponent extends React.Component{
     getTotal(){
         // 总价元素
         var totleprice_ele = document.getElementsByClassName('totleprice')[0];
+        // 选中商品总数
+        var totlenum_ele = document.getElementsByClassName('totlenum')[0];
         // 单件商品价格元素
         var price_num = document.getElementsByClassName('price_num');
         // 单个商品数量元素
@@ -63,38 +66,66 @@ class carComponent extends React.Component{
         // 循环遍历每个商品计算价格
         var isCheck = document.getElementsByClassName('anticon anticon-check-circle');
         var totleprice = 0;
+        var totlenum = 0;
                 
         for(var i=1;i<=isCheck.length-2;i++){
             if(isCheck[i].className == 'anticon anticon-check-circle checked'){
                 // console.log(num[i-1].value);
                 totleprice += price_num[i-1].innerText*1*num[i-1].value;
+                totlenum += num[i-1].value*1;
             }
         }
         // 第一次的时候为undifined
-        if(!totleprice_ele){
+        if(!totleprice_ele || !totlenum_ele){
             return;
         }
         totleprice_ele.innerHTML = totleprice;
+        totlenum_ele.innerHTML = totlenum;
     }
     // 减少商品数量
     reduceNum = (e) => {
         // 商品数量元素
         var num = e.target.parentNode.getElementsByClassName('num')[0];
+        var carid = e.target.getAttribute("data-id");
         if(num.value == 1){
             return ;
         }
         num.value--;
         this.getTotal();
+
+        // 判断选中才发起请求
+        if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('anticon anticon-check-circle')[0].className == 'anticon anticon-check-circle checked'){
+            this.props.updateData("car_update.php",{goodnum:num.value,carid:carid},'post');
+        }
+        
     }
 
     // 增加商品数量
     addNum = (e) => {
-        
         // 商品数量元素
-        var num = e.target.parentNode.getElementsByClassName('num')[0];
-        num.value++;
+        var goodnum = e.target.parentNode.getElementsByClassName('num')[0];
+        var carid = e.target.getAttribute("data-id");
+        goodnum.value++;
         this.getTotal();
+
+        // 判断选中才发起请求
+        if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('anticon anticon-check-circle')[0].className == 'anticon anticon-check-circle checked'){
+            this.props.updateData("car_update.php",{goodnum:goodnum.value,carid:carid},'post');
+        }
+        
     }
+
+    // 删除商品
+    delgoods = (e) => {
+        // console.log(e.target.className == 'anticon anticon-delete delgoods');
+        var carid = e.target.getAttribute("data-id");
+         // 判断选中才发起请求
+         if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('anticon anticon-check-circle')[0].className == 'anticon anticon-check-circle checked'){
+            this.props.delData("car_del.php",{carid:carid},'post');
+         }
+         this.props.getData("car_sel.php",{userid:1})
+    }
+
     render(){
         // this.getTotal();
         if(!this.props.dataset){
@@ -114,9 +145,8 @@ class carComponent extends React.Component{
                             <Icon type="left"></Icon>
                         </div>
                         <h3>购物车</h3>
-                        <div className="header_classify_r">
+                        <div className="header_classify_r" onClick={this.save}>
                             <Icon type="bars"></Icon>
-                            {/* 保存 */}
                         </div>
                     </div>
                     <div className="main_car_wy">
@@ -128,7 +158,7 @@ class carComponent extends React.Component{
                             {
                                 dataset.map(function(obj, index){
                                     return (
-                                        <li key={'goods' + index} data-id={obj.goodid}>
+                                        <li key={'goods' + index} data-id={obj.carid}>
                                             <div className="goods_l">
                                                 <Icon type="check-circle" onClick={this.clickCheck} className="checked"/>
                                             </div>
@@ -136,7 +166,7 @@ class carComponent extends React.Component{
                                                     <p className="title">{obj.name}</p>
                                                     <div className="goods_r_m">
                                                         <div className="goods_r_m_l">
-                                                            <img src={require(`../../libs/images/${obj.imgurl}.jpg`)} alt=""/>
+                                                            <img src={obj.imgurl} alt=""/>
                                                         </div>
                                                         <div className="goods_r_m_r">
                                                             <div className="info_t">
@@ -151,12 +181,12 @@ class carComponent extends React.Component{
                                                             </div>
                                                             <div className="info_num">
                                                                 <div className="info_num_l">
-                                                                    <Icon type="minus" className="minus" onClick={this.reduceNum}/>
-                                                                    <input type="text" className="num" defaultValue={1}/>
-                                                                    <Icon type="plus" className="plus" onClick={this.addNum.bind(this)}/>
+                                                                    <Icon type="minus" className="minus" data-id={obj.carid} onClick={this.reduceNum}/>
+                                                                    <input type="text" className="num" defaultValue={obj.goodnum}/>
+                                                                    <Icon type="plus" className="plus" data-id={obj.carid} onClick={this.addNum.bind(this)}/>
                                                                 </div>
                                                                 <div className="info_num_r">
-                                                                    <Icon type="delete"></Icon>
+                                                                    <Icon type="delete" data-id={obj.carid} className="delgoods" onClick={this.delgoods}></Icon>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -177,7 +207,7 @@ class carComponent extends React.Component{
                             <div className="cal_r_l">
                                 <span>总计：<em>￥</em><em className="totleprice">0</em>(不含运费)</span>
                             </div>
-                            <div className="cal_r_r">去结算</div>
+                            <div className="cal_r_r">去结算(<span className="totlenum"></span>)</div>
                         </div>
                     </div>
                     <div className="footer_wy">
