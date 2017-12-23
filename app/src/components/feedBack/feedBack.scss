@@ -32,6 +32,11 @@ html,body,#app{
             h4{
                 height: 80px;
                 line-height: 80px;
+                position: relative;
+                span{
+                    font-size:26px;color:red;
+                    position: absolute;left: 200px;
+                }
             }
             ul{
                 display: flex;
