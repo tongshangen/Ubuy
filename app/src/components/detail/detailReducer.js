@@ -1,4 +1,4 @@
-export default function goodListReducer(state = {}, action){
+export default function detailReducer(state = {}, action){
     var newState = JSON.parse(JSON.stringify(state));
     if(action.response){
         console.log(JSON.parse(action.response)[0])

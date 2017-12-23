@@ -1,33 +1,35 @@
-import http from '../utils/httpClient'
+    import http from '../utils/httpClient'
 
 export function ajaxMiddleware(api) {
     return function (dispatch) {
         return function (action) {
-            const { types, url, method = 'get', params = {} } = action
-            // console.log('id',action.types)
-            if (!url) {
-                return dispatch(action)
-            }
-            api.dispatch({
-                type: 'beforeRequest'
-            })
-            if (url) {
-               const   [a,b,c] = types
-                http.post(url, params).then(res => {
-                    // console.log('Requested',a)
-                    api.dispatch({
-                        type:b,
-                        response: res
-                    })
-                }).catch(error => {
+            if(action){
+                const { types, url, method = 'get', params = {} } = action
+                // console.log('id',action.types)
+                if (!url) {
+                    return dispatch(action)
+                }
+                api.dispatch({
+                    type: 'beforeRequest'
+                })
+                if (url) {
+                const   [a,b,c] = types
+                    http.post(url, params).then(res => {
+                        // console.log('Requested',a)
+                        api.dispatch({
+                            type:b,
+                            response: res
+                        })
+                    }).catch(error => {
                     api.dispatch({
                         type: 'requestError',
                         error
                     })
                 })
-            }
+              }
         }
     }
+}
 }
 
 // export function userMiddleWare(middlewareAPI){
