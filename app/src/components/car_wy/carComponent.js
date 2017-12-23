@@ -1,10 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import * as carAction from './carAction';
 import './car.scss'
 
-import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber} from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber,Alert,message, Button} from 'antd';
 import { browserHistory } from 'react-router';
 
 class carComponent extends React.Component{ 
@@ -15,7 +16,7 @@ class carComponent extends React.Component{
         this.getTotal();
     }
     state = {
-        isAllChecked:true,
+        isAllChecked:true
     }
     // 点击头部全选
     handleClick = (e) => {
@@ -125,6 +126,26 @@ class carComponent extends React.Component{
          this.props.getData("car_sel.php",{userid:1})
     }
 
+    // 结算
+    balance = (e) => {
+        // 循环看是否有商品勾选
+        
+        var selData = []
+        // 选择按钮
+        var isCheck = document.getElementsByClassName('anticon anticon-check-circle');
+        for(var i=1;i<=isCheck.length-2;i++){
+            if(isCheck[i].className == 'anticon anticon-check-circle checked'){
+                selData.push({goodid:isCheck[i].parentNode.parentNode.getAttribute("data-id"),userid:1});
+            }
+        }
+        if(selData.length == 0){
+            alert('请提交商品');
+        }else{
+            sessionStorage.setItem('orderinfo',JSON.stringify(selData));
+            hashHistory.push('/car/order');
+        }
+    }
+
     render(){
         // this.getTotal();
         if(!this.props.dataset){
@@ -206,7 +227,9 @@ class carComponent extends React.Component{
                             <div className="cal_r_l">
                                 <span>总计：<em>￥</em><em className="totleprice">0</em>(不含运费)</span>
                             </div>
-                            <Link to='/car/order'><div className="cal_r_r" onClick={this.balance}>去结算(<span className="totlenum"></span>)</div></Link>
+                            {/* <Link to='/car/order'> */}
+                                <div className="cal_r_r" onClick={this.balance}>去结算(<span className="totlenum"></span>)</div>
+                            {/* </Link> */}
                         </div>
                     </div>
                     <div className="footer_wy">

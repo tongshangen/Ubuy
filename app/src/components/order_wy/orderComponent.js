@@ -8,7 +8,47 @@ import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber} from 'antd
 import { browserHistory } from 'react-router';
 
 class orderComponent extends React.Component{ 
+    componentDidMount(){
+        const orderData = JSON.parse(sessionStorage.getItem('orderinfo'));
+        this.props.getData("car_sel.php",orderData)
+    } 
+    componentDidUpdate(){
+        if(!this.props.dataset){
+            return null
+        }else{
+            var goodsinfo = JSON.parse(this.props.dataset);
+        }
+        
+        // 商品总数量
+        var numtotle = 0;
+        // 商品总金额
+        var totleOprice = 0;
+        // 节省金额
+        var savemoney = 0;
+        // 应付金额
+        var paymoney = 0;
+        
+        for(var i=0;i<goodsinfo.length;i++){
+            numtotle += goodsinfo[i].goodnum*1;
+            totleOprice += goodsinfo[i].Oprice*goodsinfo[i].goodnum;
+            paymoney += goodsinfo[i].price*goodsinfo[i].goodnum;
+        }
+        savemoney = totleOprice - paymoney;
+        document.getElementsByClassName('numbertotle')[0].innerText = numtotle;
+        document.getElementsByClassName('totleoprice')[0].innerText = totleOprice;
+        document.getElementsByClassName('paymoney')[0].innerText = paymoney;
+        document.getElementsByClassName('savepricetotle')[0].innerText = savemoney;
+        // 积分
+        document.getElementsByClassName('crenum')[0].innerText = paymoney;
+    }
     render(){
+        if(!this.props.dataset){
+            return null
+        }else{
+            var dataset = JSON.parse(this.props.dataset);
+        }
+        console.log(dataset);
+        
         return(
             <div className="box_order_wy">
                 <div className="header_order">
@@ -55,37 +95,43 @@ class orderComponent extends React.Component{
                     <div className="ordergoods">
                         <p><Icon type="exception" className="exception"/>商品信息</p>
                         <ul>
-                            <li>
-                                <div className="goodsinfo">
-                                    <div className="goodsinfo_l">
-                                        <img src={require("../../libs/images/goods01_wy.jpg")} alt=""/>
-                                    </div>
-                                    <div className="goodsinfo_r">
-                                        <div className="title">撒大家收到上交所的精髓撒大家收到上交所的精髓</div>
-                                        <div className="colorsize">
-                                            <div className="color">黑/白</div>
-                                            <div className="size">37.5</div>
-                                        </div>
-                                        <div className="pricenum">
-                                            <div className="price"><b>￥</b><b>123</b></div>
-                                            <div className="num"><i>&times;</i><i>1</i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            {
+                                dataset.map(function(obj, index){
+                                    return(
+                                        <li key={'goods' + index}>
+                                            <div className="goodsinfo">
+                                                <div className="goodsinfo_l">
+                                                    <img src={obj.imgurl} alt=""/>
+                                                </div>
+                                                <div className="goodsinfo_r">
+                                                    <div className="title">{obj.name}</div>
+                                                    <div className="colorsize">
+                                                        <div className="color">{obj.color}</div>
+                                                        <div className="size">{obj.size}</div>
+                                                    </div>
+                                                    <div className="pricenum">
+                                                        <div className="price"><b>￥</b><b className="pri">{obj.price}</b></div>
+                                                        <div className="num"><i>&times;</i><i className="goodsnum">{obj.goodnum}</i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                     <div className="settlement">
                         <p><Icon type="pie-chart" className="pie-chart"/>结算明细</p>
-                        <div><span>数量</span><span className="totlenum"><i className="num">7</i>件</span></div>
-                        <div><span>商品总金额</span><span className="totleprice">￥<i className="price">734</i></span></div>
-                        <div><span>节省金额</span><span className="saveprice"><i className="spare">-</i>￥<i className="price">312</i></span></div>
+                        <div><span>数量</span><span className="totlenum"><i className="numbertotle"></i>件</span></div>
+                        <div><span>商品总金额</span><span className="totleprice">￥<i className="totleoprice"></i></span></div>
+                        <div><span>节省金额</span><span className="saveprice"><i className="spare">-</i>￥<i className="savepricetotle"></i></span></div>
                         <div><span>运费</span><span className="freight">￥<i className="freightnum">0</i></span></div>
                     </div>
-                    <div className="credits"><span>可获得积分</span><span className="creditsnum"><i className="crenum">368</i>积分</span></div>
+                    <div className="credits"><span>可获得积分</span><span className="creditsnum"><i className="crenum"></i>积分</span></div>
                 </div>
                 <div className="footer_order">
-                    <div className="footer_order_l">应付金额：<span><b>￥</b><b>345</b></span></div>
+                    <div className="footer_order_l">应付金额：<span><b>￥</b><b className="paymoney"></b></span></div>
                     <div className="footer_order_r">提交订单</div>
                 </div>
             </div>
@@ -94,10 +140,10 @@ class orderComponent extends React.Component{
 }
 
 const mapStateToProps = function(state){
-    // return {
-    //     loading: state.order.loading,
-    //     dataset: state.order.response
-    // }
+    return {
+        loading: state.order.loading,
+        dataset: state.order.response
+    }
 }
 
 export default connect(mapStateToProps, orderAction)(orderComponent)
