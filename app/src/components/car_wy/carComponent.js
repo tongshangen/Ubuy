@@ -10,7 +10,6 @@ import { browserHistory } from 'react-router';
 class carComponent extends React.Component{ 
     componentDidMount(){
         this.props.getData("car_sel.php",{userid:1})
-        
     } 
     componentDidUpdate(){
         this.getTotal();
@@ -207,14 +206,14 @@ class carComponent extends React.Component{
                             <div className="cal_r_l">
                                 <span>总计：<em>￥</em><em className="totleprice">0</em>(不含运费)</span>
                             </div>
-                            <div className="cal_r_r">去结算(<span className="totlenum"></span>)</div>
+                            <Link to='/car/order'><div className="cal_r_r" onClick={this.balance}>去结算(<span className="totlenum"></span>)</div></Link>
                         </div>
                     </div>
                     <div className="footer_wy">
                         <span>首页</span>
-                        <span><Link to="/classify">分类</Link></span>
+                        <Link to="/classify"><span>分类</span></Link>
                         <span>分享购</span>
-                        <span><Link to="/car">购物车</Link></span>
+                        <Link to="/car"><span>购物车</span></Link>
                         <span>我的</span>
                     </div>
                 </div>
