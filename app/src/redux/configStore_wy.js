@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware} from 'redux';
 import homeReducer from '../components/home/homeReducer';
 import rootReducer from './rootReducer';
-import {ajaxMiddleware} from './ajaxMiddleware'
+import {ajaxMiddleware} from './ajaxMiddleware_wy'
 
 export default function configStore(){
     let middleware = applyMiddleware(ajaxMiddleware)
