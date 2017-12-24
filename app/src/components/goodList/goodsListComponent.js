@@ -20,7 +20,7 @@ class goodsListComponent extends React.Component{
         return (
     <div>
         <Layout>
-          <Header style={{ position: 'fixed', width: '100%' }}>
+          <Header className="goodsListHeader" >
           
           <div className="h_left">
           <Icon type="left" style={{color:'#000',backgroundColor:null}}/></div>
@@ -57,9 +57,7 @@ class goodsListComponent extends React.Component{
             <BackTop>
               <div className="ant-back-top-inner" style={{ position:'fixed',bottom:'1rem'}}><Icon type="up-square" /> </div>
             </BackTop>
-            Scroll down to see the bottom-right
-            <strong style={{ color: '#1088e9' }}> blue </strong>
-            button.
+            
           </div>
           <div className="someSearch">
               <div className="some_top">

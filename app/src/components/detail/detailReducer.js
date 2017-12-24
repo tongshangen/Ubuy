@@ -1,7 +1,7 @@
 export default function detailReducer(state = {}, action){
     var newState = JSON.parse(JSON.stringify(state));
     if(action.response){
-        console.log(JSON.parse(action.response)[0])
+        console.log(JSON.parse(action.response)[0],"ruducer")
     }
     
     switch(action.type){
