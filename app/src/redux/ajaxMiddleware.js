@@ -13,11 +13,12 @@ export function ajaxMiddleware(api) {
                     type: 'beforeRequest'
                 })
                 if (url) {
-                const   [a,b,c] = types
-                    http.post(url, params).then(res => {
-                        // console.log('Requested',a)
+               
+                console.log(8888)
+                    http.get(url, params).then(res => {
+                         console.log('00000')
                         api.dispatch({
-                            type:b,
+                            type:'Requested',
                             response: res
                         })
                     }).catch(error => {

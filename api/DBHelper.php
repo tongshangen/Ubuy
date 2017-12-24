@@ -68,7 +68,7 @@
         $servername = "10.3.135.244";//
         $username = "root";
         $password = "root";
-        $dbname = 'ubuy'; 
+        $database = 'ubuy'; 
         //初始化连接，返回一个连接对象(包含所连接数据库的信息)
         $con = mysqli_connect($servername,$username,$password,$database); 
 
