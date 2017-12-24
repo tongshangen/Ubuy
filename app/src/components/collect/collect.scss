@@ -67,7 +67,12 @@ html,body,#app{
                     position: relative;
                     p{
                         height: 50px;
+                        width: 450px;
                         line-height: 50px;
+                        overflow: hidden; /*自动隐藏文字*/
+                        text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+                        white-space: nowrap;/*强制不换行*/
+                        // width: 20em;/*不允许出现半汉字截断*/
                     }
                     .cost{
                         text-decoration:line-through;

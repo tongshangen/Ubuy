@@ -1,4 +1,4 @@
-export default function goodsListReducer(state = {}, action){
+export default function goodListReducer(state = {}, action){
     var newState = JSON.parse(JSON.stringify(state));
    
     
