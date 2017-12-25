@@ -35,10 +35,10 @@ class CollectComponent extends React.Component{
                             }
                         </TabPane>
                         <TabPane tab="降价" key="2" className="menuItem">
-                            您暂无此记录
+                            暂无降价商品
                         </TabPane>
                         <TabPane tab="即将断货" key="3" className="menuItem">
-                            您暂无此记录
+                            暂无断货商品
                         </TabPane>
                     </Tabs>
                 </div>
@@ -60,7 +60,7 @@ function callback(key) {
 }
 
 const mapToState = function(state){
-    // console.log(state.collect.response)
+    console.log(state.collect.response)
     return {
         dataset: state.collect.response || []
     }

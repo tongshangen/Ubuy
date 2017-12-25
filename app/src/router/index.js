@@ -1,13 +1,10 @@
 import React from 'react';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import homeComponent from '../components/home/homeComponent'
-
 import carComponent from '../components/car_wy/carComponent'
 import classifyComponent from '../components/classify_wy/classifyComponent'
-
 import MyPage from '../components/myPage/myPageComponent'
 import ViewHistoryComponent from '../components/viewhistory/viewhistoryComponent'
-
 import collect from '../components/collect/collectComponent'
 import HelpCenter from '../components/helpCenter/helpCenterComponent';
 import FeedBack from '../components/feedBack/feedBackComponent'
@@ -15,9 +12,11 @@ import goodslistComponent from "../components/goodList/goodsListComponent"
 import HelpItem from "../components/helpCenter/helpitem"
 import Server from "../components/service/ServiceComponent"
 import Chat from "../components/service/chat"
-
+import ManagerOrder from "../components/manager/manager_order"
+import LogisticsComponent from "../components/logistics/logisticsComponent"
+import AssessComponent from "../components/assess/assessComponent"
 import detailComponent from "../components/detail/detailComponent"
-
+ 
 export default (
         <div>
             <Route path="/" component={homeComponent}>                
@@ -38,5 +37,12 @@ export default (
             <Route path="chat" component={Chat}/>
             <Route path="detail" component={detailComponent}>
             </Route>
+            <Route path="managerorder" component={ManagerOrder}>
+            </Route>
+            <Route path="logistics" component={LogisticsComponent}>
+            </Route>
+            <Route path="assess" component={AssessComponent}>
+            </Route>
+           
         </div>
 )

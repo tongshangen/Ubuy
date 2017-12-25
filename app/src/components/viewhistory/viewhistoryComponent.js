@@ -6,6 +6,16 @@ import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import './viewhistory.scss'
 
 export default class ViewHistoryComponent extends React.Component{
+    componentDidMount(){
+        var cookies = document.cookie;
+        // document.cookie = 'name=laoxie';
+        // this.props.normalSearch();
+        // console.log(cookies['id'])
+        // this.setState({list:})
+    }
+    state={
+        list:''
+    }
     render(){
         return(
             <div id="viewhistory_cts">
@@ -25,72 +35,22 @@ export default class ViewHistoryComponent extends React.Component{
                             <Icon type="right" />
                         </div>
                     </div>
-                    <div className="viewhistory_all">
-                        <div className="left"><img  src="http://localhost:3032/src/libs/default/img1.jpg"/></div>
-                        <div className="rigth">
-                            <p>jsaidajjdsisadas</p>
-                            <span className="cost">￥1490</span>
-                            <span>￥448</span>
-                            <Icon type="right" />
-                        </div>
-                    </div>
-                    <div className="viewhistory_all">
-                        <div className="left"><img  src="http://localhost:3032/src/libs/default/img1.jpg"/></div>
-                        <div className="rigth">
-                            <p>jsaidajjdsisadas</p>
-                            <span className="cost">￥1490</span>
-                            <span>￥448</span>
-                            <Icon type="right" />
-                        </div>
-                    </div>
-                    <div className="viewhistory_all">
-                        <div className="left"><img  src="http://localhost:3032/src/libs/default/img1.jpg"/></div>
-                        <div className="rigth">
-                            <p>jsaidajjdsisadas</p>
-                            <span className="cost">￥1490</span>
-                            <span>￥448</span>
-                            <Icon type="right" />
-                        </div>
-                    </div>
-                    <div className="viewhistory_all">
-                        <div className="left"><img  src="http://localhost:3032/src/libs/default/img1.jpg"/></div>
-                        <div className="rigth">
-                            <p>jsaidajjdsisadas</p>
-                            <span className="cost">￥1490</span>
-                            <span>￥448</span>
-                            <Icon type="right" />
-                        </div>
-                    </div>
-                    <div className="viewhistory_all">
-                        <div className="left"><img  src="http://localhost:3032/src/libs/default/img1.jpg"/></div>
-                        <div className="rigth">
-                            <p>jsaidajjdsisadas</p>
-                            <span className="cost">￥1490</span>
-                            <span>￥448</span>
-                            <Icon type="right" />
-                        </div>
-                    </div>
-                    <div className="viewhistory_all">
-                        <div className="left"><img  src="http://localhost:3032/src/libs/default/img1.jpg"/></div>
-                        <div className="rigth">
-                            <p>jsaidajjdsisadas</p>
-                            <span className="cost">￥1490</span>
-                            <span>￥448</span>
-                            <Icon type="right" />
-                        </div>
-                    </div>
-                    <div className="viewhistory_all">
-                        <div className="left"><img  src="http://localhost:3032/src/libs/default/img1.jpg"/></div>
-                        <div className="rigth">
-                            <p>jsaidajjdsisadas</p>
-                            <span className="cost">￥1490</span>
-                            <span>￥448</span>
-                            <Icon type="right" />
-                        </div>
-                    </div>
+
                     
                 </div>
             </div>
         )
     }
 }
+
+                   
+{/* <div className="viewhistory_all">
+    <div className="left"><img  src="http://localhost:3032/src/libs/default/img1.jpg"/></div>
+    <div className="rigth">
+        <p>jsaidajjdsisadas</p>
+        <span className="cost">￥1490</span>
+        <span>￥448</span>
+        <Icon type="right" />
+    </div>
+</div> */}
+                  

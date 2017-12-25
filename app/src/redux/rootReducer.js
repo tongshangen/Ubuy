@@ -6,6 +6,9 @@ import goodslist from '../components/goodList/goodsListReducer'
 import collect from '../components/collect/collectReducer'
 import feedBackReducer from '../components/feedBack/feedBackReducer'
 import helpReducer from '../components/helpCenter/helpReducer'
+import logisticsRequested from "../components/logistics/logisticsReducer"
+import Assess from "../components/assess/assessAction"
+import managerOrderRequested from "../components/manager/managerOrderReducer"
 
 export default combineReducers({
     home,
@@ -15,7 +18,10 @@ export default combineReducers({
     car,
     classify,
     goodslist,
-    home
+    home,
+    logisticsRequested,
+    managerOrderRequested,
+    // Assess
 })
 
 

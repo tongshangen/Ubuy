@@ -8,6 +8,10 @@ import NotLogin from './notLoginComponent';
 import AlreadyLogged from './alreadyLoggedComponent';
 
 class MyPage extends React.Component{
+    componentDidMount(){
+        document.cookie = 'id=1;user="aaa";price=309';
+        // this.props.normalSearch();
+    }
    render() {
         return (
             <div id="myPage_cts">
@@ -17,8 +21,8 @@ class MyPage extends React.Component{
                         <div className="myorder"><span>我的订单</span><Icon type="right" /></div>
                         <div className="msg">
                             <div className="Payment"><Icon type="layout"/><span>待付款</span></div>
-                            <div className="Payment"><Icon type="layout"/><span>查看物流</span></div>
-                            <div className="Payment"><Icon type="layout"/><span>待评价</span></div>
+                            <div className="Payment"><Link to="/logistics"><Icon type="layout"/><span>查看物流</span></Link></div>
+                            <div className="Payment"><Link to="/assess"><Icon type="layout"/><span>待评价</span></Link></div>
                         </div>
                         <div className="wallet">
                             <div>
@@ -27,13 +31,12 @@ class MyPage extends React.Component{
                                     <li><i>0</i><span>礼品卡</span></li>
                                     <li><i>0</i><span>优惠券</span></li>
                                     <li><i>0</i><span>积分</span></li>
-                                    <li><i>0</i><span>分享购</span></li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="manage_shoe">
+                        <Link to="/managerorder"><div className="manage_shoe">
                             <span>我的鞋管家</span><Icon type="right" />
-                        </div>
+                        </div></Link>
                         <div className="fun">
                             <ul>
                                 <li onClick={this.ba.bind(this)}><Icon type="layout"/><span onClick={this.props.r}>我的收藏</span></li>
