@@ -4,11 +4,13 @@ import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import * as homeAction from './homeAction';
 import { Layout, Menu, Breadcrumb, Icon, Carousel} from 'antd';
 import { browserHistory } from 'react-router';
+import Spinner from '../spinner/SpinnerComponent'
 class homeComponent extends React.Component{
    render() {
         return (
             <div>
                 <h1>我是首页</h1>
+                <Spinner/>
             </div>
         )
    }

@@ -10,20 +10,20 @@ export function ajaxMiddleware(api) {
                     return dispatch(action)
                 }
                 api.dispatch({
-                    type: 'beforeRequest'
+                    type: 'regbeforeRequest'
                 })
                 if (url) {
-               
+               const [a,b,c] = types
                 console.log(8888)
                     http.get(url, params).then(res => {
                          console.log('00000')
                         api.dispatch({
-                            type:'Requested',
+                            type:b,
                             response: res
                         })
                     }).catch(error => {
                     api.dispatch({
-                        type: 'requestError',
+                        type: 'regrequestError',
                         error
                     })
                 })
