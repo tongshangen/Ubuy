@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import configStore_wy from './redux/configStore_wy';
+import configStore from './redux/configStore';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import router from './router/index';
 
-const store_wy = configStore_wy();
-
+const store = configStore();
 ReactDOM.render(
-    <Provider store={store_wy}>
+    <Provider store={store}>
         <Router history={hashHistory} routes={router}/>
     </Provider>,
     document.getElementById('app')

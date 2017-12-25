@@ -249,7 +249,7 @@ class carComponent extends React.Component{
 }
 
 const mapStateToProps = function(state){
-    // console.log(state);
+    console.log(state);
     return {
         loading: state.car.loading,
         dataset: state.car.response

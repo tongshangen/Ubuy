@@ -1,3 +1,4 @@
+import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 export function normalSearch(params){
     if(params=='全部商品'){
           return {
@@ -100,5 +101,6 @@ export function some_left(){
 }
 
 export function toDetail(){
-    console.log(666)
+    document.cookie=''
+    hashHistory.push('/detail')
 }

@@ -113,6 +113,7 @@ class RegComponent extends React.Component{
         if (nextProps.dataset!=='undefine'){
             var status = nextProps.dataset[0].qq;
             console.log(status)
+            
             if(status==='ok') {
                 message.success(
                     '注册成功!', 2

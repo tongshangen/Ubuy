@@ -102,7 +102,7 @@ class goodsListComponent extends React.Component{
 
 //DataModel => m
 const mapToState = function(state){
-    console.log(state);
+    // console.log(state);
     return {
         type: state.goodslist.type,
         dataset: state.goodslist.body || []
