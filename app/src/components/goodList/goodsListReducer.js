@@ -3,10 +3,10 @@ export default function goodListReducer(state = {}, action){
    
     
     switch(action.type){
-        case 'beforeRequest':
+        case 'goodslistbeforeRequest':
             newState.type = action.type;
             break;
-        case 'Requested':
+        case 'goodslistRequested':
             newState.type = action.type;
             newState.body = JSON.parse(action.response)
 

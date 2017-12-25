@@ -1,12 +1,14 @@
 export function normalSearch(params){
     if(params=='全部商品'){
           return {
+        types: ['goodslistbeforeRequest', 'goodslistRequested', 'goodslistrequestError'],
         type: 'normalSearch',
         url: 'goodslist.php',
         params:{brandAllname: params }
     }  
         }
     return {
+        types: ['goodslistbeforeRequest', 'goodslistRequested', 'goodslistrequestError'],
         type: 'normalSearch',
         url: 'goodslist.php',
         params:{brandname: params }

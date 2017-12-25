@@ -1,9 +1,13 @@
 //http://visionmedia.github.io/superagent/
 import request from 'superagent'
 
+
+// const LOCAL_SERVER = ' http://localhost:8080/';
+
 // const LOCAL_SERVER = 'http://localhost:1155/';
 
  const LOCAL_SERVER = ' http://10.3.135.110:888/';
+
 
 
 const DEV_SERVER = '';
