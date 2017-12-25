@@ -3,6 +3,10 @@ export function detailHistory(){
 }
 export function getGoodDetail(){
     return {
+<<<<<<< HEAD
+=======
+
+>>>>>>> tsg
         types: ['beforeRequest', 'getGoodDetail','requestError'],
         url: 'getGoodDetail.php',
         params:{goodid: 1 }

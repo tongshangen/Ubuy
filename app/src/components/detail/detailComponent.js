@@ -11,6 +11,9 @@ const { Header, Footer, Content } = Layout;
 class detailComponent extends React.Component{
     componentDidMount(){
         this.props.getGoodDetail();
+         $('.ant-layout-header .anticon-left').click(function(event) {
+            window.history.back();
+        });
     }
      
     getKeys(item){
