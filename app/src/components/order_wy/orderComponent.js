@@ -13,6 +13,9 @@ class orderComponent extends React.Component{
     // }
     componentDidMount(){
         // console.log(sessionStorage.getItem('orderinfo'));
+        // var params = JSON.parse(sessionStorage.getItem('orderinfo'));
+        // delete params.carid;
+        // console.log(params);
         this.props.getData("order_sel.php",{"ordergoods":sessionStorage.getItem('orderinfo')})
     } 
     componentDidUpdate(){
@@ -49,14 +52,26 @@ class orderComponent extends React.Component{
         // history.back();
         hashHistory.push('/car');
     }
+
+    // 提交订单
+    submitorder(){
+        var time = Date.parse( new Date());
+        var params = JSON.parse(sessionStorage.getItem('orderinfo'));
+        
+        for(let item of params){
+            delete item.carid;
+            item.status = 2;
+            item.orderno = time;
+        }
+        // console.log(params);
+        this.props.insertorder("order_insert.php",{"ordergoods":JSON.stringify(params)});
+        hashHistory.push('/car');
+    }
+
     render(){
         if(!this.props.dataset){
             return null
         }
-        // else{
-        //     var dataset = JSON.parse(this.props.dataset);
-        // }
-        // console.log(dataset);
         return(
             <div className="box_order_wy">
                 <div className="header_order">
@@ -140,7 +155,7 @@ class orderComponent extends React.Component{
                 </div>
                 <div className="footer_order">
                     <div className="footer_order_l">应付金额：<span><b>￥</b><b className="paymoney"></b></span></div>
-                    <div className="footer_order_r">确定订单</div>
+                    <div className="footer_order_r" onClick={this.submitorder.bind(this)}>确定订单</div>
                 </div>
             </div>
         )

@@ -9,7 +9,7 @@
 
     $resValue = '(';
     foreach ($orderinfo as $key => $value){
-        $resValue .= 'buycar.carid = '.$value["goodid"].' or ';
+        $resValue .= 'buycar.carid = '.$value["carid"].' or ';
     }
     
     $resValue = substr($resValue,0,-4).')';

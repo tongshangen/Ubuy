@@ -5,7 +5,7 @@ import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import * as carAction from './carAction';
 import './car.scss'
 
-import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber,Alert,message, Button} from 'antd';
+import { Icon, Carousel, Radio,InputNumber,Alert,message, Button,Modal} from 'antd';
 import { browserHistory } from 'react-router';
 
 class carComponent extends React.Component{ 
@@ -135,11 +135,16 @@ class carComponent extends React.Component{
         var isCheck = document.getElementsByClassName('anticon anticon-check-circle');
         for(var i=1;i<=isCheck.length-2;i++){
             if(isCheck[i].className == 'anticon anticon-check-circle checked'){
-                selData.push({goodid:isCheck[i].parentNode.parentNode.getAttribute("data-id"),userid:1});
+                selData.push({carid:isCheck[i].parentNode.parentNode.getAttribute("data-id"),goodid:isCheck[i].parentNode.parentNode.getAttribute("data-goodid"),userid:1});
             }
         }
         if(selData.length == 0){
-            alert('请提交商品');
+            // alert('请提交商品');
+            Modal.success({
+                title: 'This is a notification message',
+                content: 'This modal will be destroyed after 1 second',
+              });
+              setTimeout(() => modal.destroy(), 1000);
         }else{
             sessionStorage.setItem('orderinfo',JSON.stringify(selData));
             hashHistory.push('/car/order');
@@ -176,7 +181,7 @@ class carComponent extends React.Component{
                             {
                                 this.props.dataset.map(function(obj, index){
                                     return (
-                                        <li key={'goods' + index} data-id={obj.carid}>
+                                        <li key={'goods' + index} data-id={obj.carid} data-goodid={obj.goodid}>
                                             <div className="goods_l">
                                                 <Icon type="check-circle" onClick={this.clickCheck} className="checked"/>
                                             </div>
