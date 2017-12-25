@@ -4,7 +4,7 @@ import regReducer from '../components/reg/regReducer';
 import loginReducer from '../components/login/loginReducer'
 import orderReducer from '../components/order/orderReducer';
 import rootReducer from './rootReducer';
-import {ajaxMiddleware} from './ajaxMiddleware_wy'
+import {ajaxMiddleware} from './ajaxMiddleware'
 
 export default function configStore(){
     let middleware = applyMiddleware(ajaxMiddleware)

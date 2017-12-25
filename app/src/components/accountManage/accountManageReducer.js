@@ -1,15 +1,14 @@
-export default function regReducer(state = {}, action){
-    console.log('reg',action)
+export default function accountReducer(state = {}, action) {
     var newState = JSON.parse(JSON.stringify(state));
     switch (action.type) {
-        case 'beforeRequest':
+        case 'accountbeforeRequest':
             newState.status = 0;
             break;
-        case 'regRequested':
+        case 'accountregRequested':
             newState.status = 1;
-            newState.response = action.response;
+            newState.response = JSON.parse(action.response);
             break;
-        case 'requestError':
+        case 'accountrequestError':
             newState.status = -1;
             newState.error = action.error;
             break;

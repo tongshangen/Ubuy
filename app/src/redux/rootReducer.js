@@ -12,6 +12,7 @@ import detail from '../components/detail/detailReducer'
 import collect from '../components/collect/collectReducer'
 import feedBackReducer from '../components/feedBack/feedBackReducer'
 import helpReducer from '../components/helpCenter/helpReducer'
+import account from '../components/accountManage/accountManageReducer'
 import logisticsRequested from "../components/logistics/logisticsReducer"
 import Assess from "../components/assess/assessAction"
 import managerOrderRequested from "../components/manager/managerOrderReducer"
@@ -21,15 +22,16 @@ export default combineReducers({
     collect,
     feedBackReducer,
     helpReducer,
-    car,
     classify,
     goodslist,
     home,
-    order,
     logisticsRequested,
     managerOrderRequested,
-    detail,
+    // detail,
     reg,
+    login,
+    account,
     order_list,
-    login
+    car,
+    order
 })
