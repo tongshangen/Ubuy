@@ -9,7 +9,11 @@ import "../../libs/base/rem.js"
 const { Header, Footer, Content } = Layout;
 class goodsListComponent extends React.Component{
     componentDidMount(){
-        this.props.normalSearch();
+        var aa=this.props.params.brandname;
+        this.props.normalSearch(aa);
+        $('.ant-layout-header .anticon-left').click(function(event) {
+            window.history.back();
+        });
     }
 
     getKeys(item){
@@ -20,7 +24,7 @@ class goodsListComponent extends React.Component{
         return (
     <div>
         <Layout>
-          <Header style={{ position: 'fixed', width: '100%' }}>
+          <Header className="goodsListHeader" >
           
           <div className="h_left">
           <Icon type="left" style={{color:'#000',backgroundColor:null}}/></div>
@@ -29,7 +33,7 @@ class goodsListComponent extends React.Component{
           
           <div className="nav">
               <ul>
-                  <li onClick={this.props.normalSearch}>综合</li>
+                  <li onClick={this.props.normalSearch.bind(this,'耐克')}>综合</li>
                   <li onClick={this.props.newSearch}>新品</li>
                   <li onClick={this.props.countSearch}>销量</li>
                   <li onClick={this.props.priceSearch}>价格<Icon type="retweet" /></li>
@@ -37,7 +41,7 @@ class goodsListComponent extends React.Component{
               </ul>
           </div>
           </Header>
-          <Content>
+          <Content className="contentBody">
                 <ul>
                     {
                       this.props.dataset.map(function(obj, index){
@@ -57,9 +61,7 @@ class goodsListComponent extends React.Component{
             <BackTop>
               <div className="ant-back-top-inner" style={{ position:'fixed',bottom:'1rem'}}><Icon type="up-square" /> </div>
             </BackTop>
-            Scroll down to see the bottom-right
-            <strong style={{ color: '#1088e9' }}> blue </strong>
-            button.
+            
           </div>
           <div className="someSearch">
               <div className="some_top">

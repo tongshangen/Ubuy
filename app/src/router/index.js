@@ -9,6 +9,10 @@ import collect from '../components/collect/collectComponent'
 import HelpCenter from '../components/helpCenter/helpCenterComponent';
 import FeedBack from '../components/feedBack/feedBackComponent'
 import goodslistComponent from "../components/goodList/goodsListComponent"
+import LoginComponent from '../components/login/loginComponent'
+import RegComponent from '../components/reg/regComponent'
+import OrderComponent from '../components/order/orderComponent'
+import SpinnerComponent from '../components/spinner/SpinnerComponent'
 import HelpItem from "../components/helpCenter/helpitem"
 import Server from "../components/service/ServiceComponent"
 import Chat from "../components/service/chat"
@@ -21,8 +25,8 @@ export default (
         <div>
             <Route path="/" component={homeComponent}>                
             </Route>
-            <Route path="/car" component={carComponent}/>
-            <Route path="/classify" component={classifyComponent}/>
+            <Route path="/car" component={carComponent}></Route>
+            <Route path="/classify" component={classifyComponent}></Route>
             <Route path="/mypage" component={MyPage}></Route>
             <Route path="/collect" component={collect}></Route>
             <Route path="/viewhistory" component={ViewHistoryComponent}></Route>
@@ -30,11 +34,17 @@ export default (
             </Route>
             <Route path="/helpitem" component={HelpItem}></Route>
             <Route path="/feedfack" component={FeedBack}></Route>
+            <Route path="/goodslist/:brandname" component={goodslistComponent}></Route>
+            <Route path="/goodslist" component={goodslistComponent}></Route>
+            <Route path="/login" component={LoginComponent}></Route>
+            <Route path="/reg" component={RegComponent}></Route>
+            <Route path="/order" component={OrderComponent}></Route>
+            <Route path="/spinner" component={SpinnerComponent}></Route>                   
             <Route path="goodslist" component={goodslistComponent}>
             </Route>
             <Route path="server" component={Server}>
             </Route>
-            <Route path="chat" component={Chat}/>
+            <Route path="chat" component={Chat}></Route>
             <Route path="detail" component={detailComponent}>
             </Route>
             <Route path="managerorder" component={ManagerOrder}>

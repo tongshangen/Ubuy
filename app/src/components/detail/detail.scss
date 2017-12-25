@@ -20,7 +20,7 @@ html,body{
     height:100%;
 
 }
-.ant-layout-header{
+.detailHeader{
     padding: 0;
     background:transparent;
     border:1px solid transparent;box-shadow: 2px 2px 2px transparent;
@@ -54,17 +54,92 @@ html,body{
     }
         
     }
-.ant-layout-content{
-    top: 0;
-    
-
+.detailContent{
+    top: 0;background: #ddd;
     .detailBody{
-        min-height: 20.0rem;
+        min-height: 10rem;
+        div{
+            padding: 0 0.12rem;background: #fff;
+        }
+        .banner{
+            overflow:hidden;
+            img{
+                width: 100%;
+            }
+        }
+        .introduce{
+            font-size: 0.16rem;text-align: left;
+        }
+        .fenlei{
+            font-size: 0.20rem;color:#E32E32;
+        }
+        .price{
+            font-size: 0.30rem;color:red;
+            span{
+                font-size: 0.18rem;color:#ccc;
+            }
+            .pr{
+                float: right;
+            }
+        }
+        .choose{
+            font-size: 0.20rem;font-weight: bold;height: 0.6rem;line-height: 0.6rem;
+            .thscolor{
+                margin-left: 0.3rem;
+            }
+            .chooseSize{
+                float: right;
+            }
+
+        }
+        .brand{
+            padding: 0.06rem 0;
+                div{
+                    font-size: 0.16rem;
+                    
+                        
+                    color:#ddd;
+                    span{
+                        color:#191D21;
+                        margin-left: 0.3rem;
+
+                    }
+                }
+            }
+        .ifLike{
+            .likeTop{
+
+            font-size: 0.18rem;padding: 0.06rem 0;
+            }
+            .likeBody{
+                min-height:0.4rem;
+            }
+
+        }
+        .help{
+                
+                i{
+                    font-size: 0.20rem;
+                    width: 0.22rem;
+                    height: 0.22rem;
+                    background: #5F86EB;
+                    color:#fff;
+                }
+            span{
+                font-size: 0.16rem;margin-left: 0.2rem;
+            }
+        }
+        .moreDetail{
+            text-align: center;
+            font-size: 0.16rem;
+            background: #EFEFEF;
+            padding: 0.06rem 0;
+        }
     }
 
 }
 
-.ant-layout-footer{
+.detailFooter{
     width: 100%;
     height: 0.8rem;
     background: #fff;
@@ -81,6 +156,17 @@ html,body{
     .left{
         font-size: 0.6rem;
         width: 25%;
+        position:relative;
+        .carCount{
+            color:#fff;font-size: 0.2rem;font-weight: bold;
+            position:absolute;background: red;
+            border-radius:50%;
+            padding: 0.06rem;
+            
+            line-height: 1;
+            text-align: center;
+            left: 54%;transform:translate(-50%,0);
+        }
     }
     .center{
         background: #f60;

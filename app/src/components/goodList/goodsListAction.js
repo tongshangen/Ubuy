@@ -1,9 +1,17 @@
-export function normalSearch(){
-    console.log('综合搜索');
-    return {
+export function normalSearch(params){
+    if(params=='全部商品'){
+          return {
+        types: ['goodslistbeforeRequest', 'goodslistRequested', 'goodslistrequestError'],
         type: 'normalSearch',
         url: 'goodslist.php',
-        params:{brandid: 0 }
+        params:{brandAllname: params }
+    }  
+        }
+    return {
+        types: ['goodslistbeforeRequest', 'goodslistRequested', 'goodslistrequestError'],
+        type: 'normalSearch',
+        url: 'goodslist.php',
+        params:{brandname: params }
     }
 }
 

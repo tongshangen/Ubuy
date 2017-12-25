@@ -6,19 +6,28 @@ import { Layout, Menu, Breadcrumb, Icon, Carousel} from 'antd';
 
 import NotLogin from './notLoginComponent';
 import AlreadyLogged from './alreadyLoggedComponent';
-
+import { cookie } from '../../utils/cookie'
+import { message } from 'antd'
 class MyPage extends React.Component{
     componentDidMount(){
         document.cookie = 'id=1;user="aaa";price=309';
-        // this.props.normalSearch();
+    }
+    toOrder() {
+        hashHistory.push('order')
     }
    render() {
+       var pageChoice = null
+       if (cookie.get('userId')) {
+           pageChoice = <AlreadyLogged />
+       } else {
+           pageChoice = <NotLogin />
+       }
         return (
             <div id="myPage_cts">
                 <div className="myPageTop">
-                    <AlreadyLogged/>
+                    {pageChoice}
                     <div className="main_cts">
-                        <div className="myorder"><span>我的订单</span><Icon type="right" /></div>
+                        <div className="myorder" onClick={this.toOrder.bind(this)}><span>我的订单</span><Icon type="right" /></div>
                         <div className="msg">
                             <div className="Payment"><Icon type="layout"/><span>待付款</span></div>
                             <div className="Payment"><Link to="/logistics"><Icon type="layout"/><span>查看物流</span></Link></div>

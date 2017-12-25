@@ -1,10 +1,10 @@
-/* 
-* @Author: Marte
-* @Date:   2017-12-22 20:01:17
-* @Last Modified by:   Marte
-* @Last Modified time: 2017-12-22 20:01:19
-*/
-
-$(document).ready(function(){
-    
-});
+export function detailHistory(){
+    console.log('跳到浏览记录')
+}
+export function getGoodDetail(){
+    return {
+        type: 'getGoodDetail',
+        url: 'getGoodDetail.php',
+        params:{goodid: 1 }
+    }
+}
