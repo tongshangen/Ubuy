@@ -8,17 +8,19 @@ import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber} from 'antd
 import { browserHistory } from 'react-router';
 
 class orderComponent extends React.Component{ 
+    // state = {
+    //     orderData:JSON.parse(sessionStorage.getItem('orderinfo'))
+    // }
     componentDidMount(){
-        const orderData = JSON.parse(sessionStorage.getItem('orderinfo'));
-        this.props.getData("car_sel.php",orderData)
+        // console.log(sessionStorage.getItem('orderinfo'));
+        this.props.getData("order_sel.php",{"ordergoods":sessionStorage.getItem('orderinfo')})
     } 
     componentDidUpdate(){
         if(!this.props.dataset){
             return null
         }else{
-            var goodsinfo = JSON.parse(this.props.dataset);
+            var goodsinfo = this.props.dataset;
         }
-        
         // 商品总数量
         var numtotle = 0;
         // 商品总金额
@@ -41,18 +43,24 @@ class orderComponent extends React.Component{
         // 积分
         document.getElementsByClassName('crenum')[0].innerText = paymoney;
     }
+
+    // 返回购物车
+    back(){
+        // history.back();
+        hashHistory.push('/car');
+    }
     render(){
         if(!this.props.dataset){
             return null
-        }else{
-            var dataset = JSON.parse(this.props.dataset);
         }
-        console.log(dataset);
-        
+        // else{
+        //     var dataset = JSON.parse(this.props.dataset);
+        // }
+        // console.log(dataset);
         return(
             <div className="box_order_wy">
                 <div className="header_order">
-                    <div className="header_order_l">
+                    <div className="header_order_l" onClick={this.back}>
                         <Icon type="left"></Icon>
                     </div>
                     <h3>结算中心</h3>
@@ -96,7 +104,7 @@ class orderComponent extends React.Component{
                         <p><Icon type="exception" className="exception"/>商品信息</p>
                         <ul>
                             {
-                                dataset.map(function(obj, index){
+                                this.props.dataset.map(function(obj, index){
                                     return(
                                         <li key={'goods' + index}>
                                             <div className="goodsinfo">
@@ -132,7 +140,7 @@ class orderComponent extends React.Component{
                 </div>
                 <div className="footer_order">
                     <div className="footer_order_l">应付金额：<span><b>￥</b><b className="paymoney"></b></span></div>
-                    <div className="footer_order_r">提交订单</div>
+                    <div className="footer_order_r">确定订单</div>
                 </div>
             </div>
         )

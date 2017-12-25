@@ -25,7 +25,7 @@ const HttpClient = {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(res.body || res.text);
+                    resolve(res.body || JSON.parse(res.text));
                 }
             });
     }),
@@ -40,7 +40,7 @@ const HttpClient = {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(res.text);
+                    resolve(res.body || JSON.parse(res.text));
                 }
             });
     })

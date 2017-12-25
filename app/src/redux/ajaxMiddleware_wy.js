@@ -25,18 +25,21 @@ export function ajaxMiddleware(api) {
                                     error
                                 })
                             })
+                        }else{
+                            http.get(url, params).then(res => {
+                                // console.log(res);
+                                api.dispatch({
+                                    type: 'Requested' + a,
+                                    response: res
+                                })
+                            }).catch(error => {
+                                api.dispatch({
+                                    type: 'requestError' + a,
+                                    error
+                                })
+                            })
                         }
-                        http.get(url, params).then(res => {
-                            api.dispatch({
-                                type: 'Requested' + a,
-                                response: res
-                            })
-                        }).catch(error => {
-                            api.dispatch({
-                                type: 'requestError' + a,
-                                error
-                            })
-                        })
+                        
                     }
               }
         }

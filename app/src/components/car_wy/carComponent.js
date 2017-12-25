@@ -102,6 +102,7 @@ class carComponent extends React.Component{
 
     // 增加商品数量
     addNum = (e) => {
+        
         // 商品数量元素
         var goodnum = e.target.parentNode.getElementsByClassName('num')[0];
         var carid = e.target.getAttribute("data-id");
@@ -129,7 +130,6 @@ class carComponent extends React.Component{
     // 结算
     balance = (e) => {
         // 循环看是否有商品勾选
-        
         var selData = []
         // 选择按钮
         var isCheck = document.getElementsByClassName('anticon anticon-check-circle');
@@ -143,17 +143,15 @@ class carComponent extends React.Component{
         }else{
             sessionStorage.setItem('orderinfo',JSON.stringify(selData));
             hashHistory.push('/car/order');
+            // console.log(sessionStorage.getItem('orderinfo'));
         }
     }
 
     render(){
-        // this.getTotal();
         if(!this.props.dataset){
             return null
-        }else{
-            var dataset = JSON.parse(this.props.dataset);
         }
-        
+        // console.log(this.props.dataset);
         var color = {
             color:this.state.isAllChecked ? 'red' : '#ccc'
         }
@@ -176,7 +174,7 @@ class carComponent extends React.Component{
                         </div>
                         <ul className="goods">
                             {
-                                dataset.map(function(obj, index){
+                                this.props.dataset.map(function(obj, index){
                                     return (
                                         <li key={'goods' + index} data-id={obj.carid}>
                                             <div className="goods_l">
@@ -246,7 +244,7 @@ class carComponent extends React.Component{
 }
 
 const mapStateToProps = function(state){
-    // console.log(state.car.response);
+    // console.log(state);
     return {
         loading: state.car.loading,
         dataset: state.car.response
