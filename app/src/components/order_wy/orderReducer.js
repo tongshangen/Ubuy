@@ -25,17 +25,17 @@ export default function StudentReducer(state = {}, action) {
             reState.error = action.error
             break;
 
-        // case 'beforeRequestb':
-        //     reState.loading = true;
-        //     break;
-        // case 'Requestedb':
-        //     reState.loading = false;
-        //     reState.response = action.response;
-        //     break;
-        // case 'requestErrorb':
-        //     reState.loading = false;
-        //     reState.error = action.error
-        //     break;
+        case 'beforeRequestdel':
+            reState.loading = true;
+            break;
+        case 'Requesteddel':
+            reState.loading = false;
+            reState.response = action.response;
+            break;
+        case 'requestErrordel':
+            reState.loading = false;
+            reState.error = action.error
+            break;
     }
     return reState;
 }

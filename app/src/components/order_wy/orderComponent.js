@@ -12,10 +12,6 @@ class orderComponent extends React.Component{
     //     orderData:JSON.parse(sessionStorage.getItem('orderinfo'))
     // }
     componentDidMount(){
-        // console.log(sessionStorage.getItem('orderinfo'));
-        // var params = JSON.parse(sessionStorage.getItem('orderinfo'));
-        // delete params.carid;
-        // console.log(params);
         this.props.getData("order_sel.php",{"ordergoods":sessionStorage.getItem('orderinfo')})
     } 
     componentDidUpdate(){
@@ -63,8 +59,16 @@ class orderComponent extends React.Component{
             item.status = 2;
             item.orderno = time;
         }
-        // console.log(params);
         this.props.insertorder("order_insert.php",{"ordergoods":JSON.stringify(params)});
+
+        var paramsdel = JSON.parse(sessionStorage.getItem('orderinfo'));
+        var str = '';
+        for(let item2 of paramsdel){
+            str += item2.carid + ',';
+        }
+        str = str.slice(0,-1);
+        console.log(str);
+        this.props.delorder("orderdelcar.php",{"ordergoods":str});
         hashHistory.push('/car');
     }
 

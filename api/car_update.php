@@ -9,7 +9,7 @@
 
     $result = excute($sql);
     if($result){
-        $sqlsel = "select * from good,`user`,buycar,images where buycar.userid =1 and  buycar.goodid= good.goodid and `user`.userid = buycar.userid and images.goodid = good.goodid;";
+        $sqlsel = "select * from good,`user`,buycar,images where buycar.userid =1 and  buycar.goodid= good.goodid and `user`.userid = buycar.userid and images.goodid = good.goodid GROUP BY buycar.carid;";
         $result = query($sqlsel);
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
     }

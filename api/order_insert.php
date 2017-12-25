@@ -25,10 +25,11 @@
         $result = excute($sql);
         
         if($result){
+            echo "ok";
             // 障眼法
-            $sqlsel = "select * from good,`user`,buycar,images where buycar.userid =1 and  buycar.goodid= good.goodid and `user`.userid = buycar.userid and images.goodid = good.goodid;";
-            $result2 = query($sqlsel);
-            echo json_encode($result2, JSON_UNESCAPED_UNICODE);
+            // $sqlsel = "select * from good,`user`,buycar,images where buycar.userid =1 and  buycar.goodid= good.goodid and `user`.userid = buycar.userid and images.goodid = good.goodid;";
+            // $result2 = query($sqlsel);
+            // echo json_encode($result2, JSON_UNESCAPED_UNICODE);
         }
     }
 
