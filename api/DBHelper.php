@@ -2,10 +2,10 @@
 //http://www.runoob.com/php/php-mysql-select.html
     function connect_oop(){
         // 配置参数
-        $servername = '10.3.135.244';
+        $servername = 'localhost';
         $username = 'root';
-        $password = 'root';
-        $database = 'ubuy';
+        $password = '';
+        $database = 'buy';
 
         //连接数据库
         $conn = new mysqli($servername,$username,$password,$database);
@@ -65,10 +65,10 @@
 
     //初始化连接对象方法
     function connect(){
-        $servername = "10.3.135.244";//
+        $servername = "localhost";
         $username = "root";
-        $password = "root";
-        $dbname = 'ubuy'; 
+        $password = "";
+        $dbname = 'buy'; 
         //初始化连接，返回一个连接对象(包含所连接数据库的信息)
         $con = mysqli_connect($servername,$username,$password,$dbname); 
 

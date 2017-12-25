@@ -155,5 +155,10 @@ html,body,#app{
         // width: 100%;
         height: 90px;
         background: pink;
+    } 
+}
+.ant-message {
+    span {
+        font-size: 25px;
     }
 }
