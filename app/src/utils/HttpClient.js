@@ -1,7 +1,18 @@
 //http://visionmedia.github.io/superagent/
 import request from 'superagent'
 
+<<<<<<< HEAD
 const LOCAL_SERVER = 'http://localhost:666/api/';
+=======
+
+// const LOCAL_SERVER = ' http://localhost:8080/';
+
+// const LOCAL_SERVER = 'http://localhost:1155/';
+
+ const LOCAL_SERVER = ' http://10.3.135.223:888/';
+
+
+>>>>>>> f6bb10d5cd2315a901f9c07b01947d3973a1e2d0
 
 const DEV_SERVER = '';
 const PRO_SERVER = '';
@@ -22,7 +33,7 @@ const HttpClient = {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(res.body || res.text);
+                    resolve(res.body || JSON.parse(res.text));
                 }
             });
     }),
@@ -37,7 +48,7 @@ const HttpClient = {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(res.text);
+                    resolve(res.body || JSON.parse(res.text));
                 }
             });
     })
