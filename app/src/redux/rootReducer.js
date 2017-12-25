@@ -10,6 +10,7 @@ import detail from '../components/detail/detailReducer'
 import collect from '../components/collect/collectReducer'
 import feedBackReducer from '../components/feedBack/feedBackReducer'
 import helpReducer from '../components/helpCenter/helpReducer'
+import account from '../components/accountManage/accountManageReducer'
 export default combineReducers({
     home,
     collect,
@@ -22,5 +23,6 @@ export default combineReducers({
     detail,
     reg,
     order,
-    login
+    login,
+    account
 })

@@ -1,9 +1,9 @@
 <?php
     header('Access-Control-Allow-Origin:*');
-    $servername='localhost';
+    $servername='10.3.135.244';
     $username='root';
-    $passWord='';
-    $database='buy';
+    $passWord='root';
+    $database='ubuy';
 
     //连接注册登录数据库
     $conn = new mysqli($servername,$username,$passWord,$database);

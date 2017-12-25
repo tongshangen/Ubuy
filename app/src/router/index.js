@@ -21,7 +21,8 @@ import Server from "../components/service/ServiceComponent"
 import Chat from "../components/service/chat"
 
 import detailComponent from "../components/detail/detailComponent"
-
+import Footer from '../components/footer/footerComponent'
+import AccountComponent from '../components/accountManage/accountManageComponent'
 export default (
         <div>
             <Route path="/" component={homeComponent}>                
@@ -45,7 +46,8 @@ export default (
             <Route path="server" component={Server}>
             </Route>
             <Route path="chat" component={Chat}/>
-            <Route path="detail" component={detailComponent}>
-            </Route>
+            <Route path="detail" component={detailComponent}></Route>
+            <Route path="/footer" component={Footer}></Route>
+            <Route path="/account" component={AccountComponent}></Route>
         </div>
 )
