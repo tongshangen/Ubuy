@@ -1,9 +1,15 @@
-export function normalSearch(){
-    console.log('综合搜索');
+export function normalSearch(params){
+    if(params=='全部商品'){
+          return {
+        type: 'normalSearch',
+        url: 'goodslist.php',
+        params:{brandAllname: params }
+    }  
+        }
     return {
         type: 'normalSearch',
         url: 'goodslist.php',
-        params:{brandid: 0 }
+        params:{brandname: params }
     }
 }
 

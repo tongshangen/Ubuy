@@ -27,7 +27,7 @@ class detailComponent extends React.Component{
                       <span className="icon"><i><Icon type="heart-o" /></i></span>
                       <span className="icon "><i><Icon type="share-alt" /></i></span>
                       </Header>
-                      <Content >
+                      <Content className="detailContent">
                       {
                         this.props.dataset.slice(0,1).map(function(item,index){
                             return (

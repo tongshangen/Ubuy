@@ -31,7 +31,7 @@ export default (
             </Route>
             <Route path="/helpitem" component={HelpItem}></Route>
             <Route path="/feedfack" component={FeedBack}></Route>
-            <Route path="goodslist" component={goodslistComponent}>
+            <Route path="/goodslist/:brandname" component={goodslistComponent}>
             </Route>
             <Route path="server" component={Server}>
             </Route>
