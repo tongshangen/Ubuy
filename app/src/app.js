@@ -7,7 +7,6 @@ import router from './router/index';
 import $ from 'jquery';
 
 const store = configStore();
-
 ReactDOM.render(
     <Provider store={store}>
         <Router history={hashHistory} routes={router}/>
