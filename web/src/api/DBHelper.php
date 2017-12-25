@@ -65,17 +65,10 @@
 
     //初始化连接对象方法
     function connect(){
-<<<<<<< HEAD:web/src/api/DBHelper.php
         $servername = "localhost";//
         $username = "root";
         $password = "ubuy";
         $dbname = 'ubuy'; 
-=======
-        $servername = '10.3.135.244';
-        $username = 'root';
-        $password = 'root';
-        $database = 'ubuy';
->>>>>>> f6bb10d5cd2315a901f9c07b01947d3973a1e2d0:api/DBHelper.php
         //初始化连接，返回一个连接对象(包含所连接数据库的信息)
         $con = mysqli_connect($servername,$username,$password,$database); 
 
