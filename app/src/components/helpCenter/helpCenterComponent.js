@@ -8,7 +8,7 @@ import * as helpAction from './helpAction'
 
 class HelpCenter extends React.Component{
     state={
-        menusItem:['优购会员注册协议','优购会员PLUS用户协议','购物流程','售后服务','常见问题','优惠券使用说明','礼品卡使用说明','积分说明','关于商品卡使用说明','积分说明','关于商品价格说明','十天补差价','防诈骗须知'],
+        menusItem:['优购会员注册协议','优购会员PLUS用户协议','购物流程','售后服务','常见问题','优惠券使用说明','礼品卡使用说明','积分说明','十天补差价','防诈骗须知'],
         hlepType:this.props.Type.type
     }
     render(){

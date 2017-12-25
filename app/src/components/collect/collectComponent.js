@@ -2,10 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import { Tabs, Icon} from 'antd';
-import * as CollectAction from './CollectAction'
+import * as CollectAction from './collectAction'
 import './collect.scss'
 
 class CollectComponent extends React.Component{
+    componentDidMount() {
+        this.props.getData()
+    }
     render(){
         return(
             <div id="collect_cts">
@@ -20,6 +23,7 @@ class CollectComponent extends React.Component{
                            
                             {
                                 this.props.dataset.map(function(obj,idx){
+                                   
                                     return (
                                         <div className="collect_all" key={idx}>
                                             <div className="left"><img  src={obj.imgurl}/></div>
@@ -35,19 +39,17 @@ class CollectComponent extends React.Component{
                             }
                         </TabPane>
                         <TabPane tab="降价" key="2" className="menuItem">
-                            您暂无此记录
+                            暂无降价商品
                         </TabPane>
                         <TabPane tab="即将断货" key="3" className="menuItem">
-                            您暂无此记录
+                            暂无断货商品
                         </TabPane>
                     </Tabs>
                 </div>
             </div>
         )
     }
-    componentDidMount(){
-        this.props.getData() 
-    }
+    
 
     getKeys(item){
         var newObj = (item ? Object.keys(item) : []);
@@ -60,7 +62,7 @@ function callback(key) {
 }
 
 const mapToState = function(state){
-    // console.log(state.collect.response)
+    // console.log(state.collect.response,'hjgjg')
     return {
         dataset: state.collect.response || []
     }

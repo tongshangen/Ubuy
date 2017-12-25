@@ -16,9 +16,9 @@
     $conn->set_charset('utf8');
 
     // 接受前端数据
-    $username = isset($_GET['username']) ? $_GET['username'] :'';
-    $password = isset($_GET['password']) ? $_GET['password'] :'';
-    $tel = isset($_GET['tel']) ? $_GET['tel'] :'';
+    $username = isset($_GET['username']) ? $_GET['username'] :'123';
+    $password = isset($_GET['password']) ? $_GET['password'] :'123';
+    $tel = isset($_GET['tel']) ? $_GET['tel'] :'1234';
     
 
   

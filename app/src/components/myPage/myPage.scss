@@ -7,6 +7,9 @@ html,body,#app{
     display:flex;
     flex-direction:column;
     font-size:30px;
+    a{
+        color:#333;
+    }
     .myPageTop{
         flex: 1;
         overflow-x: hidden;
@@ -115,7 +118,7 @@ html,body,#app{
                         display: flex;
                         // justify-content: space-between;
                         li{
-                            width: 25%;
+                            width: 33.3%;
                             padding-top:30px;
                             i,span{
                                 display: block;

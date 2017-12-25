@@ -9,7 +9,11 @@ import "../../libs/base/rem.js"
 const { Header, Footer, Content } = Layout;
 class goodsListComponent extends React.Component{
     componentDidMount(){
-        this.props.normalSearch();
+        var aa=this.props.params.brandname;
+        this.props.normalSearch(aa);
+        $('.ant-layout-header .anticon-left').click(function(event) {
+            window.history.back();
+        });
     }
 
     getKeys(item){
@@ -29,7 +33,7 @@ class goodsListComponent extends React.Component{
           
           <div className="nav">
               <ul>
-                  <li onClick={this.props.normalSearch}>综合</li>
+                  <li onClick={this.props.normalSearch.bind(this,'耐克')}>综合</li>
                   <li onClick={this.props.newSearch}>新品</li>
                   <li onClick={this.props.countSearch}>销量</li>
                   <li onClick={this.props.priceSearch}>价格<Icon type="retweet" /></li>
@@ -37,7 +41,7 @@ class goodsListComponent extends React.Component{
               </ul>
           </div>
           </Header>
-          <Content>
+          <Content className="contentBody">
                 <ul>
                     {
                       this.props.dataset.map(function(obj, index){

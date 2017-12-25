@@ -16,7 +16,7 @@ class HelpCenter extends React.Component{
                 <div className="header">
                     <h3><Link to="/helpcenter"><Icon type="left" /></Link>帮助中心</h3>
                 </div>
-                <div className="footer_cts">
+                <div className="helpItem_cts">
                     {
                         MyComponent(this.props.Type)
 

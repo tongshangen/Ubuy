@@ -16,7 +16,7 @@ export default class Server extends React.Component{
                    
                 </div>
                 <div className="Input">
-                    <input type="text" placeholder="aa"/>
+                    <input type="text" placeholder="请输入你的问题"/>
                     <button>发送</button>
                 </div>
             </div>

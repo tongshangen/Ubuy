@@ -1,17 +1,18 @@
-export default function regReducer(state = {}, action){
-    console.log('reg',action)
+export default function feedBackReducer(state = {}, action){
     var newState = JSON.parse(JSON.stringify(state));
-    switch (action.type) {
+    // console.log(action)
+    switch(action.type){
         case 'beforeRequest':
             newState.status = 0;
             break;
-        case 'regRequested':
+        case 'managerOrderRequested':
             newState.status = 1;
-            newState.response = action.response;
+            var aa =  JSON.parse(action.response)
+            newState.response = aa;
             break;
         case 'requestError':
             newState.status = -1;
-            newState.error = action.error;
+            newState.error = action.error
             break;
     }
     return newState;

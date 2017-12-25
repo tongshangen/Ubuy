@@ -17,6 +17,12 @@ class classifyComponent extends React.Component{
     changeTabPosition = (tabPosition) => {
         this.setState({ tabPosition });
     }
+    componentDidMount(){
+        $('.ant-col-8').click(function(event){
+            var ro ="/goodslist/"+$(event.target).parent().children('div').text()
+            hashHistory.push(ro);
+        })
+    }
     render (){
         return(
             <div className="box_wy">
@@ -41,41 +47,41 @@ class classifyComponent extends React.Component{
                                         <img src={require('../../libs/images/womenShoes.jpg')} alt=""/>
                                     </div>
                                     <div className="hot_brand">
-                                        <h3>热门品牌</h3>
+                                    <Link to="/goodslist"><h3>热门品牌</h3></Link>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 <div>百丽</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 <div>天美意</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/tata_wy.jpg')} alt=""/>
                                                 <div>他她</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/bata_wy.jpg')} alt=""/>
                                                 <div>拔佳</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/sacc_wy.jpg')} alt=""/>
                                                 <div>思加图</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/bassto_wy.jpg')} alt=""/>
                                                 <div>百思图</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/senda_wy.jpg')} alt=""/>
                                                 <div>森达</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/miaoli_wy.jpg')} alt=""/>
                                                 <div>妙丽</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/search_wy.jpg')} alt=""/>
                                                 <div className="ys_wy">全部商品</div>
                                             </Col>
@@ -84,39 +90,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 <div>小白鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/lefu_wy.jpg')} alt=""/>
                                                 <div>乐福鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/xiuxian_wy.jpg')} alt=""/>
                                                 <div>休闲鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/songgao.jpg')} alt=""/>
                                                 <div>松糕鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/fanbu_wy.jpg')} alt=""/>
                                                 <div>帆布鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/yundong_wy.jpg')} alt=""/>
                                                 <div>运动风</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/doudou.jpg')} alt=""/>
                                                 <div>豆豆鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/hunxie_wy.jpg')} alt=""/>
                                                 <div>婚鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/leizg_wy.jpg')} alt=""/>
                                                 <div>内增高</div>
                                             </Col>
@@ -125,39 +131,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 <div>鱼嘴</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/lefu_wy.jpg')} alt=""/>
                                                 <div>浅口鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/xiuxian_wy.jpg')} alt=""/>
                                                 <div>布洛克鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/songgao.jpg')} alt=""/>
                                                 <div>凉拖鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/fanbu_wy.jpg')} alt=""/>
                                                 <div>豆豆鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/yundong_wy.jpg')} alt=""/>
                                                 <div>休闲鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/doudou.jpg')} alt=""/>
                                                 <div>及踝鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/hunxie_wy.jpg')} alt=""/>
                                                 <div>懒人鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/leizg_wy.jpg')} alt=""/>
                                                 <div>淑女</div>
                                             </Col>
@@ -166,39 +172,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 <div>鱼嘴</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/lefu_wy.jpg')} alt=""/>
                                                 <div>浅口鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/xiuxian_wy.jpg')} alt=""/>
                                                 <div>布洛克鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/songgao.jpg')} alt=""/>
                                                 <div>凉拖鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/fanbu_wy.jpg')} alt=""/>
                                                 <div>豆豆鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/yundong_wy.jpg')} alt=""/>
                                                 <div>休闲鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/doudou.jpg')} alt=""/>
                                                 <div>及踝鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/hunxie_wy.jpg')} alt=""/>
                                                 <div>懒人鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/leizg_wy.jpg')} alt=""/>
                                                 <div>淑女</div>
                                             </Col>
@@ -207,39 +213,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 <div>鱼嘴</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/lefu_wy.jpg')} alt=""/>
                                                 <div>浅口鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/xiuxian_wy.jpg')} alt=""/>
                                                 <div>布洛克鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/songgao.jpg')} alt=""/>
                                                 <div>凉拖鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/fanbu_wy.jpg')} alt=""/>
                                                 <div>豆豆鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/yundong_wy.jpg')} alt=""/>
                                                 <div>休闲鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/doudou.jpg')} alt=""/>
                                                 <div>及踝鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/hunxie_wy.jpg')} alt=""/>
                                                 <div>懒人鞋</div>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/leizg_wy.jpg')} alt=""/>
                                                 <div>淑女</div>
                                             </Col>
@@ -255,39 +261,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -296,39 +302,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -337,39 +343,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -378,39 +384,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -419,39 +425,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -467,39 +473,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -508,39 +514,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -549,39 +555,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -590,39 +596,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -631,39 +637,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -679,39 +685,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -720,39 +726,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -761,39 +767,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -802,39 +808,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -843,39 +849,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -891,39 +897,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -932,39 +938,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -973,39 +979,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1014,39 +1020,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1055,39 +1061,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1103,39 +1109,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -1144,39 +1150,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1185,39 +1191,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1226,39 +1232,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1267,39 +1273,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1315,39 +1321,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -1356,39 +1362,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1397,39 +1403,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1438,39 +1444,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1479,39 +1485,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1527,39 +1533,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -1568,39 +1574,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1609,39 +1615,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1650,39 +1656,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1691,39 +1697,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1739,39 +1745,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -1780,39 +1786,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1821,39 +1827,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1862,39 +1868,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1903,39 +1909,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -1951,39 +1957,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -1992,39 +1998,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -2033,39 +2039,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -2074,39 +2080,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -2115,39 +2121,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -2163,39 +2169,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>热门品牌</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/belle_wy.jpg')} alt=""/>
                                                 百丽
                                             </Col>
@@ -2204,39 +2210,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>极简实穿</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -2245,39 +2251,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士单鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -2286,39 +2292,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士靴子</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
@@ -2327,39 +2333,39 @@ class classifyComponent extends React.Component{
                                     <div className="hot_brand">
                                         <h3>女士凉鞋</h3>
                                         <Row>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/teenmix_wy.jpg')} alt=""/>
                                                 天美意
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={8} >
                                                 <img src={require('../../libs/images/white_wy.jpg')} alt=""/>
                                                 小白鞋
                                             </Col>

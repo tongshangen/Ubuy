@@ -3,9 +3,14 @@ header('Access-Control-Allow-Origin:*');
 
     include "DBHelper.php";
   
-    $brandid = isset($_GET["brandid"]) ? $_GET["brandid"] : '';
+    $brandname = isset($_GET["brandname"]) ? $_GET["brandname"] : '';
+    $brandAllname = isset($_GET["brandAllname"]) ? $_GET["brandAllname"] : '';
+    if($brandAllname){
+         $sql = "SELECT * from good,images";
+    }else{
+        $sql = "SELECT * from good,images WHERE good.brandname='$brandname' and images.goodid=good.goodid";
+    }
     
-    $sql = "SELECT * from good,images WHERE good.brandid=$brandid and good.goodid=images.goodid";
 
     $result = query($sql);
 
