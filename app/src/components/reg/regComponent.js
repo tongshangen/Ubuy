@@ -109,33 +109,36 @@ class RegComponent extends React.Component{
 
     componentWillReceiveProps(nextProps) {
         // qq
-        console.log(this.props)
-        var status = nextProps.dataset[0];
-        var curStatus = status.qq;
-        // console.log(this.props)
-        console.log(nextProps.dataset)
-        if(curStatus==='ok') {
-            message.success(
-                '注册成功!', 2
-            )
-            console.log(nextProps.dataset)            
-            // cookie.set({
-            //     name: 'userId',
-            //     val:obj
-            // })
-            // ReactDOM.render(
-            //     <div className="example">
-            //         <Spin />
-            //     </div>, 
-            // document.querySelector('#app'));
-            setTimeout(() => {
-                hashHistory.push('login')
-            }, 2000);
-        } else if (curStatus === 'fail'){
-            message.error(
-                '帐号已存在',2
-            )
+        console.log(nextProps)
+        if (nextProps.dataset!=='undefine'){
+            var status = nextProps.dataset[0].qq;
+            console.log(status)
+            if(status==='ok') {
+                message.success(
+                    '注册成功!', 2
+                )
+                console.log(nextProps.dataset)            
+                // cookie.set({
+                //     name: 'userId',
+                //     val:obj
+                // })
+                // ReactDOM.render(
+                //     <div className="example">
+                //         <Spin />
+                //     </div>, 
+                // document.querySelector('#app'));
+                setTimeout(() => {
+                    hashHistory.push('login')
+                }, 2000);
+            } else if (status === 'fail'){
+                message.error(
+                    '帐号已存在',2
+                )
+            }
         }
+        // var status = status.qq;
+        // console.log(this.props)
+       
     }
     componentWillUnmount() {
         // <div className="example">
@@ -182,10 +185,10 @@ class RegComponent extends React.Component{
 }
 
 const mapToState = function(state){
-    console.log(state);
+    console.log(state.reg.response);
     return {
         type: state.reg.type,
-        dataset: state.reg.response
+        dataset: state.reg.response || []
     }
 }
 

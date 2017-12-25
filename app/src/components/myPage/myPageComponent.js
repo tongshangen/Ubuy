@@ -1,10 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
+import {Router, Route, Link, hashHistory} from 'react-router';
 import './myPage.scss'
 import { Layout, Menu, Breadcrumb, Icon, Carousel} from 'antd';
-// import '../../libs/base/style.css'
-// import '../../libs/base/rem'
 
 import NotLogin from './notLoginComponent';
 import AlreadyLogged from './alreadyLoggedComponent';
@@ -52,14 +50,14 @@ class MyPage extends React.Component{
                         </div>
                         <div className="fun">
                             <ul>
-                                <li><Link to="/collect"><Icon type="layout"/><span>我的收藏</span></Link></li>
+                                <li onClick={this.ba.bind(this)}><Icon type="layout"/><span onClick={this.props.r}>我的收藏</span></li>
                                 <li><Link to="/viewhistory"><Icon type="layout"/><span>浏览记录</span></Link></li>
                                 <li><Link to="/helpcenter"><Icon type="layout"/><span>帮助中心</span></Link></li>
                                 <li><Link to="/feedfack"><Icon type="layout"/><span>意见反馈</span></Link></li>
                                 <li><Icon type="layout"/><span>会员中心</span></li>
                                 <li><Icon type="layout"/><span>积分商城</span></li>
                                 <li><Icon type="layout"/><span>每日签到</span></li>
-                                <li><Icon type="layout"/><span>联系客服</span></li>
+                                <li><Link to="/server"><Icon type="layout"/><span>联系客服</span></Link></li>
                             </ul>
                         </div>
                     </div>
@@ -68,6 +66,21 @@ class MyPage extends React.Component{
             </div>
         )
    }
+    state = {
+        zhuangtai: 1
+    }
+
+   ba(){
+       console.log(this)
+       hashHistory.push('/collect')
+   }
 }
 
-export default MyPage
+const mapToState = function(state){
+    return {
+        status:state.collectReducer.status
+    }
+}
+
+export default MyPage;
+// export default connect(mapToState, mypageActions)(MyPage)

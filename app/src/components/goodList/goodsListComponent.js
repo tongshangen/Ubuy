@@ -8,11 +8,19 @@ import "../goodList/goodsList.scss"
 import "../../libs/base/rem.js"
 const { Header, Footer, Content } = Layout;
 class goodsListComponent extends React.Component{
+    componentDidMount(){
+        this.props.normalSearch();
+    }
+
+    getKeys(item){
+        var newObj = (item ? Object.keys(item) : []);
+        return newObj
+    }
     render(){
         return (
     <div>
         <Layout>
-          <Header style={{ position: 'fixed', width: '100%' }}>
+          <Header className="goodsListHeader" >
           
           <div className="h_left">
           <Icon type="left" style={{color:'#000',backgroundColor:null}}/></div>
@@ -31,75 +39,25 @@ class goodsListComponent extends React.Component{
           </Header>
           <Content>
                 <ul>
-                    <li>
+                    {
+                      this.props.dataset.map(function(obj, index){
+                            return (
+                                <li key={index} onClick={this.props.toDetail}>
+                                <img src={obj.imgurl}/>
+                                <p>{obj.name}</p>
+                                <p>￥<span>{obj.price}</span> &nbsp;<del>原价{obj.Oprice}</del></p>
 
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                    <li>
-
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                    <li>
-
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                    <li>
-
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                    <li>
-
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
-                     <li>
-                        
-                    </li>
+                                </li>
+                            )
+                        }.bind(this))
+                  }
                 </ul>
           </Content>
           <div>
             <BackTop>
-              <div className="ant-back-top-inner"><Icon type="up-square" /> </div>
+              <div className="ant-back-top-inner" style={{ position:'fixed',bottom:'1rem'}}><Icon type="up-square" /> </div>
             </BackTop>
-            Scroll down to see the bottom-right
-            <strong style={{ color: '#1088e9' }}> blue </strong>
-            button.
+            
           </div>
           <div className="someSearch">
               <div className="some_top">
@@ -128,7 +86,7 @@ class goodsListComponent extends React.Component{
                   </div>
               </div>
               <ul className="someSmall">
-                 
+
               </ul>
           </div>
           <Footer></Footer>
