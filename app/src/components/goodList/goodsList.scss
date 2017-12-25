@@ -20,7 +20,8 @@ html,body{
     height:100%;
 
 }
-.ant-layout-header{
+.goodsListHeader{
+    position:fixed; width: 100%;
     color:#000;padding: 0;
     background:#F8F8F8;height:1.076rem;
     border:1px solid #ddd;box-shadow: 2px 2px 2px #ccc;
@@ -58,7 +59,7 @@ html,body{
         }
     }
 }
-.ant-layout-content{
+.contentBody{
 
     overflow:hidden;position: absolute;top:1.076rem;background: #F5F5F5;padding-bottom: 0.08rem;width: 100%;
     ul{

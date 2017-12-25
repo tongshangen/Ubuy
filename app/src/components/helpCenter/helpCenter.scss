@@ -43,4 +43,25 @@ html,body,#app{
             }
         }
     }
+    .helpItem_cts{
+        flex: 1;
+        overflow-x: hidden;
+        padding:20px 40px;
+        h2{
+            height: 80px;
+            line-height: 80px;
+            font-size: 36px;
+            text-align: center;
+        }
+        h3{
+            // font-size: 26px;
+            height: 50px;
+            line-height: 50px;
+            margin-top:10px;
+            
+        }
+        ul{
+            margin:10px 0;
+        }
+    }
 }
