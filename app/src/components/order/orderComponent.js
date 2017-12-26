@@ -41,20 +41,19 @@ class OrderComponent extends React.Component {
                                             <div className="left">
                                                 <img src="http://localhost:3032/src/libs/default/img1.jpg" />
                                             </div>
-                                        <div className="rigth">
-                                            <p>{item.name}</p><br/>
-                                            <span>￥{item.price}</span>
-                                            <button>去支付</button>
-                                            <em>订单号:M45242432</em>
-                                    </div>
-                                </div>
+                                            <div className="rigth">
+                                                <p>{item.name}</p><br/>
+                                                <span>￥{item.price}</span>
+                                                <button>去支付</button>
+                                                <em>订单号:M45242432</em>
+                                            </div>
+                                        </div>
                                     )
-                                })
-                                
+                                }) 
                             }
                                 
                         </TabPane>
-                        <TabPane tab="代付款" key="2" className="menuItem">
+                        <TabPane tab="待付款" key="2" className="menuItem">
                             您暂无此记录
                         </TabPane>
                         <TabPane tab="已付款" key="3" className="menuItem">
@@ -76,8 +75,8 @@ function callback(key) {
 const mapToState = function(state){
     console.log(state)
     return {
-        type: state.order.type,
-        dataset: state.order.response || []
+        type: state.orderlist.type,
+        dataset: state.orderlist.response || []
     }
 }
 export default connect(mapToState, OrderActions)(OrderComponent);

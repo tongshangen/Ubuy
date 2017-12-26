@@ -4,16 +4,18 @@ export default function StudentReducer(state = {}, action) {
         case 'beforeRequest':
             reState.loading = true;
             break;
-        case 'Requested':
+        case 'Requestedcarget':
             reState.loading = false;
+            // var aa = action.response;
             reState.response = action.response;
             break;
         case 'requestError':
             reState.loading = false;
             reState.error = action.error
             break;
-        default:
-            
+
+       
     }
+    // console.log(reState);
     return reState;
 }

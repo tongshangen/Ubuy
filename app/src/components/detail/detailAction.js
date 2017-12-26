@@ -1,10 +1,12 @@
 export function detailHistory(){
     console.log('跳到浏览记录')
 }
-export function getGoodDetail(){
+export function getGoodDetail(aa){
+    
     return {
-        type: 'getGoodDetail',
+
+        types: ['beforeRequest', 'detailRequested','requestError'],
         url: 'getGoodDetail.php',
-        params:{goodid: 1 }
+        params:{goodid: aa }
     }
 }

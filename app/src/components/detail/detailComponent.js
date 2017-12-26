@@ -2,21 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import {connect} from 'react-redux';
 import "../../libs/base/rem.js"
-import { Layout, Menu, Breadcrumb, Icon, Carousel,BackTop} from 'antd'
+import { Layout, Menu, Breadcrumb, Icon, Carousel,BackTop,Select ,Spin} from 'antd'
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router'
 import * as detailActions from '../detail/detailAction'
 
 import "../detail/detail.scss"
 const { Header, Footer, Content } = Layout;
+
 class detailComponent extends React.Component{
     componentDidMount(){
-        this.props.getGoodDetail();
+      var aa=this.props.params.goodid;
+        this.props.getGoodDetail(aa);
+         $('.ant-layout-header .anticon-left').click(function(event) {
+            window.history.back();
+        }); 
     }
      
     getKeys(item){
         var newObj = (item ? Object.keys(item) : []);
         return newObj
     }
+    toCar(){
+      hashHistory.push('/car')
+     }
+     total(){
+      hashHistory.push('/orderlist')
+     }
+     
     render(){
         return (
             <div>
@@ -38,8 +50,13 @@ class detailComponent extends React.Component{
                             <div className="introduce">{item.name}</div>
                             <div className="fenlei">{item.name.slice(-16,-8)}</div>
                             <div className="price">￥{item.price} <span>￥<del>{item.Oprice}</del></span><span className="pr">无可用优惠券</span></div>
-                            <div className="choose">已选 <span className="thscolor">{item.color}色</span>
-                            <span className="chooseSize">请选择尺码<Icon type="right" /></span>
+                            <div className="choose">已选 <span className="thscolor">{item.color}</span>
+                     <span className="chooseSize">请选择尺码<Icon type="right" /></span> <Icon type="down" />       
+        
+    
+               
+      
+    
                             </div>
                             <div className="preview"></div>
                             <div className="brand">
@@ -59,7 +76,8 @@ class detailComponent extends React.Component{
                            <div className="likeBody"></div>
                            </div>
                            <div className="help"><i><Icon type="customer-service" /></i><span>联系客服</span> </div>
-                            <div className="moreDetail">上拉查看详情</div>     
+                            <div className="moreDetail">上拉查看详情</div>
+                            <div className="abc"><Spin size="large"/></div>
                           </div>
                             )
                         })
@@ -68,14 +86,14 @@ class detailComponent extends React.Component{
                       }
                       </Content>
                       <Footer className="detailFooter">
-                      <div className="left">
+                      <div className="left" onClick={this.toCar}>
                       <span className="carCount"></span>
                             <Icon type="shopping-cart" />
                       </div>
                       <div className="center">
                         加入购物车
                       </div>
-                      <div className="right">
+                      <div className="right" onClick={this.total}>
                         去结算
                       </div>
                       </Footer>

@@ -9,6 +9,7 @@
     $word = isset($_POST["word"]) ? $_POST["word"] :'其他';
     $tel = isset($_POST["tel"]) ? $_POST["tel"] :'';
 
+<<<<<<< HEAD
     include 'DBHelper.php';
     if($tel != ""){
         $sql = "SELECT username FROM `user` WHERE tel='$tel'";
@@ -25,6 +26,16 @@
         }else{
             echo 'fail';
         }
+=======
+    include 'ppp.php';
+    $sql = "insert into opinion (feedbacktype,feedbackOpinion,userName) values('$type','$word','$name')";
+        
+    $result = excute($sql);
+    if($result){
+        echo 'ok';
+    }else{
+        echo 'fail';
+>>>>>>> eb280345e7a0bb0ca0ab19c05df19817cda5e1d8
     }
 
    

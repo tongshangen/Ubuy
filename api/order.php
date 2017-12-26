@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin:*');
-    include "public.php";
+    include "DBHelper.php";
   
     $orderid = isset($_POST["orderid"]) ? $_POST["orderid"] : '';
     $sql = "select * from order where orderid = $orderid";

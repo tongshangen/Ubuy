@@ -8,6 +8,7 @@ import NotLogin from './notLoginComponent';
 import AlreadyLogged from './alreadyLoggedComponent';
 import { cookie } from '../../utils/cookie'
 import { message } from 'antd'
+import Footer from '../footer/footerComponent'
 class MyPage extends React.Component{
     componentDidMount(){
        
@@ -51,7 +52,9 @@ class MyPage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="footer_cts">hahaha</div>
+                <div className="footer_cts">
+                    <Footer/>
+                </div>
             </div>
         )
    }
