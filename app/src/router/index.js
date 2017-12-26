@@ -31,7 +31,6 @@ export default (
             </Route>
             
             <Route path="/car/order" component={orderComponent}/>
-            <Route path="/classify" component={classifyComponent}/>
             <Route path="/car" component={carComponent}></Route>
             <Route path="/classify" component={classifyComponent}></Route>
             <Route path="/mypage" component={MyPage}></Route>
