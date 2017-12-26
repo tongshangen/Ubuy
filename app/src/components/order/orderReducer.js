@@ -2,19 +2,18 @@ export default function OrderReducer(state={}, action){
     var newState = JSON.parse(JSON.stringify(state));
     // console.log(action)
     switch (action.type) {
-        case 'orderbeforeRequest':
+        case 'beforeRequest':
             newState.status = 0;
             break;
         case 'orderRequested':
             newState.status = 1;
-            newState.response = JSON.parse(action.response);
+            newState.response = action.response;
             break;
-        case 'orderrequestError':
+        case 'requestError':
             newState.status = -1;
             newState.error = action.error;
             break;
-        default:
-            break;
     }
+    // console.log('newState', newState)
     return newState;
 }

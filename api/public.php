@@ -1,9 +1,9 @@
 <?php
 	header('Access-Control-Allow-Origin:*');
-	$mysql_server_name = "localhost";
+	$mysql_server_name = "10.3.135.244";
 	$mysql_username = "root";
-	$mysql_password = "";
-	$mysql_database = "buy";
+	$mysql_password = "root";
+	$mysql_database = "ubuy";
 	
 	$conn=new mysqli($mysql_server_name,$mysql_username,$mysql_password,$mysql_database);  
 	

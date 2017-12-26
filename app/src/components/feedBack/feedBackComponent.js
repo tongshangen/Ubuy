@@ -2,7 +2,6 @@ import React from 'react';
 import { Icon,message,Modal} from 'antd';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import {connect} from 'react-redux';
-import {cookie} from "../../utils/cookie"
 import './feedBack.scss'
 import * as feedBack from './feedBackAction'
 
@@ -27,7 +26,7 @@ class FeeBackCenter extends React.Component{
                         <textarea onKeyUp={this.change.bind(this)}></textarea>
                     </div>
                     <div className="username_cts">
-                        <input type="text" value={this.props.user} onChange={this.onChange.bind(this)}/>
+                        <input type="text" value={this.state.name} onChange={this.onChange.bind(this)}/>
                     </div>
                     <div className="btn_cts">
                         <button onClick={this.sub.bind(this,{type:this.state.type,text:this.state.textarea,name:this.state.name})}>提交</button>
@@ -40,14 +39,8 @@ class FeeBackCenter extends React.Component{
         num:0,
         type:'',
         textarea:'',
-        name:''
+        name:'张三'
     }
-    componentDidMount(){
-        var tel = cookie.get("userId")
-        this.props.getDate(tel);
-       
-    }
-
     // 获取反馈类型的值
     handleClick(eve){  
         this.setState({type:eve.target.innerHTML})
@@ -59,7 +52,7 @@ class FeeBackCenter extends React.Component{
         this.setState({textarea:eve.target.value})
     }
     onChange(eve){
-        // this.setState({name:eve.target.value})
+        this.setState({name:eve.target.value})
     }
     // 提交按钮,将参数传到action里
     sub(obj){
@@ -71,7 +64,7 @@ class FeeBackCenter extends React.Component{
             });
             return
         }
-        this.props.InserDate(obj)
+        this.props.getData(obj)
         // message.info('感谢您的反馈,我们会提交给相关部门');
         // setTimeout(() => {
         //     hashHistory.push('/mypage')
@@ -85,9 +78,9 @@ class FeeBackCenter extends React.Component{
 }
 
 const mapToState = function(state){
-    console.log(state.feedBackReducer.response)
+    // console.log(state.feedBackReducer)
     return {
-        user: state.feedBackReducer.response || []
+        // dataset: state.collect.response || []
     }
 }
 export default connect(mapToState, feedBack)(FeeBackCenter)

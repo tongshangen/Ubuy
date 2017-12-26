@@ -63,7 +63,7 @@ function callback(key) {
 }
 
 const mapToState = function(state){
-    // console.log(state.collect.response)
+    console.log(state.collect.response)
     return {
         dataset: state.collect.response || []
     }

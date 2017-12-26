@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin:*');
+    header('Access-Control-Allow-Origin:*');
     include "public.php";
   
     $orderid = isset($_POST["orderid"]) ? $_POST["orderid"] : '';

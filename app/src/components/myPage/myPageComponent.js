@@ -8,12 +8,13 @@ import NotLogin from './notLoginComponent';
 import AlreadyLogged from './alreadyLoggedComponent';
 import { cookie } from '../../utils/cookie'
 import { message } from 'antd'
+import Footer from '../footer/footerComponent'
 class MyPage extends React.Component{
     componentDidMount(){
-       
+        document.cookie = 'id=1;user="aaa";price=309';
     }
     toOrder() {
-        hashHistory.push('order')
+        hashHistory.push('orderlist')
     }
    render() {
        var pageChoice = null
@@ -31,9 +32,9 @@ class MyPage extends React.Component{
                         <div className="msg">
                             <div className="Payment"><Icon type="layout"/><span>待付款</span></div>
                             <div className="Payment"><Link to="/logistics"><Icon type="layout"/><span>查看物流</span></Link></div>
-                            <div className="Payment"><Link to={'/order/3'}><Icon type="layout"/><span>待评价</span></Link></div>
+                            <div className="Payment"><Link to="/assess"><Icon type="layout"/><span>待评价</span></Link></div>
                         </div>
-                        
+                       
                         <Link to="/managerorder"><div className="manage_shoe">
                             <span>我的鞋管家</span><Icon type="right" />
                         </div></Link>
@@ -51,21 +52,20 @@ class MyPage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="footer_cts">hahaha</div>
+                <div className="footer_cts">
+                    <Footer/>
+                </div>
             </div>
         )
    }
     state = {
         zhuangtai: 1
     }
-    Goto(){
-        hashHistory.push('/order/',encodeURIComponent('3'))
-        
-    }
-    ba(){
-        console.log(this)
-        hashHistory.push('/collect')
-    }
+
+   ba(){
+       console.log(this)
+       hashHistory.push('/collect')
+   }
 }
 
 const mapToState = function(state){

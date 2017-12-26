@@ -4,25 +4,24 @@ import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 import { Tabs, Icon } from 'antd';
 import * as OrderActions from '../order/orderAction';
 import './order.scss'
-
+import {cookie } from '../../utils/cookie'
 class OrderComponent extends React.Component {
     constructor(props){
         super(props)
-
+        this.state ={
+            type:1
+        }
     }
     componentDidMount() {
-        // console.log(this.state)
-        this.props.getData();
-        console.log(this.props.params.key)
-    }
-    
-    btn() {
-        console.log(this.props.dataset)
-        this.props.dataset.map(function(item,idx){
-            console.log(item)
-        })
+        var tel = cookie.get('userId')
+        this.props.getData({type:this.state.type,tel:tel})
+        console.log(this)
     }
 
+    toAssess() {
+        hashHistory.push('assess')
+    }
+    
     render() {
         return (
             <div id="order_zcy">
@@ -32,41 +31,92 @@ class OrderComponent extends React.Component {
                     </div>
                 </div>
                 <div className="order_footer">
-                    <Tabs defaultActiveKey="1" onChange={callback} className="menus_all">
+                    <Tabs defaultActiveKey="1" onChange={this.callback.bind(this)} className="menus_all">
                         <TabPane tab="全部" key="1" className="menuItem">
                             {
                                 this.props.dataset.map(function(item,idx){
                                     return (
                                         <div className="order_all" key={idx}>
                                             <div className="left">
-                                                <img src="http://localhost:3032/src/libs/default/img1.jpg" />
+                                                <img src={item.imgurl} />
                                             </div>
-                                        <div className="rigth">
-                                            <p>{item.name}</p><br/>
-                                            <span>￥{item.price}</span>
-                                            <button>去支付</button>
-                                            <em>订单号:M45242432</em>
-                                    </div>
-                                </div>
+                                            <div className="rigth">
+                                                <p>{item.name}</p><br/>
+                                                <span>￥{item.price}</span>
+                                                <button>去支付</button>
+                                                <em>订单号:{item.orderno}</em>
+                                            </div>
+                                        </div>
                                     )
-                                })
-                                
+                                }) 
                             }
                                 
                         </TabPane>
-                        <TabPane tab="代付款" key="2" className="menuItem">
-                            您暂无此记录
+                        <TabPane tab="待付款" key="2" className="menuItem">
+                            {
+                                this.props.dataset.map(function (item, idx) {
+                                    return (
+                                        <div className="order_all" key={idx}>
+                                            <div className="left">
+                                                <img src={item.imgurl} />
+                                            </div>
+                                            <div className="rigth">
+                                                <p>{item.name}</p><br />
+                                                <span>￥{item.price}</span>
+                                                <button>去支付</button>
+                                                <em>订单号:{item.orderno}</em>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </TabPane>
                         <TabPane tab="已付款" key="3" className="menuItem">
-                            您暂无此记录
+                            {
+                                this.props.dataset.map(function (item, idx) {
+                                    return (
+                                        <div className="order_all" key={idx}>
+                                            <div className="left">
+                                                <img src={item.imgurl} />
+                                            </div>
+                                            <div className="rigth">
+                                                <p>{item.name}</p><br />
+                                                <span>￥{item.price}</span>
+                                                <em>订单号:{item.orderno}</em>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </TabPane>
                         <TabPane tab="待评价" key="4" className="menuItem">
-                            您暂无此记录
+                            {
+                                this.props.dataset.map(function (item, idx) {
+                                    return (
+                                        <div className="order_all" key={idx}>
+                                            <div className="left">
+                                                <img src={item.imgurl} />
+                                            </div>
+                                            <div className="rigth">
+                                                <p>{item.name}</p><br />
+                                                <span>￥{item.price}</span>
+                                                <div onClick={this.toAssess.bind(this)}><button>去评价</button></div>
+                                                <em>订单号:{item.orderno}</em>
+                                            </div>
+                                        </div>
+                                    )
+                                }.bind(this))
+                            }
                         </TabPane>
                     </Tabs>
                 </div>
             </div>
         )
+    }
+    callback(key) {
+        console.log(key);
+        var tel = cookie.get("userId")
+        this.props.getData({type:key,tel:tel})
     }
 }
 const TabPane = Tabs.TabPane;
@@ -74,10 +124,10 @@ function callback(key) {
     console.log(key);
 }
 const mapToState = function(state){
-    console.log(state)
+    console.log(state.order_list.respons)
     return {
-        type: state.order.type,
-        dataset: state.order.response || []
+        type: state.order_list.type,
+        dataset: state.order_list.response || []
     }
 }
 export default connect(mapToState, OrderActions)(OrderComponent);

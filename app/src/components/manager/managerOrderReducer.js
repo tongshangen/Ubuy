@@ -7,7 +7,7 @@ export default function feedBackReducer(state = {}, action){
             break;
         case 'managerOrderRequested':
             newState.status = 1;
-            var aa =  JSON.parse(action.response)
+            var aa =  action.response
             newState.response = aa;
             break;
         case 'requestError':

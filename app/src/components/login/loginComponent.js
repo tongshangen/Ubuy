@@ -40,12 +40,12 @@ class LoginComponent extends React.Component{
     componentWillReceiveProps(nextProps) {
         var status = nextProps.dataset;
         // console.log(nextProps)
-        if(status ==='false'){
+        if(status ===false){
             message.error(
                 '登录失败，用户名或密码有误!',2
             )
             return;
-        }else if(status==='true') {
+        }else if(status===true) {
             message.success(
                 '登录成功',2
             )

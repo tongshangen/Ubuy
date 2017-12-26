@@ -3,7 +3,7 @@ export function detailHistory(){
 }
 export function getGoodDetail(){
     return {
-        type: 'getGoodDetail',
+        types: ['beforeRequest', 'getGoodDetail','requestError'],
         url: 'getGoodDetail.php',
         params:{goodid: 1 }
     }

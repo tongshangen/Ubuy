@@ -1,0 +1,132 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#account_zcy{
+    width: 100%;
+    .head_account{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90px;
+        text-align: center;
+        padding-left: 120px;
+        padding-right: 120px;
+        border-bottom: 1px solid #eeeeee;
+        background: #F8F8F8;
+        .anticon-left{
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 60px;
+            height: 90px;
+            display: inline-block;
+            font-size: 60px;
+        }
+        h3{
+            flex: 1;
+            display: inline-block;
+            font-size: 32px;
+            line-height: 90px;
+            font-weight: bold;
+        }
+    }
+   
+    .haha{
+        width: 100%;
+        .heihei{
+            // height: 90px;
+            width: 100%;
+            line-height: 90px;
+            // padding: 0 20px;
+            div{
+                font-size: 30px;
+                width: 100%;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;           
+                span{
+                    display: inline-block;
+                    height: 90px;
+                    float: right;
+                } 
+            }
+            .choice{
+                // font-size: 30px;
+                width: 100%;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;
+                select{
+                    float: right;
+                    width: 100px;
+                    height: 90px;
+                    border: 0 none;
+                    option{
+                        font-size: 10px;
+                    }
+                }
+            }
+            .birthday{
+                width: 100%;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;
+                .ant-calendar-picker{
+                    width: 200px;
+                    line-height: 90px;
+                    font-size: 30px;
+                    .ant-calendar-picker-input{
+                        height: 90px;
+                        font-size: 25px;
+                    }
+                    
+                }
+            }
+            .dizhi{
+                width: 100%;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;
+                .anticon-right{
+                    height: 90px;
+                    float: right;
+                    line-height: 90px;
+                }
+            }
+            .xiugaiPwd{
+                width: 100%;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;
+                .anticon-right {
+                    height: 90px;
+                    float: right;
+                    line-height: 90px;
+                }
+            }
+            .exit{
+                button{
+                    border:0 none;
+                    font-size: 30px;
+                    color: #ffff;
+                    background: red;
+                }
+            }
+            
+        }
+        .blank{
+            width: 100%;
+            height: 12px;
+            background: #F8F8F8;
+        }
+    }
+}
+.ant-calendar-panel{
+    font-size: 20px;
+}
