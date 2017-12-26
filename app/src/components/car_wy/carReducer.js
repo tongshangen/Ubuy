@@ -13,15 +13,8 @@ export default function StudentReducer(state = {}, action) {
             reState.loading = false;
             reState.error = action.error
             break;
-            
-        // case 'Requestedcarupdate':
-        //     reState.loading = false;
-        //     reState.response = action.response;
-        //     break;
-        // case 'Requestedcardel':
-        //     reState.loading = false;
-        //     reState.response = action.response;
-        //     break;
+
+       
     }
     // console.log(reState);
     return reState;

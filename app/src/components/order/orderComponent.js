@@ -13,6 +13,7 @@ class OrderComponent extends React.Component {
     componentDidMount() {
         // console.log(this.state)
         this.props.getData();
+        console.log(this.props.params.key)
     }
     
     btn() {
@@ -74,8 +75,8 @@ function callback(key) {
 const mapToState = function(state){
     console.log(state)
     return {
-        type: state.order.type,
-        dataset: state.order.response || []
+        type: state.orderlist.type,
+        dataset: state.orderlist.response || []
     }
 }
 export default connect(mapToState, OrderActions)(OrderComponent);

@@ -7,7 +7,7 @@ import goodslist from '../components/goodList/goodsListReducer'
 import order from '../components/order_wy/orderReducer'
 import login from '../components/login/loginReducer'
 import reg from '../components/reg/regReducer'
-import order_list from '../components/order/orderReducer'
+import orderlist from '../components/order/orderReducer'
 import detail from '../components/detail/detailReducer'
 import collect from '../components/collect/collectReducer'
 import feedBackReducer from '../components/feedBack/feedBackReducer'
@@ -27,11 +27,11 @@ export default combineReducers({
     home,
     logisticsRequested,
     managerOrderRequested,
-    // detail,
+    detail,
     reg,
+    orderlist,
     login,
     account,
-    order_list,
     car,
     order
 })

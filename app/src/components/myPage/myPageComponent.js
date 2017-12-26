@@ -11,7 +11,7 @@ import { message } from 'antd'
 import Footer from '../footer/footerComponent'
 class MyPage extends React.Component{
     componentDidMount(){
-        document.cookie = 'id=1;user="aaa";price=309';
+       
     }
     toOrder() {
         hashHistory.push('order')
@@ -32,18 +32,9 @@ class MyPage extends React.Component{
                         <div className="msg">
                             <div className="Payment"><Icon type="layout"/><span>待付款</span></div>
                             <div className="Payment"><Link to="/logistics"><Icon type="layout"/><span>查看物流</span></Link></div>
-                            <div className="Payment"><Link to="/assess"><Icon type="layout"/><span>待评价</span></Link></div>
+                            <div className="Payment"><Link to={'/order/3'}><Icon type="layout"/><span>待评价</span></Link></div>
                         </div>
-                        <div className="wallet">
-                            <div>
-                                <h3>我的钱包</h3>
-                                <ul>
-                                    <li><i>0</i><span>礼品卡</span></li>
-                                    <li><i>0</i><span>优惠券</span></li>
-                                    <li><i>0</i><span>积分</span></li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                         <Link to="/managerorder"><div className="manage_shoe">
                             <span>我的鞋管家</span><Icon type="right" />
                         </div></Link>
@@ -70,11 +61,14 @@ class MyPage extends React.Component{
     state = {
         zhuangtai: 1
     }
-
-   ba(){
-       console.log(this)
-       hashHistory.push('/collect')
-   }
+    Goto(){
+        hashHistory.push('/order/',encodeURIComponent('3'))
+        
+    }
+    ba(){
+        console.log(this)
+        hashHistory.push('/collect')
+    }
 }
 
 const mapToState = function(state){

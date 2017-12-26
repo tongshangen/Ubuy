@@ -1,11 +1,11 @@
-import http from '../utils/HttpClient'
+    import http from '../utils/httpClient'
 
 export function ajaxMiddleware(api) {
     return function (dispatch) {
         return function (action) {
-            
+              if(action){ 
                 const { types, url, method = 'get', params = {} } = action
-                // console.log(action,6666)
+                // console.log('id',action.types)
                 if (!url) {
                     return dispatch(action)
                 }
@@ -13,14 +13,9 @@ export function ajaxMiddleware(api) {
                     type: 'beforeRequest'
                 })
                 if (url) {
-<<<<<<< HEAD
-=======
-
->>>>>>> tsg
                     const [a,b,c] = types
-                    // console.log(types)
+                // console.log(8888)
                     http[method](url, params).then(res => {
-                        console.log(res)
                         api.dispatch({
                             type:b,
                             response: res
@@ -35,7 +30,7 @@ export function ajaxMiddleware(api) {
         }
     }
 }
-
+}
 
 // export function userMiddleWare(middlewareAPI){
 //     return function(dispatch){

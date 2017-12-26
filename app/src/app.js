@@ -6,10 +6,7 @@ import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import router from './router/index';
 
 const store = configStore();
-<<<<<<< HEAD
 
-=======
->>>>>>> tsg
 ReactDOM.render(
     <Provider store={store}>
         <Router history={hashHistory} routes={router}/>

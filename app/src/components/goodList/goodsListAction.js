@@ -2,15 +2,13 @@ import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 export function normalSearch(params){
     if(params=='全部商品'){
           return {
-        types: ['goodslistbeforeRequest', 'goodslistRequested', 'goodslistrequestError'],
-        type: 'normalSearch',
+        types: ['beforeRequest', 'goodslistRequested', 'requestError'],
         url: 'goodslist.php',
         params:{brandAllname: params }
     }  
         }
     return {
-        types: ['goodslistbeforeRequest', 'goodslistRequested', 'goodslistrequestError'],
-        type: 'normalSearch',
+        types: ['beforeRequest', 'goodslistRequested', 'requestError'],
         url: 'goodslist.php',
         params:{brandname: params }
     }
@@ -100,7 +98,30 @@ export function some_left(){
     $someDetail.animate({right:"-10rem"});
 }
 
-export function toDetail(){
-    document.cookie=''
-    hashHistory.push('/detail')
+export function toDetail(aa){
+    var d = new Date();
+    d.setHours(d.getHours() + 72);
+    var cookies=document.cookie;
+     // var res='';
+     //  if(cookies.length){
+     //        cookies = cookies.split('; ');
+     //        for(var i=0;i<cookies.length;i++){
+     //            var arr=cookies[i].split('=');
+     //            if(arr[0]==='his'){
+     //                return res=arr[1];
+     //                break;
+     //            }
+     //            return res;
+     //        }
+     //        console.log(res)
+     //        res=JSON.parse(res); 
+     //        for (var i=0; i < res.length; i++) {  
+     //            aa.push( res[i] );  
+     //        } 
+     //    } 
+        
+        var str='his='+JSON.stringify(aa)+';expires='+d.toGMTString()+';path=/'; 
+        //写入cookie
+    document.cookie=str;
+    hashHistory.push('/detail/'+aa[4].goodid)
 }

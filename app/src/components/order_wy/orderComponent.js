@@ -167,6 +167,7 @@ class orderComponent extends React.Component{
 }
 
 const mapStateToProps = function(state){
+    // console.log(state);
     return {
         loading: state.order.loading,
         dataset: state.order.response

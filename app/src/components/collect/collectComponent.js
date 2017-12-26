@@ -2,7 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import { Tabs, Icon} from 'antd';
-import * as CollectAction from './collectAction'
+
+import * as CollectAction from './CollectAction'
+import {cookie} from "../../utils/cookie"
+
 import './collect.scss'
 
 class CollectComponent extends React.Component{
@@ -49,6 +52,10 @@ class CollectComponent extends React.Component{
             </div>
         )
     }
+    componentDidMount(){
+        var tel = cookie.get("userId")
+        this.props.getData(tel) 
+    }
     
 
     getKeys(item){
@@ -62,7 +69,7 @@ function callback(key) {
 }
 
 const mapToState = function(state){
-    // console.log(state.collect.response,'hjgjg')
+    // console.log(state.collect.response)
     return {
         dataset: state.collect.response || []
     }

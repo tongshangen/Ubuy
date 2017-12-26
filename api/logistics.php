@@ -7,7 +7,7 @@
 
     include 'DBHelper.php';
     $sql = 'SELECT * from collect,good,`user`,images
-        where  `user`.userid = 2
+        where  `user`.userid = 1
         and collect.goodid = good.goodid 
         and collect.userid= `user`.userid 
 		and good.goodid  = images.goodid';
