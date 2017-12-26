@@ -11,6 +11,7 @@ import { browserHistory } from 'react-router';
 class carComponent extends React.Component{ 
     componentDidMount(){
         this.props.getData("car_sel.php",{userid:1})
+        
     } 
     componentDidUpdate(){
         this.getTotal();

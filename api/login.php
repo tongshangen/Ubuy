@@ -1,6 +1,6 @@
 <?php
     header('Access-Control-Allow-Origin:*');
-    include "connect.php";  
+    include "DBHelper.php";  
     $tel = isset($_GET["tel"]) ? $_GET["tel"] : '';
     $password = isset($_GET["password"]) ? $_GET["password"] : '';
     // echo $tel;

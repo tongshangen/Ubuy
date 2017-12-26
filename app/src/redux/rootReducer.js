@@ -27,7 +27,7 @@ export default combineReducers({
     home,
     logisticsRequested,
     managerOrderRequested,
-    // detail,
+    detail,
     reg,
     login,
     account,

@@ -8,7 +8,7 @@
     $type = isset($_POST["type"]) ? $_POST["type"] :'其他';
     $word = isset($_POST["word"]) ? $_POST["word"] :'其他';
 
-    include 'DBHelper.php';
+    include 'ppp.php';
     $sql = "insert into opinion (feedbacktype,feedbackOpinion,userName) values('$type','$word','$name')";
         
     $result = excute($sql);

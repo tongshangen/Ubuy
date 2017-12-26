@@ -3,7 +3,7 @@ import http from '../utils/HttpClient'
 export function ajaxMiddleware(api) {
     return function (dispatch) {
         return function (action) {
-            
+              if(action){ 
                 const { types, url, method = 'get', params = {} } = action
                 // console.log(action,6666)
                 if (!url) {
@@ -32,7 +32,7 @@ export function ajaxMiddleware(api) {
         }
     }
 }
-
+}
 
 // export function userMiddleWare(middlewareAPI){
 //     return function(dispatch){

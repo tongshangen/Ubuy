@@ -7,9 +7,9 @@ import request from 'superagent'
 // const LOCAL_SERVER = 'http://localhost:1155/';
 
 
- const LOCAL_SERVER = 'http://192.168.43.96:888/';
+ // const LOCAL_SERVER = 'http://192.168.43.96:888/';
 // const LOCAL_SERVER = ' http://10.3.135.189:8080/';
-//  const LOCAL_SERVER = ' http://10.3.135.223:888/';
+ const LOCAL_SERVER = ' http://10.3.135.110:888/';
 
 
 
