@@ -1,7 +1,9 @@
-export function getData(){
+export function getData(tel){
+    console.log(tel)
     return {
         types: ['beforeRequest', 'Requested', 'requestError'],
         url: 'collect.php',
-        params:{}
+        params:{tel:tel},
+        method:'post'
     }
 }

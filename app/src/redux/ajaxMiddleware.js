@@ -13,10 +13,10 @@ export function ajaxMiddleware(api) {
                     type: 'regbeforeRequest'
                 })
                 if (url) {
-               const [a,b,c] = types
-                console.log(8888)
-                    http.get(url, params).then(res => {
-                         console.log('00000')
+                    const [a,b,c] = types
+                // console.log(8888)
+                    http[method](url, params).then(res => {
+                        //  console.log('00000')
                         api.dispatch({
                             type:b,
                             response: res

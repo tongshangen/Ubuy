@@ -7,7 +7,8 @@ export default function feedBackReducer(state = {}, action){
             break;
         case 'FeedBackRequested':
             newState.status = 1;
-            newState.response = action.response;
+            var aa =  JSON.parse(action.response)
+            newState.response = aa[0].username;
             break;
         case 'requestError':
             newState.status = -1;

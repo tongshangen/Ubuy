@@ -3,6 +3,7 @@ import { Icon,Tabs} from 'antd';
 import {connect} from 'react-redux'
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import './manager_order.scss'
+import {cookie} from "../../utils/cookie"
 import * as manageOrderAction from "../manager/managerOrderAction"
 const TabPane = Tabs.TabPane;
 class managerOrder extends React.Component{
@@ -10,8 +11,9 @@ class managerOrder extends React.Component{
         type:2
     }
     componentDidMount(){
-        // console.log(this.state.type)
-        this.props.getData(this.state.type)
+        var tel = cookie.get("userId")
+        // console.log(tel)
+        this.props.getData({type:this.state.type,tel:tel})
     }
     render(){
         return(
@@ -63,7 +65,8 @@ class managerOrder extends React.Component{
     }
     callback(key) {
         // console.log(key);
-        this.props.getData(key)
+        var tel = cookie.get("userId")
+        this.props.getData({type:key,tel:tel})
     }
 }
 

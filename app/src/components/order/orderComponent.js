@@ -13,6 +13,7 @@ class OrderComponent extends React.Component {
     componentDidMount() {
         // console.log(this.state)
         this.props.getData();
+        console.log(this.props.params.key)
     }
     
     btn() {
