@@ -10,6 +10,5 @@ export function getData(url,_params) {
 export function orderAll(){
     return {
         type: 'allOrder'
-
     }
 }

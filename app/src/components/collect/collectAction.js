@@ -1,6 +1,7 @@
 export function getData(){
     return {
-        types: ['beforeRequest', 'Requestedcol_cts', 'requestError'],
+      
+        types: ['beforeRequest', 'collectRequested', 'requestError'],
         url: 'collect.php',
         params:{}
     }

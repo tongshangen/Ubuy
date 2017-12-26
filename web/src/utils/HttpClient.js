@@ -1,13 +1,13 @@
 //http://visionmedia.github.io/superagent/
 import request from 'superagent'
 
-const LOCAL_SERVER = 'http://localhost:888/';
+const LOCAL_SERVER = 'http://localhost:666/web/src/api/';
 
 const DEV_SERVER = '';
 const PRO_SERVER = '';
 
 function getUrl(path) {
-    if (path.startsWith('http')) {
+    if (path.startsWith('http') || path.startsWith('https')) {
         return path;
     }
     return `${LOCAL_SERVER}${path}`;
@@ -37,8 +37,7 @@ const HttpClient = {
                 if (err) {
                     reject(err);
                 } else {
-                    console.log(res)
-                    resolve(JSON.parse(res.text));
+                    resolve(res.body);
                 }
             });
     })

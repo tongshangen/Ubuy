@@ -1,4 +1,5 @@
 export default function regReducer(state = {}, action){
+    console.log('reg',action)
     var newState = JSON.parse(JSON.stringify(state));
     switch (action.type) {
         case 'beforeRequest':
@@ -6,7 +7,7 @@ export default function regReducer(state = {}, action){
             break;
         case 'regRequested':
             newState.status = 1;
-            newState.response = JSON.parse(action.response);
+            newState.response = action.response;
             break;
         case 'requestError':
             newState.status = -1;

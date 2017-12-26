@@ -4,38 +4,18 @@ export default function StudentReducer(state = {}, action) {
         case 'beforeRequest':
             reState.loading = true;
             break;
-        case 'Requestedcar_wy':
+        case 'Requestedcarget':
             reState.loading = false;
+            // var aa = action.response;
             reState.response = action.response;
             break;
         case 'requestError':
             reState.loading = false;
             reState.error = action.error
             break;
-            
-        // case 'beforeRequesta':
-        //     reState.loading = true;
-        //     break;
-        // case 'Requesteda':
-        //     reState.loading = false;
-        //     reState.response = action.response;
-        //     break;
-        // case 'requestErrora':
-        //     reState.loading = false;
-        //     reState.error = action.error
-        //     break;
 
-        // case 'beforeRequestb':
-        //     reState.loading = true;
-        //     break;
-        // case 'Requestedb':
-        //     reState.loading = false;
-        //     reState.response = action.response;
-        //     break;
-        // case 'requestErrorb':
-        //     reState.loading = false;
-        //     reState.error = action.error
-        //     break;
+       
     }
+    // console.log(reState);
     return reState;
 }
