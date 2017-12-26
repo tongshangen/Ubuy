@@ -22,6 +22,8 @@ import AssessComponent from "../components/assess/assessComponent"
 import detailComponent from "../components/detail/detailComponent"
 import carComponent from '../components/car_wy/carComponent'
 import orderComponent from '../components/order_wy/orderComponent'
+import ciaComponent from "../components/cia/ciaComponent"
+import searchComponent from "../components/search/searchComponent"
  
 export default (
         <div>
@@ -58,6 +60,10 @@ export default (
             <Route path="logistics" component={LogisticsComponent}>
             </Route>
             <Route path="assess" component={AssessComponent}>
+            </Route>
+            <Route path="search" component={searchComponent}>
+            </Route>
+            <Route path="cia" component={ciaComponent}>
             </Route>
            
         </div>
