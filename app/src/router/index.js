@@ -50,7 +50,7 @@ export default (
             <Route path="server" component={Server}>
             </Route>
             <Route path="chat" component={Chat}></Route>
-            <Route path="detail" component={detailComponent}>
+            <Route path="detail/:goodid" component={detailComponent}>
             </Route>
             <Route path="managerorder" component={ManagerOrder}>
             </Route>

@@ -6,14 +6,12 @@ export default function collectReducer(state = {}, action){
             break;
         case 'collectRequested':
             newState.status = 1;
-            // var aa =  JSON.parse(action.response)
             newState.response = action.response;
             break;
-        case 'collectrequestError':
+        case 'requestError':
             newState.status = -1;
             newState.error = action.error
             break;
     }
-    console.log(newState.response);
     return newState;
 }

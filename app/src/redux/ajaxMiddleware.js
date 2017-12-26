@@ -3,7 +3,7 @@
 export function ajaxMiddleware(api) {
     return function (dispatch) {
         return function (action) {
-            if(action){
+              if(action){ 
                 const { types, url, method = 'get', params = {} } = action
                 // console.log('id',action.types)
                 if (!url) {

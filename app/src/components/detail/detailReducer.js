@@ -8,7 +8,11 @@ export default function detailReducer(state = {}, action){
             break;
         case 'detailRequested':
             newState.type = action.type;
-            newState.body = JSON.parse(action.response)
+            newState.body = action.response
+        case 'requestError':
+            newState.status = -1;
+            newState.error = action.error
+            break;
 
     }
 
