@@ -15,25 +15,20 @@ export default class MenuComponent extends React.Component {
           <Menu.Item key="3"><Link to='/goods_list'>商品列表</Link></Menu.Item>
           <Menu.Item key="4"  className={this.props.permission ? 'menushow' : 'menuhidden'}><Link to='/goods_add'>添加商品</Link></Menu.Item>
         </SubMenu>
-        <SubMenu
-          key="sub6"
-          title={<span><Icon type="switcher" /><span>商品分类</span></span>}
-        >
-          <Menu.Item key="15"><Link to='/class_list'>分类列表</Link></Menu.Item>
 
-          <Menu.Item key="16" className={this.props.permission ? 'menushow' : 'menuhidden'}><Link to='/class_add'>添加分类</Link></Menu.Item>
-        </SubMenu>
         <SubMenu
           key="sub2"
           title={<span><Icon type="user" /><span>用户管理</span></span>}
         >
           <Menu.Item key="6"><Link to='/users_list'>用户列表</Link></Menu.Item>
+          <Menu.Item key="7"><Link to='/users_add'>添加用户</Link></Menu.Item>
         </SubMenu> 
         <SubMenu
           key="sub3"
           title={<span><Icon type="team" /><span>订单管理</span></span>}
         >
-          <Menu.Item key="8"><Link to='/order_list'>订单列表</Link>订单列表</Menu.Item>
+          <Menu.Item key="8"><Link to='/orders_list'>订单列表</Link>订单列表</Menu.Item>
+          <Menu.Item key="11"><Link to='/orders_add'>添加订单</Link></Menu.Item>
         </SubMenu>
         <SubMenu
           key="sub4"

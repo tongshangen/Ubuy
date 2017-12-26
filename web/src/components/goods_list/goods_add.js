@@ -33,7 +33,7 @@ const CustomizedForm = Form.create({
         };
     },
     onValuesChange(_, values) {
-        console.log(values);
+        
     },
 })((props) => {
     const { getFieldDecorator } = props.form;
@@ -91,7 +91,7 @@ class Goods_addComponent extends React.Component {
     }
 
     addsave() {
-        console.log(this)
+        
         this.props.addsave({ name: this.state.name ,price: this.state.price,Oprice: this.state.Oprice,brandid: this.state.brandid,types: this.state.types,
              introduce: this.state.introduce , color: this.state.color , size: this.state.size , iventory: this.state.iventory })
     }
@@ -197,7 +197,7 @@ class Goods_addComponent extends React.Component {
 }
 
 const mapToState = function (state) {
-    // console.log(state.datagrid.response)
+    
     return {
         dataset: state.datagrid.response
     }

@@ -32,10 +32,20 @@
     $color = isset($_GET["color"]) ? $_GET["color"] : '';
     $iventory = isset($_GET["iventory"]) ? $_GET["iventory"] : '';
 
+    $userid = isset($_GET["userid"]) ? $_GET["userid"] : '';
+    $username = isset($_GET["username"]) ? $_GET["username"] : '';
+    $password = isset($_GET["password"]) ? $_GET["password"] : '';
+    $tel = isset($_GET["tel"]) ? $_GET["tel"] : '';
+
+
     $admin_id = isset($_GET["admin_id"]) ? $_GET["admin_id"] : '';
     $username = isset($_GET["username"]) ? $_GET["username"] : '';
     $password = isset($_GET["password"]) ? $_GET["password"] : '';
-    
+
+    $order_id = isset($_GET["order_id"]) ? $_GET["order_id"] : '';
+    $order_user = isset($_GET["order_user"]) ? $_GET["order_user"] : '';
+    $order_tel = isset($_GET["order_tel"]) ? $_GET["order_tel"] : '';
+    $order_site = isset($_GET["order_site"]) ? $_GET["order_site"] : '';
     
     if($name){
         $sql="insert into good(`name`,`price`,`Oprice`,`brandid`,`types`,`introduce`,`size`,`color`,`iventory`)values('$name','$price','$Oprice','$brandid','$types','$introduce','$size',
@@ -58,6 +68,32 @@
 
         if($res){
             $msql="select * from admin_list where username ='$username'";
+            $msql .= ';select FOUND_ROWS() as rowsCount;';
+            $result = multi_query_oop($msql);
+            echo json_encode($result, JSON_UNESCAPED_UNICODE);
+        }else{
+            echo json_encode($res, JSON_UNESCAPED_UNICODE);
+        };
+    } else if($order_id){
+        $sql="insert into order_list(`order_id`,`order_user`,`order_tel`,`order_site`)values('$order_id','$order_user','$order_tel','$order_site')";
+
+        $res = multi_query_oop($sql);
+
+        if($res){
+            $msql="select * from order_list where order_id ='$order_id'";
+            $msql .= ';select FOUND_ROWS() as rowsCount;';
+            $result = multi_query_oop($msql);
+            echo json_encode($result, JSON_UNESCAPED_UNICODE);
+        }else{
+            echo json_encode($res, JSON_UNESCAPED_UNICODE);
+        };
+    } else if($userid){
+        $sql="insert into user(`userid`,`username`,`password`,`tel`)values('$userid','$username','$password','$tel')";
+
+        $res = multi_query_oop($sql);
+
+        if($res){
+            $msql="select * from user where userid ='$userid'";
             $msql .= ';select FOUND_ROWS() as rowsCount;';
             $result = multi_query_oop($msql);
             echo json_encode($result, JSON_UNESCAPED_UNICODE);

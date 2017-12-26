@@ -13,10 +13,6 @@ const FormItem = Form.Item;
 
 class NormalLoginForm extends React.Component {
 
-    // state = {
-    //     username: this.props.data.data1[0].username,
-    //     password: this.props.data.data1[0].password
-    // }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -84,7 +80,7 @@ const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
 
 
 const mapStateToProps = function (state) {
-    console.log(state)
+ 
     return {
         personal: state.datagrid.response
     }

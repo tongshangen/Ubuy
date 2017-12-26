@@ -33,7 +33,7 @@ const CustomizedForm = Form.create({
         };
     },
     onValuesChange(_, values) {
-        console.log(values);
+      
     },
 })((props) => {
     const { getFieldDecorator } = props.form;
@@ -53,8 +53,7 @@ const CustomizedForm = Form.create({
 class goods_editComponent extends React.Component {
 
     componentDidMount(){
-        // this.props.search({ goodid: this.props.data.data1[0].goodid })
-        // console.log(this)
+        
     }
 
     state = {
@@ -108,12 +107,12 @@ class goods_editComponent extends React.Component {
             goodid:this.state.goodid,name: this.state.name, price: this.state.price, Oprice: this.state.Oprice, brandid: this.state.brandid, 
             types: this.state.types,introduce: this.state.introduce, color: this.state.color, size: this.state.size, iventory: this.state.iventory
         })
-        console.log(this)
+        
 
     }
     back(){
         hashHistory.push('/goods_list');
-        console.log(this)
+        
     }
 
     render() {
@@ -223,7 +222,7 @@ class goods_editComponent extends React.Component {
 }
 
 const mapToState = function (state) {
-    console.log(state)
+    
     return {
         data: state.datagrid.response
     }

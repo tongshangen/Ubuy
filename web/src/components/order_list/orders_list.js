@@ -4,8 +4,8 @@ import DataGrid from '../datagrid/DatagridComponent'
 export default class ProductsComponent extends React.Component {
     render() {
         return (<div>
-            <h2>管理员页</h2>
-            <DataGrid url="admins.php"></DataGrid>
+            <h2>订单页</h2>
+            <DataGrid url="orders.php"></DataGrid>
         </div>
         )
 
