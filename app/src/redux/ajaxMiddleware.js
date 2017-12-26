@@ -13,7 +13,10 @@ export function ajaxMiddleware(api) {
                     type: 'beforeRequest'
                 })
                 if (url) {
+<<<<<<< HEAD
+=======
 
+>>>>>>> tsg
                     const [a,b,c] = types
                     // console.log(types)
                     http[method](url, params).then(res => {
