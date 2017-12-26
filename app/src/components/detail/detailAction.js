@@ -10,3 +10,11 @@ export function getGoodDetail(aa){
         params:{goodid: aa }
     }
 }
+export function addCar(aa){
+return{
+    types: ['beforeRequest', 'addCarRequested','requestError'],
+        url: 'getGoodDetail.php',
+        params:aa
+}
+
+}

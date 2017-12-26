@@ -13,6 +13,9 @@ export default function detailReducer(state = {}, action){
             newState.status = -1;
             newState.error = action.error
             break;
+        case 'addCarRequested':
+            console.log('成功加入购物车');
+             break;
 
     }
 

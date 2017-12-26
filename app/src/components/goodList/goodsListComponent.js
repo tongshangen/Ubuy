@@ -15,12 +15,13 @@ class goodsListComponent extends React.Component{
             window.history.back();
         });
     }
-
+    
     getKeys(item){
         var newObj = (item ? Object.keys(item) : []);
         return newObj
     }
     render(){
+      
         return (
     <div>
         <Layout>
