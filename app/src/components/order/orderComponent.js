@@ -75,8 +75,8 @@ function callback(key) {
 const mapToState = function(state){
     console.log(state)
     return {
-        type: state.order.type,
-        dataset: state.order.response || []
+        type: state.orderlist.type,
+        dataset: state.orderlist.response || []
     }
 }
 export default connect(mapToState, OrderActions)(OrderComponent);

@@ -5,7 +5,7 @@ export default function DataGridReducer(state = {}, action){
         case 'beforeRequest':
             newState.status = 0;
             break;
-        case 'Requested':
+        case 'Requestedcol_cts':
             newState.status = 1;
             var aa =  JSON.parse(action.response)
             newState.response = aa;
@@ -15,5 +15,6 @@ export default function DataGridReducer(state = {}, action){
             newState.error = action.error
             break;
     }
+    console.log(newState.response);
     return newState;
 }

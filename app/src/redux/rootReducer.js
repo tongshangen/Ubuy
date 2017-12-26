@@ -2,13 +2,13 @@ import {combineReducers} from 'redux';
 import home from '../components/home/homeReducer'
 import car from '../components/car_wy/carReducer'
 import classify from '../components/classify_wy/classifyReducer'
-import goodslist from '../components/goodList/goodsListReducer'
+// import goodslist from '../components/goodList/goodsListReducer'
 
 import order from '../components/order_wy/orderReducer'
 import login from '../components/login/loginReducer'
 import reg from '../components/reg/regReducer'
-import order_list from '../components/order/orderReducer'
-import detail from '../components/detail/detailReducer'
+import orderlist from '../components/order/orderReducer'
+// import detail from '../components/detail/detailReducer'
 import collect from '../components/collect/collectReducer'
 import feedBackReducer from '../components/feedBack/feedBackReducer'
 import helpReducer from '../components/helpCenter/helpReducer'
@@ -23,13 +23,13 @@ export default combineReducers({
     helpReducer,
     car,
     classify,
-    goodslist,
+    // goodslist,
     home,
     order,
     logisticsRequested,
     managerOrderRequested,
-    detail,
+    // detail,
     reg,
-    order_list,
+    orderlist,
     login
 })

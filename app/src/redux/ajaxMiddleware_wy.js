@@ -27,7 +27,7 @@ export function ajaxMiddleware(api) {
                             })
                         }else{
                             http.get(url, params).then(res => {
-                                // console.log(res);
+                                console.log(res);
                                 api.dispatch({
                                     type: 'Requested' + a,
                                     response: res
