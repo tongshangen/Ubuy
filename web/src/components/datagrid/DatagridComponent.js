@@ -62,7 +62,7 @@ class DatagridComponent extends React.Component{
 
         var uid = this.props.url.slice(0, -4);
         if (uid == 'goods'){
-            this.props.search({ goodid: value,name:value });
+            this.props.search({ goodid: value,brandname:value });
         } else if (uid == 'users'){
             this.props.search({userid:value, username:value})
         } else if(uid == 'admins'){

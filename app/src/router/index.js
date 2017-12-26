@@ -25,10 +25,9 @@ import AssessComponent from "../components/assess/assessComponent"
 import detailComponent from "../components/detail/detailComponent"
 import carComponent from '../components/car_wy/carComponent'
 // import orderComponent from '../components/order_wy/orderComponent'
-// import AccountComponent from '../components/accountManage/accountManageComponent'
- import DizhiComponent from '../components/dizhi/dizhiComponent'
-import ChangePwdComponent from '../components/changePwd/changePwdComponent'
- 
+import ciaComponent from "../components/cia/ciaComponent"
+import searchComponent from "../components/search/searchComponent"
+
 export default (
         <div>
             <Route path="/" component={homeComponent}>                
@@ -39,7 +38,6 @@ export default (
             </Route>
             
             <Route path="/car/order" component={orderComponent}/>
-            <Route path="/classify" component={classifyComponent}/>
             <Route path="/car" component={carComponent}></Route>
             <Route path="/classify" component={classifyComponent}></Route>
             <Route path="/mypage" component={MyPage}></Route>
@@ -67,11 +65,10 @@ export default (
             </Route>
             <Route path="assess" component={AssessComponent}>
             </Route>
-            {/* <Route path="/account" component={AccountComponent}>
-            </Route> */}
-            <Route path="/account/dizhi" component={DizhiComponent}>
+            <Route path="search" component={searchComponent}>
             </Route>
-            <Route path="/account/changepwd" component={ChangePwdComponent}>
+            <Route path="cia" component={ciaComponent}>
             </Route>
+           
         </div>
 )

@@ -9,7 +9,7 @@ export default class footerComponent extends React.Component {
         hashHistory.push('/')
     }
     toList() {
-        hashHistory.push('goodlist')
+        hashHistory.push('classify')
     }
     toCart() {
         hashHistory.push('car')

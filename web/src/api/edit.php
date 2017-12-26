@@ -16,6 +16,7 @@
     $size = isset($_GET["size"]) ? $_GET["size"] : '';
     $color = isset($_GET["color"]) ? $_GET["color"] : '';
     $iventory = isset($_GET["iventory"]) ? $_GET["iventory"] : '';
+    $brandname = isset($_GET["brandname"]) ? $_GET["brandname"] : '';
 
     $userid = isset($_GET["userid"]) ? $_GET["userid"] : '';
     $username = isset($_GET["username"]) ? $_GET["username"] : '';
@@ -32,12 +33,13 @@
     $order_site = isset($_GET["order_site"]) ? $_GET["order_site"] : '';
 
     if($goodid){
-        $sql="update good set name='$name',price='$price',Oprice='$Oprice',brandid='$brandid',types='$types',introduce='$introduce',size='$size',color='$color',iventory='$iventory' where goodid='$goodid'";
+        $sql="update good set name='$name',price='$price',Oprice='$Oprice',brandid='$brandid',types='$types',introduce='$introduce',size='$size',color='$color',iventory='$iventory',brandname='$brandname' where goodid='$goodid'";
 
         $res = multi_query_oop($sql);
 
         if($res){
                 $msql="select * from good where goodid ='$goodid'";
+                $msql .= ';select FOUND_ROWS() as rowsCount;';
                 $result = multi_query_oop($msql);
                 echo json_encode($result, JSON_UNESCAPED_UNICODE);
             }else{

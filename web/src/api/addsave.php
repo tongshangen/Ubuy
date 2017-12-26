@@ -31,6 +31,7 @@
     $size = isset($_GET["size"]) ? $_GET["size"] : '';
     $color = isset($_GET["color"]) ? $_GET["color"] : '';
     $iventory = isset($_GET["iventory"]) ? $_GET["iventory"] : '';
+    $brandname = isset($_GET["brandname"]) ? $_GET["brandname"] : '';
 
     $userid = isset($_GET["userid"]) ? $_GET["userid"] : '';
     $username = isset($_GET["username"]) ? $_GET["username"] : '';
@@ -48,8 +49,8 @@
     $order_site = isset($_GET["order_site"]) ? $_GET["order_site"] : '';
     
     if($name){
-        $sql="insert into good(`name`,`price`,`Oprice`,`brandid`,`types`,`introduce`,`size`,`color`,`iventory`)values('$name','$price','$Oprice','$brandid','$types','$introduce','$size',
-        '$color','$iventory')";
+        $sql="insert into good(`name`,`price`,`Oprice`,`brandid`,`types`,`introduce`,`size`,`color`,`iventory`,`brandname`)values('$name','$price','$Oprice','$brandid','$types','$introduce','$size',
+        '$color','$iventory','$brandname')";
 
         $res = multi_query_oop($sql);
 

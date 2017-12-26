@@ -109,10 +109,12 @@ class RegComponent extends React.Component{
 
     componentWillReceiveProps(nextProps) {
         // qq
+        var status='';
         console.log(nextProps)
         if (nextProps.dataset!=='undefine'){
-            var status = nextProps.dataset[0].qq;
-            console.log(status)
+            if(nextProps.dataset.length>0){
+                status = nextProps.dataset[0].qq;
+            console.log('STATUS',status)
             
             if(status==='ok') {
                 message.success(
@@ -131,6 +133,8 @@ class RegComponent extends React.Component{
                 setTimeout(() => {
                     hashHistory.push('login')
                 }, 2000);
+            }
+            
             } else if (status === 'fail'){
                 message.error(
                     '帐号已存在',2

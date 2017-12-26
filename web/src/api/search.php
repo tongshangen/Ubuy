@@ -9,6 +9,7 @@
     $goodid = isset($_GET["goodid"]) ? $_GET["goodid"] : '';
     $name = isset($_GET["name"]) ? $_GET["name"] : '';
     $username = isset($_GET["username"]) ? $_GET["username"] : '';
+    $brandname = isset($_GET["brandname"]) ? $_GET["brandname"] : '';
 
     $userid = isset($_GET["userid"]) ? $_GET["userid"] : '';
 
@@ -18,7 +19,7 @@
     $order_user = isset($_GET["order_user"]) ? $_GET["order_user"] : '';
 
     if($goodid){
-        $sql = "select * from good where goodid ='$goodid' or name ='$name'";
+        $sql = "select * from good where goodid ='$goodid' or brandname ='$brandname'";
         $sql .= ';select FOUND_ROWS() as rowsCount;';
 
         $result = multi_query_oop($sql);

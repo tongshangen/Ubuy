@@ -14,8 +14,9 @@ export function ajaxMiddleware(api) {
                 })
                 if (url) {
                     const [a,b,c] = types
-                    // console.log(types)
                     http[method](url, params).then(res => {
+                    // console.log(res)
+                        
                         api.dispatch({
                             type:b,
                             response: res

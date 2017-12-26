@@ -47,7 +47,7 @@ class detailComponent extends React.Component{
       hashHistory.push('/car')
      }
      total(){
-      hashHistory.push('/car/order')
+      hashHistory.push('/car')
      }
     
 
@@ -71,7 +71,7 @@ class detailComponent extends React.Component{
                       {
                         this.props.dataset.slice(0,1).map(function(item,index){
                             return (
-                            <div className="detailBody"> 
+                            <div className="detailBody" key={index}> 
                             <div className="banner">
                                     <img src={item.imgurl}/>
                             </div>
@@ -180,7 +180,7 @@ class detailComponent extends React.Component{
     }
 }
 const mapToState = function(state){
-    console.log(state);
+    console.log('detail',state.detail.type);
     return {
         type: state.detail.type,
         dataset: state.detail.body || []

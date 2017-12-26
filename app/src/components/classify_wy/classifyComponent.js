@@ -5,7 +5,7 @@ import * as classifyAction from './classifyAction';
 import './classify.scss'
 
 import {Icon, Tabs, Select, Row, Col} from 'antd';
-
+import Foot from '../footer/footerComponent'
 const TabPane = Tabs.TabPane;
 const Option = Select.Option;
 
@@ -2378,14 +2378,7 @@ class classifyComponent extends React.Component{
                     </div> 
                    <div className="main_classify_r"></div>
                 </div>
-                <div className="footer_classify">
-                    <ul>
-                        <li><Icon type="home">首页</Icon></li>
-                        <li><Icon type="appstore">分类</Icon></li>
-                        <li><Icon type="shopping-cart">购物车</Icon></li>
-                        <li><Icon type="user">我的优购</Icon></li>
-                    </ul>
-                </div>
+                <Foot/>
             </div>
         )
     }

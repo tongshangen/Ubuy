@@ -59,7 +59,8 @@ class Goods_addComponent extends React.Component {
         introduce: '',
         color: '',
         size: '',
-        iventory: ''
+        iventory: '',
+        brandname:''
 
     }
     nameChange(e) {
@@ -89,11 +90,14 @@ class Goods_addComponent extends React.Component {
     iventoryChange(e) {
         this.setState({ iventory: e.target.value })
     }
+    brandnameChange(e) {
+        this.setState({ brandname: e.target.value })
+    }
 
     addsave() {
         
         this.props.addsave({ name: this.state.name ,price: this.state.price,Oprice: this.state.Oprice,brandid: this.state.brandid,types: this.state.types,
-             introduce: this.state.introduce , color: this.state.color , size: this.state.size , iventory: this.state.iventory })
+            introduce: this.state.introduce, color: this.state.color, size: this.state.size, iventory: this.state.iventory, brandname: this.state.brandname })
     }
     backs() {
         hashHistory.push('/goods_list');
@@ -174,6 +178,14 @@ class Goods_addComponent extends React.Component {
                     hasFeedback
                 >
                     <Input placeholder="I'm the iventory" id="Iventory" value={this.state.iventory} onChange={this.iventoryChange.bind(this)} />
+                </FormItem>
+
+                <FormItem
+                    {...formItemLayout}
+                    label="Brandname"
+                    hasFeedback
+                >
+                    <Input placeholder="I'm the brandname" id="brandname" value={this.state.brandname} onChange={this.brandnameChange.bind(this)} />
                 </FormItem>
 
 

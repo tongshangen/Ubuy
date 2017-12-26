@@ -17,6 +17,7 @@ import helpReducer from '../components/helpCenter/helpReducer'
 import logisticsRequested from "../components/logistics/logisticsReducer"
 import Assess from "../components/assess/assessAction"
 import managerOrderRequested from "../components/manager/managerOrderReducer"
+import search from '../components/search/searchReducer'
 
 export default combineReducers({
     home,
@@ -39,5 +40,6 @@ export default combineReducers({
     login,
     // account,
     car,
+    search,
     order
 })

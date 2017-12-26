@@ -4,7 +4,7 @@ export function detailHistory(){
 export function getGoodDetail(aa){
     
     return {
-        types: ['beforeRequest', 'getGoodDetail','requestError'],
+        types: ['beforeRequest', 'detailRequested','requestError'],
         url: 'getGoodDetail.php',
         params:{goodid: aa }
     }
