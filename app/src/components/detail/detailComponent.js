@@ -6,7 +6,7 @@ import { Layout, Menu, Breadcrumb, Icon, Carousel,BackTop,Select ,Spin} from 'an
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router'
 import * as detailActions from '../detail/detailAction'
 
-// import "../detail/detail.scss"
+import "../detail/detail.scss"
 const { Header, Footer, Content } = Layout;
 
 class detailComponent extends React.Component{
