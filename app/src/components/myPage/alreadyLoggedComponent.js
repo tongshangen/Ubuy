@@ -13,8 +13,10 @@ export default class alreadyLogged extends React.Component{
         //  拿cookie
         console.log(cookie.get('userId'))
     }
-    toAccount() {
-        hashHistory.push('account')
+  
+    exit() {
+        cookie.remove('userId')
+        hashHistory.push('login')
     }
     render(){
         return(
@@ -22,9 +24,10 @@ export default class alreadyLogged extends React.Component{
                 <div className="alreadyLogged">
                     <div className="TX"></div>
                     <div className="usermsg">
+
                         <h3>用户{cookie.get('userId')}</h3>
-                        <span className="le">会员等级</span>
-                        <span onClick={this.toAccount.bind(this)}>账户管理<Icon type="right" /></span>
+                        <span className="le" onClick={this.exit.bind(this)}>退出用户</span>
+                        <span>账户管理<Icon type="right" /></span>
                     </div>
                 </div>
             </div>
