@@ -47,7 +47,7 @@ class detailComponent extends React.Component{
       hashHistory.push('/car')
      }
      total(){
-      hashHistory.push('/orderlist')
+      hashHistory.push('/car/order')
      }
     
 
