@@ -21,7 +21,6 @@ html,body{
             width: 60px;
             height: 90px;
             display: inline-block;
-            float: left;
             font-size: 60px;
         }
         h3{
@@ -32,19 +31,93 @@ html,body{
             font-weight: bold;
         }
     }
-    dl{
-        dt{
-            dd{
-                height: 90px;
-                line-height: 90px;
-                font-size: 28px;
-                padding: 0 20px;
-            }
-            .blank{
+   
+    .haha{
+        width: 100%;
+        .heihei{
+            // height: 90px;
+            width: 100%;
+            line-height: 90px;
+            // padding: 0 20px;
+            div{
+                font-size: 30px;
                 width: 100%;
-                height: 12px;
-                background: #F8F8F8;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;           
+                span{
+                    display: inline-block;
+                    height: 90px;
+                    float: right;
+                } 
+            }
+            .choice{
+                // font-size: 30px;
+                width: 100%;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;
+                select{
+                    float: right;
+                    width: 100px;
+                    height: 90px;
+                    border: 0 none;
+                    option{
+                        font-size: 10px;
+                    }
+                }
+            }
+            .birthday{
+                width: 100%;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;
+                .ant-calendar-picker{
+                    width: 200px;
+                    line-height: 90px;
+                    font-size: 30px;
+                    .ant-calendar-picker-input{
+                        height: 90px;
+                        font-size: 25px;
+                    }
+                    
+                }
+            }
+            .dizhi{
+                width: 100%;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;
+                .anticon-right{
+                    height: 90px;
+                    float: right;
+                    line-height: 90px;
+                }
+            }
+            .xiugaiPwd{
+                width: 100%;
+                height: 90px;
+                margin-bottom: 20px;
+                background: #ffff;
+                padding: 0 20px;
+                .anticon-right {
+                    height: 90px;
+                    float: right;
+                    line-height: 90px;
+                }
             }
         }
+        .blank{
+            width: 100%;
+            height: 12px;
+            background: #F8F8F8;
+        }
     }
+}
+.ant-calendar-panel{
+    font-size: 20px;
 }

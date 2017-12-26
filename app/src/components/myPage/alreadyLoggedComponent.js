@@ -20,7 +20,7 @@ export default class alreadyLogged extends React.Component{
         return(
             <div className="header_cts">
                 <div className="alreadyLogged">
-                    <div className="TX"><Icon type="user"></Icon></div>
+                    <div className="TX"><Icon type="user" className="alreadyUser"></Icon></div>
                     <div className="usermsg">
                         <h3>用户{cookie.get('userId')}</h3>
                         <span className="le">会员等级</span>

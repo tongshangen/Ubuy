@@ -6,7 +6,7 @@ export default function accountReducer(state = {}, action) {
             break;
         case 'accountregRequested':
             newState.status = 1;
-            newState.response = JSON.parse(action.response);
+            newState.response = action.response;
             break;
         case 'accountrequestError':
             newState.status = -1;

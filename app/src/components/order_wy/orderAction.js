@@ -1,27 +1,24 @@
 export function getData(_url, _params){
     return {
-        types: ['beforeRequest', 'Requested', 'requestError'],
+        types: ['beforeRequest', 'Requestedordersel', 'requestError'],
         url: _url,
-        params: _params,
-        a:'ordersel'
+        params: _params
     }
 }
 
 
 export function insertorder(_url, _params){
     return {
-        types: ['beforeRequest', 'Requested', 'requestError'],
+        types: ['beforeRequest', 'Requestedorderins', 'requestError'],
         url: _url,
-        params: _params,
-        a:'orderins'
+        params: _params
     }
 }
 
 export function delorder(_url, _params){
     return {
-        types: ['beforeRequest', 'Requested', 'requestError'],
+        types: ['beforeRequest', 'Requestedorderdel', 'requestError'],
         url: _url,
-        params: _params,
-        a:'orderdel'
+        params: _params
     }
 }

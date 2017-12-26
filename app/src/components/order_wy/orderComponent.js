@@ -7,7 +7,7 @@ import './order.scss'
 import { Layout, Menu, Breadcrumb, Icon, Carousel, Radio,InputNumber} from 'antd';
 import { browserHistory } from 'react-router';
 
-class orderComponent extends React.Component{ 
+class orderComponent extends React.Component{
     // state = {
     //     orderData:JSON.parse(sessionStorage.getItem('orderinfo'))
     // }
@@ -167,6 +167,7 @@ class orderComponent extends React.Component{
 }
 
 const mapStateToProps = function(state){
+    // console.log(state);
     return {
         loading: state.order.loading,
         dataset: state.order.response

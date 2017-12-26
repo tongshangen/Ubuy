@@ -40,8 +40,15 @@ html,body,#app{
                     height: 130px;   
                     border:2px solid #fff;
                     border-radius: 50%;
-                    margin: 80px
-                    
+                    margin: 80px;
+                    .alreadyUser {
+                        display: inline-block;
+                        font-size: 130px;
+                        color: #fff;
+                        position: absolute;
+                        top: 75px;
+                        left: 80px;
+                    }
                 } 
                 .usermsg{
                     flex: 1;

@@ -14,7 +14,7 @@ class MyPage extends React.Component{
         document.cookie = 'id=1;user="aaa";price=309';
     }
     toOrder() {
-        hashHistory.push('order')
+        hashHistory.push('orderlist')
     }
    render() {
        var pageChoice = null

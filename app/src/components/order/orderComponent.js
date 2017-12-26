@@ -4,6 +4,7 @@ import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 import { Tabs, Icon } from 'antd';
 import * as OrderActions from '../order/orderAction';
 import './order.scss'
+import loginImg from '../../libs/default/login.jpg'
 
 class OrderComponent extends React.Component {
     constructor(props){
@@ -13,7 +14,10 @@ class OrderComponent extends React.Component {
     componentDidMount() {
         // console.log(this.state)
         this.props.getData();
+        // console.log(pro)
     }
+    
+    
     
     btn() {
         console.log(this.props.dataset)
@@ -38,7 +42,7 @@ class OrderComponent extends React.Component {
                                     return (
                                         <div className="order_all" key={idx}>
                                             <div className="left">
-                                                <img src="http://localhost:3032/src/libs/default/img1.jpg" />
+                                                <img src={loginImg} />
                                             </div>
                                             <div className="rigth">
                                                 <p>{item.name}</p><br/>
@@ -74,8 +78,8 @@ function callback(key) {
 const mapToState = function(state){
     console.log(state)
     return {
-        type: state.order.type,
-        dataset: state.order.response || []
+        type: state.order_list.type,
+        dataset: state.order_list.response || []
     }
 }
 export default connect(mapToState, OrderActions)(OrderComponent);

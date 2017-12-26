@@ -7,7 +7,7 @@ export default function OrderReducer(state={}, action){
             break;
         case 'orderRequested':
             newState.status = 1;
-            newState.response = JSON.parse(action.response);
+            newState.response = action.response;
             break;
         case 'orderrequestError':
             newState.status = -1;

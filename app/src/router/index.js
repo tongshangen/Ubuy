@@ -24,7 +24,9 @@ import AssessComponent from "../components/assess/assessComponent"
 import detailComponent from "../components/detail/detailComponent"
 import carComponent from '../components/car_wy/carComponent'
 import orderComponent from '../components/order_wy/orderComponent'
- 
+import AccountComponent from '../components/accountManage/accountManageComponent'
+ import DizhiComponent from '../components/dizhi/dizhiComponent'
+import ChangePwdComponent from '../components/changePwd/changePwdComponent'
 export default (
         <div>
             <Route path="/" component={homeComponent}>                
@@ -58,6 +60,11 @@ export default (
             </Route>
             <Route path="assess" component={AssessComponent}>
             </Route>
-           
+            <Route path="/account" component={AccountComponent}>
+            </Route>
+            <Route path="/account/dizhi" component={DizhiComponent}>
+            </Route>
+            <Route path="/account/changepwd" component={ChangePwdComponent}>
+            </Route>
         </div>
 )
