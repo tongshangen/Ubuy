@@ -135,6 +135,12 @@ html,body{
             background: #EFEFEF;
             padding: 0.06rem 0;
         }
+        .abc{
+            padding-left: 45%;display:none;
+            div{
+                background: transparent;
+            }
+        }
     }
 
 }
@@ -176,4 +182,25 @@ html,body{
     .right{
         width:35%;background: #FF0000;color:#fff;
     }
+}
+.ant-modal-content{
+    position:absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+
+    .ant-radio-button-wrapper{
+        font-size: 0.12rem;
+        width: 0.6rem;
+        height: 0.4rem;
+    }
+}
+.ant-modal-header {
+    height: 0.3rem;
+    .ant-modal-title{
+        font-size: 0.2rem;font-weight: bold;color:#ccc;
+    }
+}
+.ant-btn{
+    height: 0.5rem;font-size:0.2rem;padding: 0 0.1rem;
 }

@@ -12,10 +12,10 @@ const Option = Select.Option;
 
 class classifyComponent extends React.Component{
     state = {
-        tabPosition: 'left',
+        tabPosition1: 'left',
     }
-    changeTabPosition = (tabPosition) => {
-        this.setState({ tabPosition });
+    changeTabPosition = (tabPosition1) => {
+        this.setState({ tabPosition1 });
     }
     componentDidMount(){
         $('.ant-col-8').click(function(event){
@@ -40,8 +40,8 @@ class classifyComponent extends React.Component{
                 </div>
                 <div className="main_classify">
                     <div className="main_classify_l">
-                        <Tabs tabPosition={this.state.tabPosition}>
-                            <TabPane tab="女鞋" key="1">
+                        <Tabs tabPosition={this.state.tabPosition1}>
+                            <TabPane tab="女鞋" key="1" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/womenShoes.jpg')} alt=""/>
@@ -253,7 +253,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="男鞋" key="2">
+                            <TabPane tab="男鞋" key="2" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/manShoes.jpg')} alt=""/>
@@ -465,7 +465,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="运动" key="3">
+                            <TabPane tab="运动" key="3" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/sports_wy.jpg')} alt=""/>
@@ -677,7 +677,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="户外" key="4">
+                            <TabPane tab="户外" key="4" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/huwai.jpg')} alt=""/>
@@ -889,7 +889,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="童鞋童装" key="5">
+                            <TabPane tab="童鞋童装" key="5" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/child_wy.jpg')} alt=""/>
@@ -1101,7 +1101,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="全部品牌" key="6">
+                            <TabPane tab="全部品牌" key="6" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/womenShoes.jpg')} alt=""/>
@@ -1313,7 +1313,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="专柜同款" key="7">
+                            <TabPane tab="专柜同款" key="7" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/shoppe_wy.jpg')} alt=""/>
@@ -1525,7 +1525,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="她他" key="8">
+                            <TabPane tab="她他" key="8" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/womenShoes.jpg')} alt=""/>
@@ -1737,7 +1737,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="天美意" key="9">
+                            <TabPane tab="天美意" key="9" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/womenShoes.jpg')} alt=""/>
@@ -1949,7 +1949,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="百丽" key="10">
+                            <TabPane tab="百丽" key="10" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/womenShoes.jpg')} alt=""/>
@@ -2161,7 +2161,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="思加图" key="11">
+                            <TabPane tab="思加图" key="11" className="iteml">
                                 <div className="main_classify_r">
                                     <div className="header_logo_img">
                                         <img src={require('../../libs/images/womenShoes.jpg')} alt=""/>
@@ -2373,7 +2373,7 @@ class classifyComponent extends React.Component{
                                     </div>
                                 </div>
                             </TabPane>
-                            <TabPane tab="森达" key="12">Content of Tab 2</TabPane>
+                            <TabPane tab="森达" key="12" className="iteml">Content of Tab 2</TabPane>
                         </Tabs>
                     </div> 
                    <div className="main_classify_r"></div>

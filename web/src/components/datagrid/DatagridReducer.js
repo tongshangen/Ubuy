@@ -1,17 +1,18 @@
-export default function accountReducer(state = {}, action) {
+export default function DataGridReducer(state = {}, action) {
     var newState = JSON.parse(JSON.stringify(state));
     switch (action.type) {
-        case 'accountbeforeRequest':
+        case 'beforeRequest':
             newState.status = 0;
             break;
-        case 'accountregRequested':
+        case 'Requested':
             newState.status = 1;
             newState.response = action.response;
             break;
-        case 'accountrequestError':
+        case 'requestError':
             newState.status = -1;
-            newState.error = action.error;
+            newState.error = action.error
             break;
     }
+
     return newState;
 }

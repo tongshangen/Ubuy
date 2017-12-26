@@ -3,8 +3,8 @@ export function getData(key){
     var sta;
     if(key.type == 3){
         sta = 3
-    }else if(key.type == 2){
-        sta = 2
+    }else if(key.type == 1){
+        sta = 1
     }
     // console.log(sta)
     return {

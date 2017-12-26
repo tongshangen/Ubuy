@@ -13,8 +13,7 @@
         $result = excute($sql);
     }
     if($result){
-        // $arr = array();
-        echo "ok";
+        echo 'ok';
     }else{
         echo 'fail';
     }

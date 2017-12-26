@@ -8,7 +8,23 @@
     $type = isset($_POST["type"]) ? $_POST["type"] :'其他';
     $word = isset($_POST["word"]) ? $_POST["word"] :'其他';
 
+
     include 'DBHelper.php';
+    if($tel != ""){
+        $sql = "SELECT username FROM `user` WHERE tel='$tel'";
+
+        $result = query_oop($sql);
+
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
+
+    } else {
+        $sql = "insert into opinion (feedbacktype,feedbackOpinion,userName) values('$type','$word','$name')";
+        $result = excute($sql);
+        if($result){
+            echo 'ok';
+        }else{
+            echo 'fail';
+        }
     $sql = "insert into opinion (feedbacktype,feedbackOpinion,userName) values('$type','$word','$name')";
         
     $result = excute($sql);

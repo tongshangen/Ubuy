@@ -3,7 +3,8 @@ import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import homeComponent from '../components/home/homeComponent'
 // import carComponent from '../components/car_wy/carComponent'
 import classifyComponent from '../components/classify_wy/classifyComponent'
-// import orderComponent from '../components/order_wy/orderComponent'
+import orderComponent from '../components/order_wy/orderComponent'
+// import classifyComponent from '../components/classify_wy/classifyComponent'
 
 import MyPage from '../components/myPage/myPageComponent'
 import ViewHistoryComponent from '../components/viewhistory/viewhistoryComponent'
@@ -23,10 +24,11 @@ import LogisticsComponent from "../components/logistics/logisticsComponent"
 import AssessComponent from "../components/assess/assessComponent"
 import detailComponent from "../components/detail/detailComponent"
 import carComponent from '../components/car_wy/carComponent'
-import orderComponent from '../components/order_wy/orderComponent'
-import AccountComponent from '../components/accountManage/accountManageComponent'
+// import orderComponent from '../components/order_wy/orderComponent'
+// import AccountComponent from '../components/accountManage/accountManageComponent'
  import DizhiComponent from '../components/dizhi/dizhiComponent'
 import ChangePwdComponent from '../components/changePwd/changePwdComponent'
+ 
 export default (
         <div>
             <Route path="/" component={homeComponent}>                
@@ -35,6 +37,10 @@ export default (
             </Route>
             <Route path="/car/order" component={orderComponent}>
             </Route>
+            
+            <Route path="/car/order" component={orderComponent}/>
+            <Route path="/classify" component={classifyComponent}/>
+            <Route path="/car" component={carComponent}></Route>
             <Route path="/classify" component={classifyComponent}></Route>
             <Route path="/mypage" component={MyPage}></Route>
             <Route path="/collect" component={collect}></Route>
@@ -47,12 +53,13 @@ export default (
             <Route path="/goodslist" component={goodslistComponent}></Route>
             <Route path="/login" component={LoginComponent}></Route>
             <Route path="/reg" component={RegComponent}></Route>
+            <Route path="/order(/:key)" component={OrderComponent}></Route>
             <Route path="/orderlist" component={OrderComponent}></Route>
             <Route path="/spinner" component={SpinnerComponent}></Route>                   
             <Route path="server" component={Server}>
             </Route>
             <Route path="chat" component={Chat}></Route>
-            <Route path="detail" component={detailComponent}>
+            <Route path="detail/:goodid" component={detailComponent}>
             </Route>
             <Route path="managerorder" component={ManagerOrder}>
             </Route>
@@ -60,8 +67,8 @@ export default (
             </Route>
             <Route path="assess" component={AssessComponent}>
             </Route>
-            <Route path="/account" component={AccountComponent}>
-            </Route>
+            {/* <Route path="/account" component={AccountComponent}>
+            </Route> */}
             <Route path="/account/dizhi" component={DizhiComponent}>
             </Route>
             <Route path="/account/changepwd" component={ChangePwdComponent}>

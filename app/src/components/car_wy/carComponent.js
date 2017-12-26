@@ -128,6 +128,35 @@ class carComponent extends React.Component{
     }
 
     // 结算
+    // balance = (e) => {
+    //     // 循环看是否有商品勾选
+    //     var selData = []
+    //     // 选择按钮
+    //     var isCheck = document.getElementsByClassName('anticon anticon-check-circle');
+    //     for(var i=1;i<=isCheck.length-2;i++){
+    //         if(isCheck[i].className == 'anticon anticon-check-circle checked'){
+    //             selData.push({carid:isCheck[i].parentNode.parentNode.getAttribute("data-id"),goodid:isCheck[i].parentNode.parentNode.getAttribute("data-goodid"),userid:1});
+    //         }
+    //     }
+    //     if(selData.length == 0){
+    //         // alert('请提交商品');
+    //         Modal.success({
+    //             title: 'This is a notification message',
+    //             content: 'This modal will be destroyed after 1 second',
+    //           });
+    //           setTimeout(() => modal.destroy(), 1000);
+    //     }else{
+    //         sessionStorage.setItem('orderinfo',JSON.stringify(selData));
+    //         hashHistory.push('/car/order');
+    //         // console.log(sessionStorage.getItem('orderinfo'));
+    //     }
+    // }
+
+    back() {
+        history.back();
+    }
+
+    // 结算
     balance = (e) => {
         // 循环看是否有商品勾选
         var selData = []
@@ -150,10 +179,6 @@ class carComponent extends React.Component{
             hashHistory.push('/car/order');
             // console.log(sessionStorage.getItem('orderinfo'));
         }
-    }
-
-    back() {
-        history.back();
     }
 
     render(){

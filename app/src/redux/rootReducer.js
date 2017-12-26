@@ -8,11 +8,12 @@ import order from '../components/order_wy/orderReducer'
 import login from '../components/login/loginReducer'
 import reg from '../components/reg/regReducer'
 import order_list from '../components/order/orderReducer'
+import orderlist from '../components/order/orderReducer'
 import detail from '../components/detail/detailReducer'
 import collect from '../components/collect/collectReducer'
 import feedBackReducer from '../components/feedBack/feedBackReducer'
 import helpReducer from '../components/helpCenter/helpReducer'
-import account from '../components/accountManage/accountManageReducer'
+// import account from '../components/accountManage/accountManageReducer'
 import logisticsRequested from "../components/logistics/logisticsReducer"
 import Assess from "../components/assess/assessAction"
 import managerOrderRequested from "../components/manager/managerOrderReducer"
@@ -30,8 +31,13 @@ export default combineReducers({
     // detail,
     reg,
     login,
-    account,
+    // account,
     order_list,
+    detail,
+    reg,
+    orderlist,
+    login,
+    // account,
     car,
     order
 })

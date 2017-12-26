@@ -32,7 +32,7 @@ class MyPage extends React.Component{
                         <div className="msg">
                             <div className="Payment"><Icon type="layout"/><span>待付款</span></div>
                             <div className="Payment"><Link to="/logistics"><Icon type="layout"/><span>查看物流</span></Link></div>
-                            <div className="Payment"><Link to="/assess"><Icon type="layout"/><span>待评价</span></Link></div>
+                            <div className="Payment"><Link to="/orderlist"><Icon type="layout"/><span>待评价</span></Link></div>
                         </div>
                        
                         <Link to="/managerorder"><div className="manage_shoe">

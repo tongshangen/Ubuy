@@ -2,12 +2,16 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import { Tabs, Icon} from 'antd';
+
 import * as CollectAction from './CollectAction'
 import {cookie} from "../../utils/cookie"
 
 import './collect.scss'
 
 class CollectComponent extends React.Component{
+    componentDidMount() {
+        this.props.getData()
+    }
     render(){
         return(
             <div id="collect_cts">
@@ -22,6 +26,7 @@ class CollectComponent extends React.Component{
                            
                             {
                                 this.props.dataset.map(function(obj,idx){
+                                   
                                     return (
                                         <div className="collect_all" key={idx}>
                                             <div className="left"><img  src={obj.imgurl}/></div>
@@ -51,6 +56,7 @@ class CollectComponent extends React.Component{
         var tel = cookie.get("userId")
         this.props.getData(tel) 
     }
+    
 
     getKeys(item){
         var newObj = (item ? Object.keys(item) : []);

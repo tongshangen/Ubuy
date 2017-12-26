@@ -1,16 +1,21 @@
 export default function detailReducer(state = {}, action){
     var newState = JSON.parse(JSON.stringify(state));
-    if(action.response){
-        console.log(JSON.parse(action.response)[0],"ruducer")
-    }
+   
     
     switch(action.type){
         case 'beforeRequest':
             newState.type = action.type;
             break;
-        case 'Requested':
+        case 'detailRequested':
             newState.type = action.type;
-            newState.body = JSON.parse(action.response)
+            newState.body = action.response
+        case 'requestError':
+            newState.status = -1;
+            newState.error = action.error
+            break;
+        case 'addCarRequested':
+            console.log('成功加入购物车');
+             break;
 
     }
 

@@ -5,7 +5,7 @@ header('Access-Control-Allow-Origin:*');
   
     $goodid = isset($_GET["goodid"]) ? $_GET["goodid"] : '';
     
-    $sql = "SELECT * from good,images WHERE good.goodid=$goodid ";
+    $sql = "SELECT * from good,images WHERE good.goodid=$goodid and images.goodid=$goodid";
 
     $result = query($sql);
 

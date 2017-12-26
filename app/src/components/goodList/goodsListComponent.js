@@ -15,12 +15,13 @@ class goodsListComponent extends React.Component{
             window.history.back();
         });
     }
-
+    
     getKeys(item){
         var newObj = (item ? Object.keys(item) : []);
         return newObj
     }
     render(){
+      
         return (
     <div>
         <Layout>
@@ -46,7 +47,7 @@ class goodsListComponent extends React.Component{
                     {
                       this.props.dataset.map(function(obj, index){
                             return (
-                                <li key={index} onClick={this.props.toDetail}>
+                                <li key={index} onClick={this.props.toDetail.bind(this,[{imgurl:obj.imgurl},{name:obj.name},{price:obj.price},{Oprice:obj.Oprice},{goodid:obj.goodid}])}>
                                 <img src={obj.imgurl}/>
                                 <p>{obj.name}</p>
                                 <p>￥<span>{obj.price}</span> &nbsp;<del>原价{obj.Oprice}</del></p>
@@ -102,7 +103,7 @@ class goodsListComponent extends React.Component{
 
 //DataModel => m
 const mapToState = function(state){
-    console.log(state);
+    // console.log(state);
     return {
         type: state.goodslist.type,
         dataset: state.goodslist.body || []
