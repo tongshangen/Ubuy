@@ -17,7 +17,7 @@ let aId;
 const menu = (
   <Menu>
     <Menu.Item key="20">
-      <Link to={'/admin_edit' + aId}>修改个人信息</Link>
+      <Link to={'/admins_list' }>修改个人信息</Link>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="21">
@@ -50,7 +50,7 @@ class HomeComponent extends React.Component {
               <Header style={{ background: '#fff', padding: 0 }} >
                 <Breadcrumb style={{ margin: '0 16px' }}>
                   <Breadcrumb.Item><Link to="/">首页</Link></Breadcrumb.Item>
-                  <Breadcrumb.Item>Bill</Breadcrumb.Item>
+                  
                 </Breadcrumb>
                 <Dropdown overlay={menu} trigger={['click']}>
                   <Avatar style={{ backgroundColor: '#108ee9', position: 'absolute', top: 20, right: 30 }} icon="user" />

@@ -26,7 +26,10 @@
     $admin_user = isset($_GET["admin_user"]) ? $_GET["admin_user"] : '';
     $admin_psw = isset($_GET["admin_psw"]) ? $_GET["admin_psw"] : '';
 
-
+    $order_id = isset($_GET["order_id"]) ? $_GET["order_id"] : '';
+    $order_user = isset($_GET["order_user"]) ? $_GET["order_user"] : '';
+    $order_tel = isset($_GET["order_tel"]) ? $_GET["order_tel"] : '';
+    $order_site = isset($_GET["order_site"]) ? $_GET["order_site"] : '';
 
     if($goodid){
         $sql="update good set name='$name',price='$price',Oprice='$Oprice',brandid='$brandid',types='$types',introduce='$introduce',size='$size',color='$color',iventory='$iventory' where goodid='$goodid'";
@@ -60,6 +63,19 @@
 
         if($res){
                 $msql="select * from admin_list where admin_id ='$admin_id'";
+                $msql .= ';select FOUND_ROWS() as rowsCount;';
+                $result = multi_query_oop($msql);
+                echo json_encode($result, JSON_UNESCAPED_UNICODE);
+            }else{
+                echo json_encode($res, JSON_UNESCAPED_UNICODE);
+            };
+    } else if($order_id){
+        $sql="update order_list set order_id='$order_id',order_user='$order_user',order_tel='$order_tel',order_site='$order_site' where order_id='$order_id'";
+
+        $res = multi_query_oop($sql);
+
+        if($res){
+                $msql="select * from order_list where order_id ='$order_id'";
                 $msql .= ';select FOUND_ROWS() as rowsCount;';
                 $result = multi_query_oop($msql);
                 echo json_encode($result, JSON_UNESCAPED_UNICODE);

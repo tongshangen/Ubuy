@@ -13,7 +13,7 @@ const Search = Input.Search;
 class DatagridComponent extends React.Component{
     componentDidMount() {
         this.props.Init(this.props.url, { page: 1})
-        // console.log(this)
+        
         
     }
     
@@ -22,7 +22,7 @@ class DatagridComponent extends React.Component{
     }
 
     onpageChange = (page) => {
-        console.log(page);
+        
         this.setState({
             current: page,
         });
@@ -46,6 +46,8 @@ class DatagridComponent extends React.Component{
             this.props.search({ userid: id });
         } else if(uid == 'admins'){
             this.props.search({ admin_id: id });
+        } else if(uid == 'orders'){
+            this.props.search({ order_id: id });
         }
         
         var url = this.props.url.slice(0, -4);
@@ -53,20 +55,22 @@ class DatagridComponent extends React.Component{
             hashHistory.push('/' + url + '_edit');
         }, 50);
 
-        console.log(this)
+       
     }
 
     search(value){
 
         var uid = this.props.url.slice(0, -4);
         if (uid == 'goods'){
-            this.props.search({ goodid: value });
+            this.props.search({ goodid: value,name:value });
         } else if (uid == 'users'){
-            this.props.search({userid:value})
+            this.props.search({userid:value, username:value})
         } else if(uid == 'admins'){
-            this.props.search({ admin_id: value })
+            this.props.search({ admin_id: value, username:value})
+        } else if(uid == 'orders'){
+            this.props.search({ order_id: value, order_user:value })
         }
-         console.log(this)
+        
     }
 
     del(e){
@@ -84,6 +88,9 @@ class DatagridComponent extends React.Component{
         } else if (uid == 'admins'){
             this.props.del({ admin_id: id })
             this.props.Init('admins.php')
+        } else if (uid == 'orders'){
+            this.props.del({ order_id: id })
+            this.props.Init('orders.php')
         }
     }
 
@@ -138,7 +145,7 @@ class DatagridComponent extends React.Component{
                     <tfoot></tfoot>
                 </table>
     
-                <Pagination current={this.state.current} onChange={this.onpageChange} total={Number(this.props.dataset.data2[0].rowsCount)} />
+                <Pagination current={this.state.current} onChange={this.onpageChange} total={Number(this.props.dataset.data2[0].rowsCount)} style={{ float: "right" }}/>
                 
             </div>
         )
@@ -146,7 +153,7 @@ class DatagridComponent extends React.Component{
 }
 
 const mapToState = function(state){
-    // console.log(state)
+    
     return{
         dataset: state.datagrid.response
     }

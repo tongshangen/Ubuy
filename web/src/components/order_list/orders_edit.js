@@ -33,7 +33,7 @@ const CustomizedForm = Form.create({
         };
     },
     onValuesChange(_, values) {
-        console.log(values);
+        
     },
 })((props) => {
     const { getFieldDecorator } = props.form;
@@ -48,88 +48,84 @@ const CustomizedForm = Form.create({
     );
 });
 
-class users_editComponent extends React.Component {
+class admins_editComponent extends React.Component {
 
     componentDidMount() {
-        
         
     }
 
     state = {
-        userid: this.props.dataset.data1[0].userid,
-        username: this.props.dataset.data1[0].username,
-        password: this.props.dataset.data1[0].password,
-        tel: this.props.dataset.data1[0].tel
+        order_id: this.props.dataset.data1[0].order_id,
+        order_user: this.props.dataset.data1[0].order_user,
+        order_tel: this.props.dataset.data1[0].order_tel,
+        order_site: this.props.dataset.data1[0].order_site,
+    }
+    order_idChange(e) {
+        this.setState({ order_id: e.target.value })
+    }
+    order_userChange(e) {
+        this.setState({ order_user: e.target.value })
+    }
+    order_telChange(e) {
+        this.setState({ order_tel: e.target.value })
+    }
+    order_siteChange(e) {
+        this.setState({ order_site: e.target.value })
+    }
 
-    }
-    useridChange(e) {
-        this.setState({ userid: e.target.value })
-    }
-    usernameChange(e) {
-        this.setState({ username: e.target.value })
-    }
-    passwordChange(e) {
-        this.setState({ password: e.target.value })
-    }
-    telChange(e) {
-        this.setState({ tel: e.target.value })
-    }
-
-    save() {
+    admin_editsave() {
         
         this.props.edit({
-            userid: this.state.userid, username: this.state.username, password: this.state.password, tel: this.state.tel
+            order_id: this.state.order_id, order_user: this.state.order_user, order_tel: this.state.order_tel, order_site: this.state.order_site
         })
     }
-    back() {
-        hashHistory.push('/users_list');
+    admin_editback() {
+        hashHistory.push('/orders_list');
     }
     render() {
 
         return (<div>
-            <h2>用户编辑</h2>
+            <h2>编辑</h2>
 
             <Form>
                 <FormItem
                     {...formItemLayout}
-                    label="userid"
+                    label="order_id"
                     hasFeedback
                 >
-                    <Input placeholder="I'm the userid" id="userid" value={this.state.userid} onChange={this.useridChange.bind(this)} />
+                    <Input placeholder="I'm the order_id" id="order_id" value={this.state.order_id} onChange={this.order_idChange.bind(this)} />
                 </FormItem>
 
                 <FormItem
                     {...formItemLayout}
-                    label="username"
+                    label="order_user"
                     hasFeedback
                 >
-                    <Input placeholder="I'm the username" id="username" value={this.state.username} onChange={this.usernameChange.bind(this)} />
+                    <Input placeholder="I'm the order_user" id="order_user" value={this.state.order_user} onChange={this.order_userChange.bind(this)} />
                 </FormItem>
 
                 <FormItem
                     {...formItemLayout}
-                    label="password"
+                    label="order_tel"
                     hasFeedback
                 >
-                    <Input placeholder="I'm the password" id="password" value={this.state.password} onChange={this.passwordChange.bind(this)} />
+                    <Input placeholder="I'm the order_tel" id="order_tel" value={this.state.order_tel} onChange={this.order_telChange.bind(this)} />
                 </FormItem>
 
                 <FormItem
                     {...formItemLayout}
-                    label="tel"
+                    label="order_site"
                     hasFeedback
                 >
-                    <Input placeholder="I'm the tel" id="tel" value={this.state.tel} onChange={this.telChange.bind(this)} />
+                    <Input placeholder="I'm the order_site" id="order_site" value={this.state.order_site} onChange={this.order_siteChange.bind(this)} />
                 </FormItem>
-
-
 
                 <Button.Group className="bianji"
                     style={{ marginLeft: "40%" }}>
-                    <Button type="primary" onClick={this.save.bind(this)}>
+                    <Button type="primary" onClick={this.admin_editsave.bind(this)}>
                         <Icon type="enter" />保存
                     </Button>
-                    <Button type="primary" onClick={this.back.bind(this)}>
+                    <Button type="primary" onClick={this.admin_editback.bind(this)}>
                         返回<Icon type="rollback" />
                     </Button>
                 </Button.Group>
@@ -149,4 +145,4 @@ const mapToState = function (state) {
     }
 }
 
-export default connect(mapToState, DatagridAction)(users_editComponent);
+export default connect(mapToState, DatagridAction)(admins_editComponent);

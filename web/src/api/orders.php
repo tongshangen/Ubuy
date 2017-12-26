@@ -8,7 +8,7 @@
     $order = isset($_GET["order"]) ? $_GET["order"] : '';
 
     include 'DBHelper.php';
-    $sql = 'select SQL_CALC_FOUND_ROWS * from user ';
+    $sql = 'select SQL_CALC_FOUND_ROWS * from order_list ';
     $sql .= ' limit ';
     $sql .= $page - 1;
     $sql .= ', ';

@@ -43,6 +43,7 @@ export default (
             <Route path="/goodslist" component={goodslistComponent}></Route>
             <Route path="/login" component={LoginComponent}></Route>
             <Route path="/reg" component={RegComponent}></Route>
+            <Route path="/order(/:key)" component={OrderComponent}></Route>
             <Route path="/orderlist" component={OrderComponent}></Route>
             <Route path="/spinner" component={SpinnerComponent}></Route>                   
             <Route path="goodslist" component={goodslistComponent}>

@@ -33,7 +33,7 @@ const CustomizedForm = Form.create({
         };
     },
     onValuesChange(_, values) {
-        console.log(values);
+       
     },
 })((props) => {
     const { getFieldDecorator } = props.form;
@@ -48,18 +48,17 @@ const CustomizedForm = Form.create({
     );
 });
 
-class users_editComponent extends React.Component {
+class users_addComponent extends React.Component {
 
     componentDidMount() {
-        
         
     }
 
     state = {
-        userid: this.props.dataset.data1[0].userid,
-        username: this.props.dataset.data1[0].username,
-        password: this.props.dataset.data1[0].password,
-        tel: this.props.dataset.data1[0].tel
+        userid: '',
+        username: '',
+        password: '',
+        tel: ''
 
     }
     useridChange(e) {
@@ -75,19 +74,19 @@ class users_editComponent extends React.Component {
         this.setState({ tel: e.target.value })
     }
 
-    save() {
+    usersave() {
         
-        this.props.edit({
+        this.props.addsave({
             userid: this.state.userid, username: this.state.username, password: this.state.password, tel: this.state.tel
         })
     }
-    back() {
+    userback() {
         hashHistory.push('/users_list');
     }
     render() {
 
         return (<div>
-            <h2>用户编辑</h2>
+            <h2>添加用户</h2>
 
             <Form>
                 <FormItem
@@ -126,10 +125,10 @@ class users_editComponent extends React.Component {
 
                 <Button.Group className="bianji"
                     style={{ marginLeft: "40%" }}>
-                    <Button type="primary" onClick={this.save.bind(this)}>
+                    <Button type="primary" onClick={this.usersave.bind(this)}>
                         <Icon type="enter" />保存
                     </Button>
-                    <Button type="primary" onClick={this.back.bind(this)}>
+                    <Button type="primary" onClick={this.userback.bind(this)}>
                         返回<Icon type="rollback" />
                     </Button>
                 </Button.Group>
@@ -149,4 +148,4 @@ const mapToState = function (state) {
     }
 }
 
-export default connect(mapToState, DatagridAction)(users_editComponent);
+export default connect(mapToState, DatagridAction)(users_addComponent);

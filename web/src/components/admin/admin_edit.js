@@ -33,7 +33,7 @@ const CustomizedForm = Form.create({
         };
     },
     onValuesChange(_, values) {
-        console.log(values);
+        
     },
 })((props) => {
     const { getFieldDecorator } = props.form;
@@ -51,8 +51,7 @@ const CustomizedForm = Form.create({
 class admins_editComponent extends React.Component {
 
     componentDidMount() {
-        // this.props.search({ userid: this.props.dataset.data1[0].userid })
-        console.log(this)
+        
     }
 
     state = {
@@ -72,7 +71,7 @@ class admins_editComponent extends React.Component {
     }
 
     admin_editsave() {
-        console.log(this)
+        
         this.props.edit({
             admin_id: this.state.admin_id, admin_user: this.state.admin_user, admin_psw: this.state.admin_psw
         })
@@ -129,7 +128,7 @@ class admins_editComponent extends React.Component {
 }
 
 const mapToState = function (state) {
-    console.log(state.datagrid.response)
+    
     return {
         dataset: state.datagrid.response
     }
